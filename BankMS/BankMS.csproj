@@ -51,16 +51,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agent.Designer.cs">
+      <DependentUpon>agent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customer.Designer.cs">
+      <DependentUpon>customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manager.Designer.cs">
+      <DependentUpon>manager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customer.resx">
+      <DependentUpon>customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
