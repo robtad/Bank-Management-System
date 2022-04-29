@@ -109,5 +109,62 @@
   <ItemGroup>
     <None Include="Resources\bank2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="customerChildForms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashWithdrawIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositCashIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashWithdrawIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteAccountIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositCashIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneyTransferIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openAccountIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\requestCreditIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\summaryOverviewIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateInfoIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-insert-card-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneyTransferIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositCashIcon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openAccountIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteAccountIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\requestCreditIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\summaryOverviewIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateInfoIcon1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
