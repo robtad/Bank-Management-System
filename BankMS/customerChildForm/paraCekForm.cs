@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankMS
+namespace BankMS.customerChildForm
 {
-    public partial class agent : Form
+    public partial class paraCekForm : Form
     {
-        public agent()
+        public paraCekForm()
         {
             InitializeComponent();
         }

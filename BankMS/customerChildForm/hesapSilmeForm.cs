@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankMS
+namespace BankMS.customerChildForm
 {
-    public partial class customer : Form
+    public partial class hesapSilmeForm : Form
     {
-        public customer()
+        public hesapSilmeForm()
         {
             InitializeComponent();
         }
-
-        
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BankMS
 {
-    partial class agent
+    partial class agentForm
     {
         /// <summary>
         /// Required designer variable.

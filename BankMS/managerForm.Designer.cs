@@ -1,6 +1,6 @@
 ﻿namespace BankMS
 {
-    partial class manager
+    partial class managerForm
     {
         /// <summary>
         /// Required designer variable.
