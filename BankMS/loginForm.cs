@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace BankMS
 {
@@ -16,13 +18,115 @@ namespace BankMS
         {
             InitializeComponent();
         }
-
-        private void label7_Click(object sender, EventArgs e)
+        //Sql connection string
+        //string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30";
+        //initializing sql connection
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30");
+        private void resetLabel_Click(object sender, EventArgs e)
         {
             userNameTB.Text = "";
             passwordTB.Text = "";
             roleCB.SelectedIndex = -1;
             roleCB.Text = "Role";
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (roleCB.SelectedIndex == -1)//if role not seleceted
+            {
+                MessageBox.Show("Please Select Your Role");
+            }
+            else if (roleCB.SelectedIndex == 0)//for manager
+            {
+                if(userNameTB.Text == "" || passwordTB.Text == "")
+                {
+                    MessageBox.Show("Enter Both Manager Name and Password");
+                }
+                else
+                {
+                    Con.Open();
+                    string query = "SELECT COUNT(*) FROM ManagerTbl WHERE mName = @username AND mPassword = @password ";
+                    //SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM ManagerTbl WHERE mName = '"+userNameTB.Text+"' AND mPassword = '"+passwordTB.Text+"' ", Con);
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                   
+                    cmd.Parameters.AddWithValue("username", userNameTB.Text);
+                    cmd.Parameters.AddWithValue("password", passwordTB.Text);
+                   
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    if(dt.Rows[0][0].ToString() == "1")
+                    {
+                        managerForm obj = new managerForm();
+                        obj.Show();
+                        this.Hide();
+                        Con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Username or Password");
+                        userNameTB.Text = "";
+                        passwordTB.Text = "";
+                    }
+                    Con.Close();
+
+                }
+            }
+            else if(roleCB.SelectedIndex == 1)//for teller (bank clerk)
+            {
+
+            }
+            else //for customer
+            {
+
+            }
+        }
+
+
+
+        //place holders for username and password
+        private void userNameTB_Enter(object sender, EventArgs e)
+        {
+            if(userNameTB.Text == "Username")
+            {
+                userNameTB.Text = "";
+                userNameTB.ForeColor = Color.Black;          }
+        }
+
+        private void userNameTB_Leave(object sender, EventArgs e)
+        {
+            if( userNameTB.Text == "")
+            {
+                userNameTB.Text = "Username";
+                userNameTB.ForeColor= Color.LightGray; 
+
+            }
+        }
+
+        private void passwordTB_Enter(object sender, EventArgs e)
+        {
+            if (passwordTB.Text == "Password")
+            {
+                passwordTB.Text = "";
+                passwordTB.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void passwordTB_Leave(object sender, EventArgs e)
+        {
+            if (passwordTB.Text == "")
+            {
+                passwordTB.Text = "Password";
+                passwordTB.ForeColor = Color.LightGray;
+
+            }
+        }
+
+
+
+
+
+
     }
 }

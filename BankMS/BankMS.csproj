@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="agentForm.cs">
+    <Compile Include="tellerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="agentForm.Designer.cs">
-      <DependentUpon>agentForm.cs</DependentUpon>
+    <Compile Include="tellerForm.Designer.cs">
+      <DependentUpon>tellerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="customerChildForm\aylikOzetForm.cs">
       <SubType>Form</SubType>

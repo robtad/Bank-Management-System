@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BankMS
 {
-    public partial class agentForm : Form
+    public partial class tellerForm : Form
     {
-        public agentForm()
+        public tellerForm()
         {
             InitializeComponent();
         }

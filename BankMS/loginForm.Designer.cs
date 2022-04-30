@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.passwordTB = new System.Windows.Forms.TextBox();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
             this.roleCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -113,10 +113,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.userNameTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTB.ForeColor = System.Drawing.Color.LightGray;
             this.userNameTB.Location = new System.Drawing.Point(314, 187);
             this.userNameTB.Name = "userNameTB";
             this.userNameTB.Size = new System.Drawing.Size(223, 31);
             this.userNameTB.TabIndex = 2;
+            this.userNameTB.Text = "Username";
+            this.userNameTB.Enter += new System.EventHandler(this.userNameTB_Enter);
+            this.userNameTB.Leave += new System.EventHandler(this.userNameTB_Leave);
             // 
             // label5
             // 
@@ -150,36 +154,41 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTB.ForeColor = System.Drawing.Color.LightGray;
             this.passwordTB.Location = new System.Drawing.Point(314, 268);
             this.passwordTB.Name = "passwordTB";
             this.passwordTB.Size = new System.Drawing.Size(223, 31);
             this.passwordTB.TabIndex = 2;
+            this.passwordTB.Text = "Password";
+            this.passwordTB.Enter += new System.EventHandler(this.passwordTB_Enter);
+            this.passwordTB.Leave += new System.EventHandler(this.passwordTB_Leave);
             // 
-            // bunifuThinButton21
+            // btnLogin
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.Black;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.bunifuThinButton21.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Login";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Black;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.bunifuThinButton21.Location = new System.Drawing.Point(314, 352);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(280, 43);
-            this.bunifuThinButton21.TabIndex = 3;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.ActiveBorderThickness = 1;
+            this.btnLogin.ActiveCornerRadius = 20;
+            this.btnLogin.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnLogin.ActiveForecolor = System.Drawing.Color.Black;
+            this.btnLogin.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLogin.BackColor = System.Drawing.Color.White;
+            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
+            this.btnLogin.ButtonText = "Login";
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnLogin.IdleBorderThickness = 1;
+            this.btnLogin.IdleCornerRadius = 20;
+            this.btnLogin.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnLogin.IdleForecolor = System.Drawing.Color.Black;
+            this.btnLogin.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnLogin.Location = new System.Drawing.Point(314, 352);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(280, 43);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // roleCB
             // 
@@ -191,7 +200,7 @@
             this.roleCB.FormattingEnabled = true;
             this.roleCB.Items.AddRange(new object[] {
             "Manager",
-            "Agent",
+            "Teller",
             "Customer"});
             this.roleCB.Location = new System.Drawing.Point(314, 121);
             this.roleCB.Name = "roleCB";
@@ -233,7 +242,7 @@
             this.resetLabel.Size = new System.Drawing.Size(48, 19);
             this.resetLabel.TabIndex = 5;
             this.resetLabel.Text = "Reset";
-            this.resetLabel.Click += new System.EventHandler(this.label7_Click);
+            this.resetLabel.Click += new System.EventHandler(this.resetLabel_Click);
             // 
             // loginForm
             // 
@@ -243,7 +252,7 @@
             this.ClientSize = new System.Drawing.Size(736, 439);
             this.Controls.Add(this.resetLabel);
             this.Controls.Add(this.roleCB);
-            this.Controls.Add(this.bunifuThinButton21);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.passwordTB);
             this.Controls.Add(this.userNameTB);
             this.Controls.Add(this.pictureBox1);
@@ -274,7 +283,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox passwordTB;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
         private System.Windows.Forms.ComboBox roleCB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
