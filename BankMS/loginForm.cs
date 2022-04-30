@@ -17,6 +17,12 @@ namespace BankMS
             InitializeComponent();
         }
 
-       
+        private void label7_Click(object sender, EventArgs e)
+        {
+            userNameTB.Text = "";
+            passwordTB.Text = "";
+            roleCB.SelectedIndex = -1;
+            roleCB.Text = "Role";
+        }
     }
 }
