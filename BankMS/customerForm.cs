@@ -1,0 +1,81 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace BankMS
+{
+    public partial class customerForm : Form
+    {
+        public customerForm()
+        {
+            InitializeComponent();
+        }
+
+
+        public void loadForm(object Form)
+        {
+            if (this.centerPanel.Controls.Count > 0)
+                this.centerPanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.centerPanel.Controls.Add(f);
+            this.centerPanel.Tag = f;
+            f.Show();
+        }
+
+        private void btnGonder_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.paraGonderForm());
+
+        }
+
+        private void btnCek_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.paraCekForm());
+
+        }
+
+        private void btnYatir_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.paraYatirForm());
+
+        }
+
+        private void btnHesapAc_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.hesapAcmaForm());
+
+        }
+
+        private void btnHesapSil_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.hesapSilmeForm());
+
+        }
+
+        private void btnKrediTaleb_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.krediTalebiForm());
+
+        }
+
+        private void btnAylikOzet_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.aylikOzetForm());
+
+        }
+
+        private void btnBilgiGuncelle_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.bilgiGuncelleForm());
+
+        }
+    }
+}

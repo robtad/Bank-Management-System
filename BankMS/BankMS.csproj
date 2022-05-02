@@ -51,16 +51,109 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
+    <Compile Include="tellerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="tellerForm.Designer.cs">
+      <DependentUpon>tellerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerChildForm\aylikOzetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerChildForm\aylikOzetForm.Designer.cs">
+      <DependentUpon>aylikOzetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerChildForm\bilgiGuncelleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerChildForm\bilgiGuncelleForm.Designer.cs">
+      <DependentUpon>bilgiGuncelleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerChildForm\hesapAcmaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerChildForm\hesapAcmaForm.Designer.cs">
+      <DependentUpon>hesapAcmaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerChildForm\hesapSilmeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerChildForm\hesapSilmeForm.Designer.cs">
+      <DependentUpon>hesapSilmeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerChildForm\krediTalebiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerChildForm\krediTalebiForm.Designer.cs">
+      <DependentUpon>krediTalebiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerChildForm\paraCekForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerChildForm\paraCekForm.Designer.cs">
+      <DependentUpon>paraCekForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerChildForm\paraGonderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerChildForm\paraGonderForm.Designer.cs">
+      <DependentUpon>paraGonderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerChildForm\paraYatirForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerChildForm\paraYatirForm.Designer.cs">
+      <DependentUpon>paraYatirForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginForm.Designer.cs">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerForm.Designer.cs">
+      <DependentUpon>customerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerForm.Designer.cs">
+      <DependentUpon>managerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="customerChildForm\aylikOzetForm.resx">
+      <DependentUpon>aylikOzetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerChildForm\bilgiGuncelleForm.resx">
+      <DependentUpon>bilgiGuncelleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerChildForm\hesapAcmaForm.resx">
+      <DependentUpon>hesapAcmaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerChildForm\hesapSilmeForm.resx">
+      <DependentUpon>hesapSilmeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerChildForm\krediTalebiForm.resx">
+      <DependentUpon>krediTalebiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerChildForm\paraCekForm.resx">
+      <DependentUpon>paraCekForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerChildForm\paraGonderForm.resx">
+      <DependentUpon>paraGonderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerChildForm\paraYatirForm.resx">
+      <DependentUpon>paraYatirForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginForm.resx">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerForm.resx">
+      <DependentUpon>customerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +180,61 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bank2.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\cashWithdrawIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositCashIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashWithdrawIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteAccountIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositCashIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneyTransferIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openAccountIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\requestCreditIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\summaryOverviewIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateInfoIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-insert-card-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneyTransferIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositCashIcon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openAccountIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteAccountIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\requestCreditIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\summaryOverviewIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateInfoIcon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
