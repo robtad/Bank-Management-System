@@ -85,15 +85,11 @@ namespace BankMS
             }
             else if(roleCB.SelectedIndex == 1)//for teller (bank clerk)
             {
-                string query = "SELECT COUNT(*) FROM ClerkTbl WHERE tName = @username AND tPassword = @password ";
-                tellerForm obj = new tellerForm();
-                login_check(query, obj);
+
             }
             else //for customer
             {
-                string query = "SELECT COUNT(*) FROM MusteriTbl WHERE cName = @username AND cPassword = @password ";
-                customerForm obj = new customerForm();
-                login_check(query, obj);
+
             }
         }
 
