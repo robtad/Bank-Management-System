@@ -36,21 +36,21 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(260, 220);
+            this.label1.Location = new System.Drawing.Point(304, 268);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "PARA GONDERME";
             // 
-            // paraGonder
+            // paraGonderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(754, 450);
+            this.ClientSize = new System.Drawing.Size(842, 547);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "paraGonder";
+            this.Name = "paraGonderForm";
             this.Text = "paraGonder";
             this.ResumeLayout(false);
             this.PerformLayout();

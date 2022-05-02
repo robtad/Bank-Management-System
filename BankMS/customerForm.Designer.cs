@@ -36,8 +36,7 @@
             this.btnHesapAc = new System.Windows.Forms.Button();
             this.btnKrediTaleb = new System.Windows.Forms.Button();
             this.btnHesapSil = new System.Windows.Forms.Button();
-            this.btnYatir = new System.Windows.Forms.Button();
-            this.btnCek = new System.Windows.Forms.Button();
+            this.btnYatirCek = new System.Windows.Forms.Button();
             this.btnGonder = new System.Windows.Forms.Button();
             this.btnBilgiGuncelle = new System.Windows.Forms.Button();
             this.bankLogo = new System.Windows.Forms.PictureBox();
@@ -76,14 +75,13 @@
             this.menuPanel.Controls.Add(this.btnHesapAc);
             this.menuPanel.Controls.Add(this.btnKrediTaleb);
             this.menuPanel.Controls.Add(this.btnHesapSil);
-            this.menuPanel.Controls.Add(this.btnYatir);
-            this.menuPanel.Controls.Add(this.btnCek);
+            this.menuPanel.Controls.Add(this.btnYatirCek);
             this.menuPanel.Controls.Add(this.btnGonder);
             this.menuPanel.Controls.Add(this.btnBilgiGuncelle);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(210, 322);
+            this.menuPanel.Size = new System.Drawing.Size(210, 308);
             this.menuPanel.TabIndex = 9;
             // 
             // btnAylikOzet
@@ -96,7 +94,7 @@
             this.btnAylikOzet.ForeColor = System.Drawing.Color.Black;
             this.btnAylikOzet.Image = global::BankMS.Properties.Resources.summaryOverviewIcon1;
             this.btnAylikOzet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAylikOzet.Location = new System.Drawing.Point(0, 216);
+            this.btnAylikOzet.Location = new System.Drawing.Point(0, 205);
             this.btnAylikOzet.Name = "btnAylikOzet";
             this.btnAylikOzet.Size = new System.Drawing.Size(210, 35);
             this.btnAylikOzet.TabIndex = 8;
@@ -115,7 +113,7 @@
             this.btnHesapAc.ForeColor = System.Drawing.Color.Black;
             this.btnHesapAc.Image = global::BankMS.Properties.Resources.openAccountIcon1;
             this.btnHesapAc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHesapAc.Location = new System.Drawing.Point(0, 108);
+            this.btnHesapAc.Location = new System.Drawing.Point(3, 82);
             this.btnHesapAc.Name = "btnHesapAc";
             this.btnHesapAc.Size = new System.Drawing.Size(210, 35);
             this.btnHesapAc.TabIndex = 4;
@@ -134,7 +132,7 @@
             this.btnKrediTaleb.ForeColor = System.Drawing.Color.Black;
             this.btnKrediTaleb.Image = global::BankMS.Properties.Resources.requestCreditIcon1;
             this.btnKrediTaleb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKrediTaleb.Location = new System.Drawing.Point(0, 180);
+            this.btnKrediTaleb.Location = new System.Drawing.Point(0, 164);
             this.btnKrediTaleb.Name = "btnKrediTaleb";
             this.btnKrediTaleb.Size = new System.Drawing.Size(210, 35);
             this.btnKrediTaleb.TabIndex = 2;
@@ -153,7 +151,7 @@
             this.btnHesapSil.ForeColor = System.Drawing.Color.Black;
             this.btnHesapSil.Image = global::BankMS.Properties.Resources.deleteAccountIcon1;
             this.btnHesapSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHesapSil.Location = new System.Drawing.Point(0, 144);
+            this.btnHesapSil.Location = new System.Drawing.Point(3, 123);
             this.btnHesapSil.Name = "btnHesapSil";
             this.btnHesapSil.Size = new System.Drawing.Size(210, 35);
             this.btnHesapSil.TabIndex = 3;
@@ -162,43 +160,24 @@
             this.btnHesapSil.UseVisualStyleBackColor = false;
             this.btnHesapSil.Click += new System.EventHandler(this.btnHesapSil_Click);
             // 
-            // btnYatir
+            // btnYatirCek
             // 
-            this.btnYatir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnYatir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnYatir.FlatAppearance.BorderSize = 0;
-            this.btnYatir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYatir.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYatir.ForeColor = System.Drawing.Color.Black;
-            this.btnYatir.Image = global::BankMS.Properties.Resources.depositCashIcon2;
-            this.btnYatir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnYatir.Location = new System.Drawing.Point(0, 72);
-            this.btnYatir.Name = "btnYatir";
-            this.btnYatir.Size = new System.Drawing.Size(210, 35);
-            this.btnYatir.TabIndex = 5;
-            this.btnYatir.Text = "PARA YATIR";
-            this.btnYatir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnYatir.UseVisualStyleBackColor = false;
-            this.btnYatir.Click += new System.EventHandler(this.btnYatir_Click);
-            // 
-            // btnCek
-            // 
-            this.btnCek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCek.FlatAppearance.BorderSize = 0;
-            this.btnCek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCek.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCek.ForeColor = System.Drawing.Color.Black;
-            this.btnCek.Image = global::BankMS.Properties.Resources.cashWithdrawIcon;
-            this.btnCek.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCek.Location = new System.Drawing.Point(0, 36);
-            this.btnCek.Name = "btnCek";
-            this.btnCek.Size = new System.Drawing.Size(210, 35);
-            this.btnCek.TabIndex = 6;
-            this.btnCek.Text = "PARA ÇEK";
-            this.btnCek.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCek.UseVisualStyleBackColor = false;
-            this.btnCek.Click += new System.EventHandler(this.btnCek_Click);
+            this.btnYatirCek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnYatirCek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnYatirCek.FlatAppearance.BorderSize = 0;
+            this.btnYatirCek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYatirCek.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYatirCek.ForeColor = System.Drawing.Color.Black;
+            this.btnYatirCek.Image = global::BankMS.Properties.Resources.depositCashIcon2;
+            this.btnYatirCek.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnYatirCek.Location = new System.Drawing.Point(3, 41);
+            this.btnYatirCek.Name = "btnYatirCek";
+            this.btnYatirCek.Size = new System.Drawing.Size(210, 35);
+            this.btnYatirCek.TabIndex = 5;
+            this.btnYatirCek.Text = "PARA [ YATIR | ÇEK ]";
+            this.btnYatirCek.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnYatirCek.UseVisualStyleBackColor = false;
+            this.btnYatirCek.Click += new System.EventHandler(this.btnYatirCek_Click);
             // 
             // btnGonder
             // 
@@ -229,7 +208,7 @@
             this.btnBilgiGuncelle.ForeColor = System.Drawing.Color.Black;
             this.btnBilgiGuncelle.Image = global::BankMS.Properties.Resources.updateInfoIcon1;
             this.btnBilgiGuncelle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBilgiGuncelle.Location = new System.Drawing.Point(0, 252);
+            this.btnBilgiGuncelle.Location = new System.Drawing.Point(3, 246);
             this.btnBilgiGuncelle.Name = "btnBilgiGuncelle";
             this.btnBilgiGuncelle.Size = new System.Drawing.Size(210, 35);
             this.btnBilgiGuncelle.TabIndex = 7;
@@ -283,8 +262,7 @@
         private System.Windows.Forms.Button btnKrediTaleb;
         private System.Windows.Forms.Button btnHesapSil;
         private System.Windows.Forms.Button btnHesapAc;
-        private System.Windows.Forms.Button btnYatir;
-        private System.Windows.Forms.Button btnCek;
+        private System.Windows.Forms.Button btnYatirCek;
         private System.Windows.Forms.Button btnBilgiGuncelle;
         private System.Windows.Forms.Button btnAylikOzet;
         private System.Windows.Forms.Panel menuPanel;

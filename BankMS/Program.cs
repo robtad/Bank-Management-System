@@ -18,6 +18,8 @@ namespace BankMS
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginForm());
             //Application.Run(new customerForm());
+            //Application.Run(new customerChildForm.paraYatirCekForm());
+
 
         }
     }

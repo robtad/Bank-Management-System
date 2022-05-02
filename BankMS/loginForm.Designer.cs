@@ -119,6 +119,7 @@
             this.userNameTB.Size = new System.Drawing.Size(223, 31);
             this.userNameTB.TabIndex = 2;
             this.userNameTB.Text = "Username";
+            this.userNameTB.TextChanged += new System.EventHandler(this.userNameTB_TextChanged);
             this.userNameTB.Enter += new System.EventHandler(this.userNameTB_Enter);
             this.userNameTB.Leave += new System.EventHandler(this.userNameTB_Leave);
             // 

@@ -141,10 +141,9 @@ namespace BankMS
             }
         }
 
+        private void userNameTB_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }
