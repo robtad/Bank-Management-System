@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace BankMS.customerChildForm
 {
-    public partial class paraCekForm : Form
+    public partial class hesapTalepleriForm : Form
     {
-        public paraCekForm()
+        public hesapTalepleriForm()
         {
             InitializeComponent();
         }
+
+       
     }
 }

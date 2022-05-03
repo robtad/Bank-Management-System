@@ -36,27 +36,16 @@ namespace BankMS
 
         }
 
-        private void btnCek_Click(object sender, EventArgs e)
+
+        private void btnYatirCek_Click(object sender, EventArgs e)
         {
-            loadForm(new customerChildForm.paraCekForm());
+            loadForm(new customerChildForm.paraYatirCekForm());
 
         }
-
-        private void btnYatir_Click(object sender, EventArgs e)
+       
+        private void btnHesapTalepleri_Click(object sender, EventArgs e)
         {
-            loadForm(new customerChildForm.paraYatirForm());
-
-        }
-
-        private void btnHesapAc_Click(object sender, EventArgs e)
-        {
-            loadForm(new customerChildForm.hesapAcmaForm());
-
-        }
-
-        private void btnHesapSil_Click(object sender, EventArgs e)
-        {
-            loadForm(new customerChildForm.hesapSilmeForm());
+            loadForm(new customerChildForm.hesapTalepleriForm());
 
         }
 
@@ -77,5 +66,7 @@ namespace BankMS
             loadForm(new customerChildForm.bilgiGuncelleForm());
 
         }
+
+       
     }
 }
