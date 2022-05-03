@@ -75,11 +75,11 @@
     <Compile Include="customerChildForm\hesapTalepleriForm.Designer.cs">
       <DependentUpon>hesapTalepleriForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="customerChildForm\krediTalebiForm.cs">
+    <Compile Include="customerChildForm\krediIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customerChildForm\krediTalebiForm.Designer.cs">
-      <DependentUpon>krediTalebiForm.cs</DependentUpon>
+    <Compile Include="customerChildForm\krediIslemleri.Designer.cs">
+      <DependentUpon>krediIslemleri.cs</DependentUpon>
     </Compile>
     <Compile Include="customerChildForm\paraGonderForm.cs">
       <SubType>Form</SubType>
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="customerChildForm\hesapTalepleriForm.resx">
       <DependentUpon>hesapTalepleriForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customerChildForm\krediTalebiForm.resx">
-      <DependentUpon>krediTalebiForm.cs</DependentUpon>
+    <EmbeddedResource Include="customerChildForm\krediIslemleri.resx">
+      <DependentUpon>krediIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customerChildForm\paraGonderForm.resx">
       <DependentUpon>paraGonderForm.cs</DependentUpon>

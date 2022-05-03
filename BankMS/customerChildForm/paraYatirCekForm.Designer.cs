@@ -499,9 +499,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(12, 58);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 20);
+            this.label11.Size = new System.Drawing.Size(50, 20);
             this.label11.TabIndex = 1;
-            this.label11.Text = "Tutarı:";
+            this.label11.Text = "Tutar:";
             // 
             // label12
             // 
