@@ -269,6 +269,7 @@
             this.depositNoteTB.Location = new System.Drawing.Point(143, 133);
             this.depositNoteTB.Multiline = true;
             this.depositNoteTB.Name = "depositNoteTB";
+            this.depositNoteTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.depositNoteTB.Size = new System.Drawing.Size(223, 97);
             this.depositNoteTB.TabIndex = 0;
             // 
@@ -457,6 +458,7 @@
             this.withdrawNoteTB.Location = new System.Drawing.Point(143, 133);
             this.withdrawNoteTB.Multiline = true;
             this.withdrawNoteTB.Name = "withdrawNoteTB";
+            this.withdrawNoteTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.withdrawNoteTB.Size = new System.Drawing.Size(223, 97);
             this.withdrawNoteTB.TabIndex = 0;
             // 

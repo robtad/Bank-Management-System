@@ -30,9 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(paraGonderForm));
             this.pnlDeposit = new System.Windows.Forms.Panel();
+            this.btnCancelTransfer = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnConfirmTransfer = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.transferDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.transferNoteTB = new System.Windows.Forms.TextBox();
+            this.transferCurrencyCB = new System.Windows.Forms.ComboBox();
+            this.transferAmountTB = new System.Windows.Forms.TextBox();
+            this.receiverAccountTB = new System.Windows.Forms.TextBox();
+            this.senderAccountTB = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCheckBalance = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -41,15 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.senderAccountTB = new System.Windows.Forms.TextBox();
-            this.receiverAccountTB = new System.Windows.Forms.TextBox();
-            this.transferCurrencyCB = new System.Windows.Forms.ComboBox();
-            this.transferAmountTB = new System.Windows.Forms.TextBox();
-            this.transferDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.transferNoteTB = new System.Windows.Forms.TextBox();
-            this.btnCancelTransfer = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnConfirmTransfer = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pnlDeposit.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,118 @@
             this.pnlDeposit.Name = "pnlDeposit";
             this.pnlDeposit.Size = new System.Drawing.Size(845, 166);
             this.pnlDeposit.TabIndex = 12;
+            // 
+            // btnCancelTransfer
+            // 
+            this.btnCancelTransfer.ActiveBorderThickness = 1;
+            this.btnCancelTransfer.ActiveCornerRadius = 20;
+            this.btnCancelTransfer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelTransfer.ActiveForecolor = System.Drawing.Color.Black;
+            this.btnCancelTransfer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelTransfer.BackColor = System.Drawing.Color.White;
+            this.btnCancelTransfer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelTransfer.BackgroundImage")));
+            this.btnCancelTransfer.ButtonText = "İptal et";
+            this.btnCancelTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelTransfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelTransfer.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelTransfer.IdleBorderThickness = 1;
+            this.btnCancelTransfer.IdleCornerRadius = 20;
+            this.btnCancelTransfer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelTransfer.IdleForecolor = System.Drawing.Color.Black;
+            this.btnCancelTransfer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelTransfer.Location = new System.Drawing.Point(740, 127);
+            this.btnCancelTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelTransfer.Name = "btnCancelTransfer";
+            this.btnCancelTransfer.Size = new System.Drawing.Size(76, 35);
+            this.btnCancelTransfer.TabIndex = 10;
+            this.btnCancelTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmTransfer
+            // 
+            this.btnConfirmTransfer.ActiveBorderThickness = 1;
+            this.btnConfirmTransfer.ActiveCornerRadius = 20;
+            this.btnConfirmTransfer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmTransfer.ActiveForecolor = System.Drawing.Color.Black;
+            this.btnConfirmTransfer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConfirmTransfer.BackColor = System.Drawing.Color.White;
+            this.btnConfirmTransfer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmTransfer.BackgroundImage")));
+            this.btnConfirmTransfer.ButtonText = "Onayla";
+            this.btnConfirmTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmTransfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmTransfer.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnConfirmTransfer.IdleBorderThickness = 1;
+            this.btnConfirmTransfer.IdleCornerRadius = 20;
+            this.btnConfirmTransfer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmTransfer.IdleForecolor = System.Drawing.Color.Black;
+            this.btnConfirmTransfer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmTransfer.Location = new System.Drawing.Point(657, 127);
+            this.btnConfirmTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmTransfer.Name = "btnConfirmTransfer";
+            this.btnConfirmTransfer.Size = new System.Drawing.Size(75, 35);
+            this.btnConfirmTransfer.TabIndex = 11;
+            this.btnConfirmTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // transferDatePicker
+            // 
+            this.transferDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transferDatePicker.Location = new System.Drawing.Point(593, 12);
+            this.transferDatePicker.Name = "transferDatePicker";
+            this.transferDatePicker.Size = new System.Drawing.Size(223, 22);
+            this.transferDatePicker.TabIndex = 9;
+            // 
+            // transferNoteTB
+            // 
+            this.transferNoteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transferNoteTB.Location = new System.Drawing.Point(593, 49);
+            this.transferNoteTB.Multiline = true;
+            this.transferNoteTB.Name = "transferNoteTB";
+            this.transferNoteTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.transferNoteTB.Size = new System.Drawing.Size(223, 56);
+            this.transferNoteTB.TabIndex = 8;
+            // 
+            // transferCurrencyCB
+            // 
+            this.transferCurrencyCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.transferCurrencyCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transferCurrencyCB.ForeColor = System.Drawing.Color.Black;
+            this.transferCurrencyCB.FormattingEnabled = true;
+            this.transferCurrencyCB.Items.AddRange(new object[] {
+            "Lira",
+            "Dollar",
+            "Euro"});
+            this.transferCurrencyCB.Location = new System.Drawing.Point(340, 79);
+            this.transferCurrencyCB.Name = "transferCurrencyCB";
+            this.transferCurrencyCB.Size = new System.Drawing.Size(98, 25);
+            this.transferCurrencyCB.TabIndex = 7;
+            this.transferCurrencyCB.Text = "Para Birimi";
+            // 
+            // transferAmountTB
+            // 
+            this.transferAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transferAmountTB.Location = new System.Drawing.Point(215, 78);
+            this.transferAmountTB.Name = "transferAmountTB";
+            this.transferAmountTB.Size = new System.Drawing.Size(102, 26);
+            this.transferAmountTB.TabIndex = 6;
+            // 
+            // receiverAccountTB
+            // 
+            this.receiverAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiverAccountTB.Location = new System.Drawing.Point(215, 43);
+            this.receiverAccountTB.Name = "receiverAccountTB";
+            this.receiverAccountTB.Size = new System.Drawing.Size(223, 26);
+            this.receiverAccountTB.TabIndex = 2;
+            // 
+            // senderAccountTB
+            // 
+            this.senderAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.senderAccountTB.Location = new System.Drawing.Point(215, 11);
+            this.senderAccountTB.Name = "senderAccountTB";
+            this.senderAccountTB.Size = new System.Drawing.Size(223, 26);
+            this.senderAccountTB.TabIndex = 2;
             // 
             // label10
             // 
@@ -107,6 +219,17 @@
             this.label9.Size = new System.Drawing.Size(116, 20);
             this.label9.TabIndex = 1;
             this.label9.Text = "Transfer Tutarı:";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Alıcı Hesap Numarısı:";
             // 
             // label7
             // 
@@ -209,128 +332,6 @@
             this.label1.Size = new System.Drawing.Size(207, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "PARA TRANSFERİ";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Alıcı Hesap Numarısı:";
-            // 
-            // senderAccountTB
-            // 
-            this.senderAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senderAccountTB.Location = new System.Drawing.Point(215, 11);
-            this.senderAccountTB.Name = "senderAccountTB";
-            this.senderAccountTB.Size = new System.Drawing.Size(223, 26);
-            this.senderAccountTB.TabIndex = 2;
-            // 
-            // receiverAccountTB
-            // 
-            this.receiverAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.receiverAccountTB.Location = new System.Drawing.Point(215, 43);
-            this.receiverAccountTB.Name = "receiverAccountTB";
-            this.receiverAccountTB.Size = new System.Drawing.Size(223, 26);
-            this.receiverAccountTB.TabIndex = 2;
-            // 
-            // transferCurrencyCB
-            // 
-            this.transferCurrencyCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.transferCurrencyCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transferCurrencyCB.ForeColor = System.Drawing.Color.Black;
-            this.transferCurrencyCB.FormattingEnabled = true;
-            this.transferCurrencyCB.Items.AddRange(new object[] {
-            "Lira",
-            "Dollar",
-            "Euro"});
-            this.transferCurrencyCB.Location = new System.Drawing.Point(340, 79);
-            this.transferCurrencyCB.Name = "transferCurrencyCB";
-            this.transferCurrencyCB.Size = new System.Drawing.Size(98, 25);
-            this.transferCurrencyCB.TabIndex = 7;
-            this.transferCurrencyCB.Text = "Para Birimi";
-            // 
-            // transferAmountTB
-            // 
-            this.transferAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transferAmountTB.Location = new System.Drawing.Point(215, 78);
-            this.transferAmountTB.Name = "transferAmountTB";
-            this.transferAmountTB.Size = new System.Drawing.Size(102, 26);
-            this.transferAmountTB.TabIndex = 6;
-            // 
-            // transferDatePicker
-            // 
-            this.transferDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transferDatePicker.Location = new System.Drawing.Point(593, 12);
-            this.transferDatePicker.Name = "transferDatePicker";
-            this.transferDatePicker.Size = new System.Drawing.Size(223, 22);
-            this.transferDatePicker.TabIndex = 9;
-            // 
-            // transferNoteTB
-            // 
-            this.transferNoteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transferNoteTB.Location = new System.Drawing.Point(593, 49);
-            this.transferNoteTB.Multiline = true;
-            this.transferNoteTB.Name = "transferNoteTB";
-            this.transferNoteTB.Size = new System.Drawing.Size(223, 56);
-            this.transferNoteTB.TabIndex = 8;
-            // 
-            // btnCancelTransfer
-            // 
-            this.btnCancelTransfer.ActiveBorderThickness = 1;
-            this.btnCancelTransfer.ActiveCornerRadius = 20;
-            this.btnCancelTransfer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelTransfer.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCancelTransfer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelTransfer.BackColor = System.Drawing.Color.White;
-            this.btnCancelTransfer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelTransfer.BackgroundImage")));
-            this.btnCancelTransfer.ButtonText = "İptal et";
-            this.btnCancelTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelTransfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelTransfer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelTransfer.IdleBorderThickness = 1;
-            this.btnCancelTransfer.IdleCornerRadius = 20;
-            this.btnCancelTransfer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelTransfer.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCancelTransfer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelTransfer.Location = new System.Drawing.Point(740, 127);
-            this.btnCancelTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelTransfer.Name = "btnCancelTransfer";
-            this.btnCancelTransfer.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelTransfer.TabIndex = 10;
-            this.btnCancelTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirmTransfer
-            // 
-            this.btnConfirmTransfer.ActiveBorderThickness = 1;
-            this.btnConfirmTransfer.ActiveCornerRadius = 20;
-            this.btnConfirmTransfer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmTransfer.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnConfirmTransfer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmTransfer.BackColor = System.Drawing.Color.White;
-            this.btnConfirmTransfer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmTransfer.BackgroundImage")));
-            this.btnConfirmTransfer.ButtonText = "Onayla";
-            this.btnConfirmTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmTransfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmTransfer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnConfirmTransfer.IdleBorderThickness = 1;
-            this.btnConfirmTransfer.IdleCornerRadius = 20;
-            this.btnConfirmTransfer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmTransfer.IdleForecolor = System.Drawing.Color.Black;
-            this.btnConfirmTransfer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmTransfer.Location = new System.Drawing.Point(657, 127);
-            this.btnConfirmTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmTransfer.Name = "btnConfirmTransfer";
-            this.btnConfirmTransfer.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmTransfer.TabIndex = 11;
-            this.btnConfirmTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // paraGonderForm
             // 
