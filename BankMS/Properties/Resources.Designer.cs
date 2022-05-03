@@ -93,6 +93,16 @@ namespace BankMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap creditIcon {
+            get {
+                object obj = ResourceManager.GetObject("creditIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap deleteAccountIcon {
             get {
                 object obj = ResourceManager.GetObject("deleteAccountIcon", resourceCulture);
@@ -136,6 +146,16 @@ namespace BankMS.Properties {
         internal static System.Drawing.Bitmap depositCashIcon2 {
             get {
                 object obj = ResourceManager.GetObject("depositCashIcon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap goBackIcon {
+            get {
+                object obj = ResourceManager.GetObject("goBackIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +213,26 @@ namespace BankMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap previewIcon {
+            get {
+                object obj = ResourceManager.GetObject("previewIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap request2Icon {
+            get {
+                object obj = ResourceManager.GetObject("request2Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap requestCreditIcon {
             get {
                 object obj = ResourceManager.GetObject("requestCreditIcon", resourceCulture);
@@ -206,6 +246,16 @@ namespace BankMS.Properties {
         internal static System.Drawing.Bitmap requestCreditIcon1 {
             get {
                 object obj = ResourceManager.GetObject("requestCreditIcon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap requestIcon {
+            get {
+                object obj = ResourceManager.GetObject("requestIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

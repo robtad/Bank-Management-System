@@ -51,6 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="tellerChildForm\hesaplarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tellerChildForm\hesaplarForm.Designer.cs">
+      <DependentUpon>hesaplarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tellerChildForm\musteriIslemlerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tellerChildForm\musteriIslemlerForm.Designer.cs">
+      <DependentUpon>musteriIslemlerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tellerChildForm\taleplerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tellerChildForm\taleplerForm.Designer.cs">
+      <DependentUpon>taleplerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="tellerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="tellerChildForm\hesaplarForm.resx">
+      <DependentUpon>hesaplarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tellerChildForm\musteriIslemlerForm.resx">
+      <DependentUpon>musteriIslemlerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tellerChildForm\taleplerForm.resx">
+      <DependentUpon>taleplerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tellerForm.resx">
+      <DependentUpon>tellerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,7 +193,9 @@
   <ItemGroup>
     <None Include="Resources\bank2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\goBackIcon.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cashWithdrawIcon.png" />
   </ItemGroup>
@@ -217,6 +249,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\updateInfoIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\creditIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\requestIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request2Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previewIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
