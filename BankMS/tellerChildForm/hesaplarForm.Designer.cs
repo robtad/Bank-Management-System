@@ -30,31 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(hesaplarForm));
             this.pnlCheckBalance = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.customerPasswordTB = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnAddCustomer = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnRemoveCustomer = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnEditCustomer = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.newAccTellerIdTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.newAccAddressTB = new System.Windows.Forms.TextBox();
             this.newAccGenderCB = new System.Windows.Forms.ComboBox();
             this.newAccCurrencyCB = new System.Windows.Forms.ComboBox();
             this.newAccPhoneTB = new System.Windows.Forms.TextBox();
-            this.newAccLastNameTB = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.newAccDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.newAccFirstNameTB = new System.Windows.Forms.TextBox();
+            this.newAccNameTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.customerAddRemoveDataGrid = new System.Windows.Forms.DataGridView();
-            this.customerPasswordTB = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.customerDataGrid = new System.Windows.Forms.DataGridView();
             this.pnlCheckBalance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerAddRemoveDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCheckBalance
@@ -65,37 +63,43 @@
             this.pnlCheckBalance.Controls.Add(this.btnAddCustomer);
             this.pnlCheckBalance.Controls.Add(this.btnRemoveCustomer);
             this.pnlCheckBalance.Controls.Add(this.btnEditCustomer);
-            this.pnlCheckBalance.Controls.Add(this.textBox1);
+            this.pnlCheckBalance.Controls.Add(this.newAccTellerIdTB);
             this.pnlCheckBalance.Controls.Add(this.label2);
             this.pnlCheckBalance.Controls.Add(this.newAccAddressTB);
             this.pnlCheckBalance.Controls.Add(this.newAccGenderCB);
             this.pnlCheckBalance.Controls.Add(this.newAccCurrencyCB);
             this.pnlCheckBalance.Controls.Add(this.newAccPhoneTB);
-            this.pnlCheckBalance.Controls.Add(this.newAccLastNameTB);
-            this.pnlCheckBalance.Controls.Add(this.label14);
             this.pnlCheckBalance.Controls.Add(this.newAccDatePicker);
-            this.pnlCheckBalance.Controls.Add(this.newAccFirstNameTB);
+            this.pnlCheckBalance.Controls.Add(this.newAccNameTB);
             this.pnlCheckBalance.Controls.Add(this.label6);
             this.pnlCheckBalance.Controls.Add(this.label17);
             this.pnlCheckBalance.Controls.Add(this.label15);
             this.pnlCheckBalance.Controls.Add(this.label9);
             this.pnlCheckBalance.Controls.Add(this.label11);
             this.pnlCheckBalance.Controls.Add(this.label7);
-            this.pnlCheckBalance.Location = new System.Drawing.Point(22, 61);
+            this.pnlCheckBalance.Location = new System.Drawing.Point(118, 61);
             this.pnlCheckBalance.Name = "pnlCheckBalance";
             this.pnlCheckBalance.Size = new System.Drawing.Size(797, 213);
             this.pnlCheckBalance.TabIndex = 13;
             // 
-            // label1
+            // customerPasswordTB
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(185, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(477, 25);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "MÜŞTERİ EKLEME, SİLME VE DÜZENLEME";
+            this.customerPasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPasswordTB.Location = new System.Drawing.Point(26, 136);
+            this.customerPasswordTB.Name = "customerPasswordTB";
+            this.customerPasswordTB.Size = new System.Drawing.Size(177, 26);
+            this.customerPasswordTB.TabIndex = 51;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Şifre:";
             // 
             // btnAddCustomer
             // 
@@ -122,6 +126,7 @@
             this.btnAddCustomer.Size = new System.Drawing.Size(75, 35);
             this.btnAddCustomer.TabIndex = 50;
             this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // btnRemoveCustomer
             // 
@@ -175,20 +180,20 @@
             this.btnEditCustomer.TabIndex = 49;
             this.btnEditCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // newAccTellerIdTB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(26, 135);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 26);
-            this.textBox1.TabIndex = 46;
+            this.newAccTellerIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newAccTellerIdTB.Location = new System.Drawing.Point(26, 83);
+            this.newAccTellerIdTB.Name = "newAccTellerIdTB";
+            this.newAccTellerIdTB.Size = new System.Drawing.Size(177, 26);
+            this.newAccTellerIdTB.TabIndex = 46;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 112);
+            this.label2.Location = new System.Drawing.Point(22, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 20);
             this.label2.TabIndex = 47;
@@ -247,40 +252,22 @@
             this.newAccPhoneTB.Size = new System.Drawing.Size(145, 26);
             this.newAccPhoneTB.TabIndex = 42;
             // 
-            // newAccLastNameTB
-            // 
-            this.newAccLastNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccLastNameTB.Location = new System.Drawing.Point(26, 83);
-            this.newAccLastNameTB.Name = "newAccLastNameTB";
-            this.newAccLastNameTB.Size = new System.Drawing.Size(177, 26);
-            this.newAccLastNameTB.TabIndex = 40;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(22, 60);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 20);
-            this.label14.TabIndex = 41;
-            this.label14.Text = "Soyad:";
-            // 
             // newAccDatePicker
             // 
+            this.newAccDatePicker.CustomFormat = "";
             this.newAccDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newAccDatePicker.Location = new System.Drawing.Point(403, 32);
             this.newAccDatePicker.Name = "newAccDatePicker";
             this.newAccDatePicker.Size = new System.Drawing.Size(220, 22);
             this.newAccDatePicker.TabIndex = 39;
             // 
-            // newAccFirstNameTB
+            // newAccNameTB
             // 
-            this.newAccFirstNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccFirstNameTB.Location = new System.Drawing.Point(26, 31);
-            this.newAccFirstNameTB.Name = "newAccFirstNameTB";
-            this.newAccFirstNameTB.Size = new System.Drawing.Size(177, 26);
-            this.newAccFirstNameTB.TabIndex = 32;
+            this.newAccNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newAccNameTB.Location = new System.Drawing.Point(26, 31);
+            this.newAccNameTB.Name = "newAccNameTB";
+            this.newAccNameTB.Size = new System.Drawing.Size(177, 26);
+            this.newAccNameTB.TabIndex = 32;
             // 
             // label6
             // 
@@ -344,45 +331,37 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(22, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 20);
+            this.label7.Size = new System.Drawing.Size(83, 20);
             this.label7.TabIndex = 38;
-            this.label7.Text = "Ad:";
+            this.label7.Text = "Ad-Soyad:";
             // 
-            // customerAddRemoveDataGrid
+            // label1
             // 
-            this.customerAddRemoveDataGrid.BackgroundColor = System.Drawing.Color.White;
-            this.customerAddRemoveDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerAddRemoveDataGrid.Location = new System.Drawing.Point(0, 293);
-            this.customerAddRemoveDataGrid.Name = "customerAddRemoveDataGrid";
-            this.customerAddRemoveDataGrid.Size = new System.Drawing.Size(841, 249);
-            this.customerAddRemoveDataGrid.TabIndex = 14;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(281, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(477, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "MÜŞTERİ EKLEME, SİLME VE DÜZENLEME";
             // 
-            // customerPasswordTB
+            // customerDataGrid
             // 
-            this.customerPasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerPasswordTB.Location = new System.Drawing.Point(74, 173);
-            this.customerPasswordTB.Name = "customerPasswordTB";
-            this.customerPasswordTB.Size = new System.Drawing.Size(129, 26);
-            this.customerPasswordTB.TabIndex = 51;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 173);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Şifre:";
+            this.customerDataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.customerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerDataGrid.Location = new System.Drawing.Point(0, 293);
+            this.customerDataGrid.Name = "customerDataGrid";
+            this.customerDataGrid.Size = new System.Drawing.Size(1031, 249);
+            this.customerDataGrid.TabIndex = 14;
             // 
             // hesaplarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(841, 541);
-            this.Controls.Add(this.customerAddRemoveDataGrid);
+            this.ClientSize = new System.Drawing.Size(1032, 541);
+            this.Controls.Add(this.customerDataGrid);
             this.Controls.Add(this.pnlCheckBalance);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -390,7 +369,7 @@
             this.Text = "hesaplarForm";
             this.pnlCheckBalance.ResumeLayout(false);
             this.pnlCheckBalance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerAddRemoveDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,23 +382,21 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnAddCustomer;
         private Bunifu.Framework.UI.BunifuThinButton2 btnRemoveCustomer;
         private Bunifu.Framework.UI.BunifuThinButton2 btnEditCustomer;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox newAccTellerIdTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox newAccAddressTB;
         private System.Windows.Forms.ComboBox newAccGenderCB;
         private System.Windows.Forms.ComboBox newAccCurrencyCB;
         private System.Windows.Forms.TextBox newAccPhoneTB;
-        private System.Windows.Forms.TextBox newAccLastNameTB;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker newAccDatePicker;
-        private System.Windows.Forms.TextBox newAccFirstNameTB;
+        private System.Windows.Forms.TextBox newAccNameTB;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView customerAddRemoveDataGrid;
+        private System.Windows.Forms.DataGridView customerDataGrid;
         private System.Windows.Forms.TextBox customerPasswordTB;
         private System.Windows.Forms.Label label3;
     }
