@@ -130,6 +130,7 @@
             this.btnEditCustomer.TabIndex = 49;
             this.btnEditCustomer.Text = "Düzenle";
             this.btnEditCustomer.UseVisualStyleBackColor = false;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // customerPasswordTB
             // 
@@ -319,6 +320,7 @@
             // customerDataGrid
             // 
             this.customerDataGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.customerDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customerDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.customerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerDataGrid.Location = new System.Drawing.Point(12, 289);

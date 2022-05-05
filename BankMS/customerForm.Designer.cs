@@ -260,7 +260,6 @@
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Button btnGonder;
         private System.Windows.Forms.Button btnKrediTaleb;
-        private System.Windows.Forms.Button btnHesapSil;
         private System.Windows.Forms.Button btnHesapAc;
         private System.Windows.Forms.Button btnYatirCek;
         private System.Windows.Forms.Button btnBilgiGuncelle;
