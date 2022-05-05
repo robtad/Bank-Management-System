@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankMS
+namespace BankMS.tellerChildForm
 {
-    public partial class managerForm : Form
+    public partial class taleplerForm : Form
     {
-        public managerForm()
+        public taleplerForm()
         {
             InitializeComponent();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            loginForm obj = new loginForm();
-            obj.Show();
-            this.Hide();
         }
     }
 }

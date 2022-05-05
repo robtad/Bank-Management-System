@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\Users\RobTad\Downloads\OTHERS\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\Users\RobTad\Downloads\OTHERS\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,6 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="tellerChildForm\hesaplarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tellerChildForm\hesaplarForm.Designer.cs">
+      <DependentUpon>hesaplarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tellerChildForm\musteriIslemlerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tellerChildForm\musteriIslemlerForm.Designer.cs">
+      <DependentUpon>musteriIslemlerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tellerChildForm\taleplerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tellerChildForm\taleplerForm.Designer.cs">
+      <DependentUpon>taleplerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="tellerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,11 +96,11 @@
     <Compile Include="customerChildForm\hesapTalepleriForm.Designer.cs">
       <DependentUpon>hesapTalepleriForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="customerChildForm\krediTalebiForm.cs">
+    <Compile Include="customerChildForm\krediIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customerChildForm\krediTalebiForm.Designer.cs">
-      <DependentUpon>krediTalebiForm.cs</DependentUpon>
+    <Compile Include="customerChildForm\krediIslemleri.Designer.cs">
+      <DependentUpon>krediIslemleri.cs</DependentUpon>
     </Compile>
     <Compile Include="customerChildForm\paraGonderForm.cs">
       <SubType>Form</SubType>
@@ -122,8 +143,8 @@
     <EmbeddedResource Include="customerChildForm\hesapTalepleriForm.resx">
       <DependentUpon>hesapTalepleriForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customerChildForm\krediTalebiForm.resx">
-      <DependentUpon>krediTalebiForm.cs</DependentUpon>
+    <EmbeddedResource Include="customerChildForm\krediIslemleri.resx">
+      <DependentUpon>krediIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customerChildForm\paraGonderForm.resx">
       <DependentUpon>paraGonderForm.cs</DependentUpon>
@@ -137,6 +158,9 @@
     <EmbeddedResource Include="customerForm.resx">
       <DependentUpon>customerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="managerForm.resx">
+      <DependentUpon>managerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -147,6 +171,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="tellerChildForm\hesaplarForm.resx">
+      <DependentUpon>hesaplarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tellerChildForm\musteriIslemlerForm.resx">
+      <DependentUpon>musteriIslemlerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tellerChildForm\taleplerForm.resx">
+      <DependentUpon>taleplerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tellerForm.resx">
+      <DependentUpon>tellerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,7 +199,9 @@
   <ItemGroup>
     <None Include="Resources\bank2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\goBackIcon.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cashWithdrawIcon.png" />
   </ItemGroup>
@@ -217,6 +255,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\updateInfoIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\creditIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\requestIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request2Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previewIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -68,9 +68,8 @@ namespace BankMS
 
             }
         }
-
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             if (roleCB.SelectedIndex == -1)//if role not seleceted
             {
@@ -145,5 +144,7 @@ namespace BankMS
         {
 
         }
+
+       
     }
 }

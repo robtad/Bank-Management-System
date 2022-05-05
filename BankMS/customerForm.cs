@@ -49,10 +49,9 @@ namespace BankMS
 
         }
 
-        private void btnKrediTaleb_Click(object sender, EventArgs e)
+        private void btnKrediIslemleri_Click(object sender, EventArgs e)
         {
-            loadForm(new customerChildForm.krediTalebiForm());
-
+            loadForm(new customerChildForm.krediIslemleri());
         }
 
         private void btnAylikOzet_Click(object sender, EventArgs e)
@@ -67,6 +66,11 @@ namespace BankMS
 
         }
 
-       
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loginForm obj = new loginForm();
+            obj.Show();
+            this.Hide();
+        }
     }
 }

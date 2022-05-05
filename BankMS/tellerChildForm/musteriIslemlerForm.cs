@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankMS.customerChildForm
+namespace BankMS.tellerChildForm
 {
-    public partial class krediTalebiForm : Form
+    public partial class musteriIslemlerForm : Form
     {
-        public krediTalebiForm()
+        public musteriIslemlerForm()
         {
             InitializeComponent();
         }

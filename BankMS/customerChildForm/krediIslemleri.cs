@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankMS
+namespace BankMS.customerChildForm
 {
-    public partial class managerForm : Form
+    public partial class krediIslemleri : Form
     {
-        public managerForm()
+        public krediIslemleri()
         {
             InitializeComponent();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            loginForm obj = new loginForm();
-            obj.Show();
-            this.Hide();
         }
     }
 }
