@@ -16,5 +16,38 @@ namespace BankMS
         {
             InitializeComponent();
         }
+        public void loadForm(object Form)
+        {
+            if (this.centerPanel.Controls.Count > 0)
+                this.centerPanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.centerPanel.Controls.Add(f);
+            this.centerPanel.Tag = f;
+            f.Show();
+        }
+
+        private void btnAccounts_Click(object sender, EventArgs e)
+        {
+            loadForm(new tellerChildForm.hesaplarForm());           
+        }
+
+        private void btnRequests_Click(object sender, EventArgs e)
+        {
+            loadForm(new tellerChildForm.taleplerForm());
+        }
+
+        private void btnTransactions_Click(object sender, EventArgs e)
+        {
+            loadForm(new tellerChildForm.musteriIslemlerForm());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loginForm obj = new loginForm();
+            obj.Show();
+            this.Hide();
+        }
     }
 }

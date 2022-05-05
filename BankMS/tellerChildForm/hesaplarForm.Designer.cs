@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(hesaplarForm));
             this.pnlCheckBalance = new System.Windows.Forms.Panel();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.btnRemoveCustomer = new System.Windows.Forms.Button();
+            this.btnEditCustomer = new System.Windows.Forms.Button();
             this.customerPasswordTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAddCustomer = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnRemoveCustomer = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnEditCustomer = new Bunifu.Framework.UI.BunifuThinButton2();
             this.newAccTellerIdTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.newAccAddressTB = new System.Windows.Forms.TextBox();
@@ -58,11 +57,11 @@
             // pnlCheckBalance
             // 
             this.pnlCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlCheckBalance.Controls.Add(this.customerPasswordTB);
-            this.pnlCheckBalance.Controls.Add(this.label3);
             this.pnlCheckBalance.Controls.Add(this.btnAddCustomer);
             this.pnlCheckBalance.Controls.Add(this.btnRemoveCustomer);
             this.pnlCheckBalance.Controls.Add(this.btnEditCustomer);
+            this.pnlCheckBalance.Controls.Add(this.customerPasswordTB);
+            this.pnlCheckBalance.Controls.Add(this.label3);
             this.pnlCheckBalance.Controls.Add(this.newAccTellerIdTB);
             this.pnlCheckBalance.Controls.Add(this.label2);
             this.pnlCheckBalance.Controls.Add(this.newAccAddressTB);
@@ -77,10 +76,60 @@
             this.pnlCheckBalance.Controls.Add(this.label9);
             this.pnlCheckBalance.Controls.Add(this.label11);
             this.pnlCheckBalance.Controls.Add(this.label7);
-            this.pnlCheckBalance.Location = new System.Drawing.Point(118, 61);
+            this.pnlCheckBalance.Location = new System.Drawing.Point(125, 57);
             this.pnlCheckBalance.Name = "pnlCheckBalance";
             this.pnlCheckBalance.Size = new System.Drawing.Size(797, 213);
             this.pnlCheckBalance.TabIndex = 13;
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomer.ForeColor = System.Drawing.Color.Black;
+            this.btnAddCustomer.Location = new System.Drawing.Point(690, 19);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(75, 35);
+            this.btnAddCustomer.TabIndex = 50;
+            this.btnAddCustomer.Text = "Ekle";
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // btnRemoveCustomer
+            // 
+            this.btnRemoveCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnRemoveCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnRemoveCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemoveCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveCustomer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveCustomer.ForeColor = System.Drawing.Color.Black;
+            this.btnRemoveCustomer.Location = new System.Drawing.Point(690, 126);
+            this.btnRemoveCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveCustomer.Name = "btnRemoveCustomer";
+            this.btnRemoveCustomer.Size = new System.Drawing.Size(76, 35);
+            this.btnRemoveCustomer.TabIndex = 48;
+            this.btnRemoveCustomer.Text = "Sil";
+            this.btnRemoveCustomer.UseVisualStyleBackColor = false;
+            this.btnRemoveCustomer.Click += new System.EventHandler(this.btnRemoveCustomer_Click);
+            // 
+            // btnEditCustomer
+            // 
+            this.btnEditCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEditCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnEditCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditCustomer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCustomer.ForeColor = System.Drawing.Color.Black;
+            this.btnEditCustomer.Location = new System.Drawing.Point(690, 74);
+            this.btnEditCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditCustomer.Name = "btnEditCustomer";
+            this.btnEditCustomer.Size = new System.Drawing.Size(75, 35);
+            this.btnEditCustomer.TabIndex = 49;
+            this.btnEditCustomer.Text = "Düzenle";
+            this.btnEditCustomer.UseVisualStyleBackColor = false;
             // 
             // customerPasswordTB
             // 
@@ -100,85 +149,6 @@
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 52;
             this.label3.Text = "Şifre:";
-            // 
-            // btnAddCustomer
-            // 
-            this.btnAddCustomer.ActiveBorderThickness = 1;
-            this.btnAddCustomer.ActiveCornerRadius = 20;
-            this.btnAddCustomer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnAddCustomer.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnAddCustomer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnAddCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddCustomer.BackColor = System.Drawing.Color.White;
-            this.btnAddCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddCustomer.BackgroundImage")));
-            this.btnAddCustomer.ButtonText = "Ekle";
-            this.btnAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCustomer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnAddCustomer.IdleBorderThickness = 1;
-            this.btnAddCustomer.IdleCornerRadius = 20;
-            this.btnAddCustomer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnAddCustomer.IdleForecolor = System.Drawing.Color.Black;
-            this.btnAddCustomer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnAddCustomer.Location = new System.Drawing.Point(690, 19);
-            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(75, 35);
-            this.btnAddCustomer.TabIndex = 50;
-            this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
-            // 
-            // btnRemoveCustomer
-            // 
-            this.btnRemoveCustomer.ActiveBorderThickness = 1;
-            this.btnRemoveCustomer.ActiveCornerRadius = 20;
-            this.btnRemoveCustomer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnRemoveCustomer.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnRemoveCustomer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnRemoveCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRemoveCustomer.BackColor = System.Drawing.Color.White;
-            this.btnRemoveCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemoveCustomer.BackgroundImage")));
-            this.btnRemoveCustomer.ButtonText = "Sil";
-            this.btnRemoveCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemoveCustomer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveCustomer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnRemoveCustomer.IdleBorderThickness = 1;
-            this.btnRemoveCustomer.IdleCornerRadius = 20;
-            this.btnRemoveCustomer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnRemoveCustomer.IdleForecolor = System.Drawing.Color.Black;
-            this.btnRemoveCustomer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnRemoveCustomer.Location = new System.Drawing.Point(690, 126);
-            this.btnRemoveCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnRemoveCustomer.Name = "btnRemoveCustomer";
-            this.btnRemoveCustomer.Size = new System.Drawing.Size(76, 35);
-            this.btnRemoveCustomer.TabIndex = 48;
-            this.btnRemoveCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnEditCustomer
-            // 
-            this.btnEditCustomer.ActiveBorderThickness = 1;
-            this.btnEditCustomer.ActiveCornerRadius = 20;
-            this.btnEditCustomer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnEditCustomer.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnEditCustomer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnEditCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditCustomer.BackColor = System.Drawing.Color.White;
-            this.btnEditCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditCustomer.BackgroundImage")));
-            this.btnEditCustomer.ButtonText = "Düzenle";
-            this.btnEditCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditCustomer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCustomer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnEditCustomer.IdleBorderThickness = 1;
-            this.btnEditCustomer.IdleCornerRadius = 20;
-            this.btnEditCustomer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnEditCustomer.IdleForecolor = System.Drawing.Color.Black;
-            this.btnEditCustomer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnEditCustomer.Location = new System.Drawing.Point(690, 74);
-            this.btnEditCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(75, 35);
-            this.btnEditCustomer.TabIndex = 49;
-            this.btnEditCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // newAccTellerIdTB
             // 
@@ -340,7 +310,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(281, 19);
+            this.label1.Location = new System.Drawing.Point(288, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(477, 25);
             this.label1.TabIndex = 12;
@@ -348,19 +318,21 @@
             // 
             // customerDataGrid
             // 
+            this.customerDataGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.customerDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.customerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerDataGrid.Location = new System.Drawing.Point(0, 293);
+            this.customerDataGrid.Location = new System.Drawing.Point(12, 289);
             this.customerDataGrid.Name = "customerDataGrid";
-            this.customerDataGrid.Size = new System.Drawing.Size(1031, 249);
+            this.customerDataGrid.Size = new System.Drawing.Size(1023, 232);
             this.customerDataGrid.TabIndex = 14;
+            this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
             // 
             // hesaplarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1032, 541);
+            this.ClientSize = new System.Drawing.Size(1047, 533);
             this.Controls.Add(this.customerDataGrid);
             this.Controls.Add(this.pnlCheckBalance);
             this.Controls.Add(this.label1);
@@ -379,9 +351,6 @@
 
         private System.Windows.Forms.Panel pnlCheckBalance;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnAddCustomer;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnRemoveCustomer;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnEditCustomer;
         private System.Windows.Forms.TextBox newAccTellerIdTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox newAccAddressTB;
@@ -396,8 +365,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView customerDataGrid;
         private System.Windows.Forms.TextBox customerPasswordTB;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAddCustomer;
+        private System.Windows.Forms.Button btnRemoveCustomer;
+        private System.Windows.Forms.Button btnEditCustomer;
+        private System.Windows.Forms.DataGridView customerDataGrid;
+       
     }
 }

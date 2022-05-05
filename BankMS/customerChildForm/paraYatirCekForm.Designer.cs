@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(paraYatirCekForm));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCheckBalance = new Bunifu.Framework.UI.BunifuThinButton2();
             this.accountTB = new System.Windows.Forms.TextBox();
             this.lblBalance = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,8 +37,6 @@
             this.pnlDeposit = new System.Windows.Forms.Panel();
             this.depositDatePicker = new System.Windows.Forms.DateTimePicker();
             this.depositCurrencyCB = new System.Windows.Forms.ComboBox();
-            this.btnCancelDeposit = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnConfirmDeposit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.depositAmountTB = new System.Windows.Forms.TextBox();
             this.depositNoteTB = new System.Windows.Forms.TextBox();
             this.depositAccountTB = new System.Windows.Forms.TextBox();
@@ -53,8 +49,6 @@
             this.pnlWithdraw = new System.Windows.Forms.Panel();
             this.withdrawDatePicker = new System.Windows.Forms.DateTimePicker();
             this.withdrawCurrencyCB = new System.Windows.Forms.ComboBox();
-            this.btnCancelWithdrawal = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnConfirmWithdrawal = new Bunifu.Framework.UI.BunifuThinButton2();
             this.withdrawAmountTB = new System.Windows.Forms.TextBox();
             this.withdrawNoteTB = new System.Windows.Forms.TextBox();
             this.withdrawAccountTB = new System.Windows.Forms.TextBox();
@@ -62,6 +56,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnCheckBalance = new System.Windows.Forms.Button();
+            this.btnCancelDeposit = new System.Windows.Forms.Button();
+            this.btnConfirmDeposit = new System.Windows.Forms.Button();
+            this.btnConfirmWithdrawal = new System.Windows.Forms.Button();
+            this.btnCancelWithdrawal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlDeposit.SuspendLayout();
             this.pnlWithdraw.SuspendLayout();
@@ -90,32 +89,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(753, 112);
             this.panel1.TabIndex = 2;
-            // 
-            // btnCheckBalance
-            // 
-            this.btnCheckBalance.ActiveBorderThickness = 1;
-            this.btnCheckBalance.ActiveCornerRadius = 20;
-            this.btnCheckBalance.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCheckBalance.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCheckBalance.BackColor = System.Drawing.Color.White;
-            this.btnCheckBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCheckBalance.BackgroundImage")));
-            this.btnCheckBalance.ButtonText = "Göster";
-            this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckBalance.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCheckBalance.IdleBorderThickness = 1;
-            this.btnCheckBalance.IdleCornerRadius = 20;
-            this.btnCheckBalance.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCheckBalance.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.Location = new System.Drawing.Point(317, 55);
-            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCheckBalance.Name = "btnCheckBalance";
-            this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
-            this.btnCheckBalance.TabIndex = 4;
-            this.btnCheckBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // accountTB
             // 
@@ -161,10 +134,10 @@
             // pnlDeposit
             // 
             this.pnlDeposit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlDeposit.Controls.Add(this.btnConfirmDeposit);
+            this.pnlDeposit.Controls.Add(this.btnCancelDeposit);
             this.pnlDeposit.Controls.Add(this.depositDatePicker);
             this.pnlDeposit.Controls.Add(this.depositCurrencyCB);
-            this.pnlDeposit.Controls.Add(this.btnCancelDeposit);
-            this.pnlDeposit.Controls.Add(this.btnConfirmDeposit);
             this.pnlDeposit.Controls.Add(this.depositAmountTB);
             this.pnlDeposit.Controls.Add(this.depositNoteTB);
             this.pnlDeposit.Controls.Add(this.depositAccountTB);
@@ -202,58 +175,6 @@
             this.depositCurrencyCB.Size = new System.Drawing.Size(98, 25);
             this.depositCurrencyCB.TabIndex = 5;
             this.depositCurrencyCB.Text = "Para Birimi";
-            // 
-            // btnCancelDeposit
-            // 
-            this.btnCancelDeposit.ActiveBorderThickness = 1;
-            this.btnCancelDeposit.ActiveCornerRadius = 20;
-            this.btnCancelDeposit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeposit.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCancelDeposit.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeposit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelDeposit.BackColor = System.Drawing.Color.White;
-            this.btnCancelDeposit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelDeposit.BackgroundImage")));
-            this.btnCancelDeposit.ButtonText = "İptal et";
-            this.btnCancelDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelDeposit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelDeposit.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelDeposit.IdleBorderThickness = 1;
-            this.btnCancelDeposit.IdleCornerRadius = 20;
-            this.btnCancelDeposit.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeposit.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCancelDeposit.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeposit.Location = new System.Drawing.Point(290, 259);
-            this.btnCancelDeposit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelDeposit.Name = "btnCancelDeposit";
-            this.btnCancelDeposit.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelDeposit.TabIndex = 4;
-            this.btnCancelDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirmDeposit
-            // 
-            this.btnConfirmDeposit.ActiveBorderThickness = 1;
-            this.btnConfirmDeposit.ActiveCornerRadius = 20;
-            this.btnConfirmDeposit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeposit.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnConfirmDeposit.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeposit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmDeposit.BackColor = System.Drawing.Color.White;
-            this.btnConfirmDeposit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmDeposit.BackgroundImage")));
-            this.btnConfirmDeposit.ButtonText = "Onayla";
-            this.btnConfirmDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmDeposit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmDeposit.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnConfirmDeposit.IdleBorderThickness = 1;
-            this.btnConfirmDeposit.IdleCornerRadius = 20;
-            this.btnConfirmDeposit.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeposit.IdleForecolor = System.Drawing.Color.Black;
-            this.btnConfirmDeposit.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeposit.Location = new System.Drawing.Point(207, 259);
-            this.btnConfirmDeposit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmDeposit.Name = "btnConfirmDeposit";
-            this.btnConfirmDeposit.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmDeposit.TabIndex = 4;
-            this.btnConfirmDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // depositAmountTB
             // 
@@ -350,10 +271,10 @@
             // pnlWithdraw
             // 
             this.pnlWithdraw.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlWithdraw.Controls.Add(this.withdrawDatePicker);
-            this.pnlWithdraw.Controls.Add(this.withdrawCurrencyCB);
             this.pnlWithdraw.Controls.Add(this.btnCancelWithdrawal);
             this.pnlWithdraw.Controls.Add(this.btnConfirmWithdrawal);
+            this.pnlWithdraw.Controls.Add(this.withdrawDatePicker);
+            this.pnlWithdraw.Controls.Add(this.withdrawCurrencyCB);
             this.pnlWithdraw.Controls.Add(this.withdrawAmountTB);
             this.pnlWithdraw.Controls.Add(this.withdrawNoteTB);
             this.pnlWithdraw.Controls.Add(this.withdrawAccountTB);
@@ -391,58 +312,6 @@
             this.withdrawCurrencyCB.Size = new System.Drawing.Size(98, 25);
             this.withdrawCurrencyCB.TabIndex = 5;
             this.withdrawCurrencyCB.Text = "Para Birimi";
-            // 
-            // btnCancelWithdrawal
-            // 
-            this.btnCancelWithdrawal.ActiveBorderThickness = 1;
-            this.btnCancelWithdrawal.ActiveCornerRadius = 20;
-            this.btnCancelWithdrawal.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelWithdrawal.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCancelWithdrawal.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelWithdrawal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelWithdrawal.BackColor = System.Drawing.Color.White;
-            this.btnCancelWithdrawal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelWithdrawal.BackgroundImage")));
-            this.btnCancelWithdrawal.ButtonText = "İptal et";
-            this.btnCancelWithdrawal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelWithdrawal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelWithdrawal.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelWithdrawal.IdleBorderThickness = 1;
-            this.btnCancelWithdrawal.IdleCornerRadius = 20;
-            this.btnCancelWithdrawal.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelWithdrawal.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCancelWithdrawal.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelWithdrawal.Location = new System.Drawing.Point(290, 259);
-            this.btnCancelWithdrawal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelWithdrawal.Name = "btnCancelWithdrawal";
-            this.btnCancelWithdrawal.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelWithdrawal.TabIndex = 4;
-            this.btnCancelWithdrawal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirmWithdrawal
-            // 
-            this.btnConfirmWithdrawal.ActiveBorderThickness = 1;
-            this.btnConfirmWithdrawal.ActiveCornerRadius = 20;
-            this.btnConfirmWithdrawal.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmWithdrawal.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnConfirmWithdrawal.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmWithdrawal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmWithdrawal.BackColor = System.Drawing.Color.White;
-            this.btnConfirmWithdrawal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmWithdrawal.BackgroundImage")));
-            this.btnConfirmWithdrawal.ButtonText = "Onayla";
-            this.btnConfirmWithdrawal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmWithdrawal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmWithdrawal.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnConfirmWithdrawal.IdleBorderThickness = 1;
-            this.btnConfirmWithdrawal.IdleCornerRadius = 20;
-            this.btnConfirmWithdrawal.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmWithdrawal.IdleForecolor = System.Drawing.Color.Black;
-            this.btnConfirmWithdrawal.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmWithdrawal.Location = new System.Drawing.Point(207, 259);
-            this.btnConfirmWithdrawal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmWithdrawal.Name = "btnConfirmWithdrawal";
-            this.btnConfirmWithdrawal.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmWithdrawal.TabIndex = 4;
-            this.btnConfirmWithdrawal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // withdrawAmountTB
             // 
@@ -514,6 +383,86 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Hesap Numarısı:";
             // 
+            // btnCheckBalance
+            // 
+            this.btnCheckBalance.ForeColor = System.Drawing.Color.Black;
+            this.btnCheckBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCheckBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCheckBalance.Text = "Göster";
+            this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckBalance.Location = new System.Drawing.Point(317, 55);
+            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckBalance.Name = "btnCheckBalance";
+            this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
+            this.btnCheckBalance.TabIndex = 4;
+            this.btnCheckBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancelDeposit
+            // 
+            this.btnCancelDeposit.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelDeposit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelDeposit.Text = "İptal et";
+            this.btnCancelDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelDeposit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelDeposit.Location = new System.Drawing.Point(290, 259);
+            this.btnCancelDeposit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelDeposit.Name = "btnCancelDeposit";
+            this.btnCancelDeposit.Size = new System.Drawing.Size(76, 35);
+            this.btnCancelDeposit.TabIndex = 4;
+            this.btnCancelDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmDeposit
+            // 
+            this.btnConfirmDeposit.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmDeposit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConfirmDeposit.Text = "Onayla";
+            this.btnConfirmDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmDeposit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmDeposit.Location = new System.Drawing.Point(207, 259);
+            this.btnConfirmDeposit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmDeposit.Name = "btnConfirmDeposit";
+            this.btnConfirmDeposit.Size = new System.Drawing.Size(75, 35);
+            this.btnConfirmDeposit.TabIndex = 4;
+            this.btnConfirmDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmWithdrawal
+            // 
+            this.btnConfirmWithdrawal.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmWithdrawal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmWithdrawal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmWithdrawal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConfirmWithdrawal.Text = "Onayla";
+            this.btnConfirmWithdrawal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmWithdrawal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmWithdrawal.Location = new System.Drawing.Point(207, 259);
+            this.btnConfirmWithdrawal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmWithdrawal.Name = "btnConfirmWithdrawal";
+            this.btnConfirmWithdrawal.Size = new System.Drawing.Size(75, 35);
+            this.btnConfirmWithdrawal.TabIndex = 4;
+            this.btnConfirmWithdrawal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancelWithdrawal
+            // 
+            this.btnCancelWithdrawal.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelWithdrawal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelWithdrawal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelWithdrawal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelWithdrawal.Text = "İptal et";
+            this.btnCancelWithdrawal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelWithdrawal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelWithdrawal.Location = new System.Drawing.Point(290, 259);
+            this.btnCancelWithdrawal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelWithdrawal.Name = "btnCancelWithdrawal";
+            this.btnCancelWithdrawal.Size = new System.Drawing.Size(76, 35);
+            this.btnCancelWithdrawal.TabIndex = 4;
+            this.btnCancelWithdrawal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // paraYatirCekForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,10 +495,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox accountTB;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCheckBalance;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnCheckBalance;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Panel pnlDeposit;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmDeposit;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmDeposit;
         private System.Windows.Forms.TextBox depositAccountTB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -559,14 +508,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox depositCurrencyCB;
         private System.Windows.Forms.DateTimePicker depositDatePicker;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelDeposit;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnCancelDeposit;
         private System.Windows.Forms.TextBox depositNoteTB;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel pnlWithdraw;
         private System.Windows.Forms.DateTimePicker withdrawDatePicker;
         private System.Windows.Forms.ComboBox withdrawCurrencyCB;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelWithdrawal;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmWithdrawal;
+       // private Bunifu.Framework.UI.BunifuThinButton2 btnCancelWithdrawal;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmWithdrawal;
         private System.Windows.Forms.TextBox withdrawAmountTB;
         private System.Windows.Forms.TextBox withdrawNoteTB;
         private System.Windows.Forms.TextBox withdrawAccountTB;
@@ -575,5 +524,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnCheckBalance;
+        private System.Windows.Forms.Button btnConfirmDeposit;
+        private System.Windows.Forms.Button btnCancelDeposit;
+        private System.Windows.Forms.Button btnCancelWithdrawal;
+        private System.Windows.Forms.Button btnConfirmWithdrawal;
     }
 }

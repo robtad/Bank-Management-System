@@ -31,43 +31,83 @@ namespace BankMS.tellerChildForm
             customerDataGrid.DataSource = ds.Tables[0];
             Con.Close();
         }
+
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (newAccNameTB.Text == "" || newAccGenderCB.SelectedIndex == -1 || newAccPhoneTB.Text == "" || newAccAddressTB.Text == "" || newAccTellerIdTB.Text == "" || customerPasswordTB.Text == "" || newAccCurrencyCB.SelectedIndex == -1 || newAccDatePicker.Text == "")
+            
+                if (newAccNameTB.Text == "" || newAccGenderCB.SelectedIndex == -1 || newAccPhoneTB.Text == "" || newAccAddressTB.Text == "" || newAccTellerIdTB.Text == "" || customerPasswordTB.Text == "" || newAccCurrencyCB.SelectedIndex == -1 || newAccDatePicker.Text == "")
+                {
+                    MessageBox.Show("Fill all the Cells before Submitting");
+                }
+                else
+                {
+                    try
+                    {
+                        Con.Open();
+                        SqlCommand cmd = new SqlCommand("insert into AccountTbl(AccName,AccGender,AccPhone,AccBalance,AccType,AccTeller,AccAddress,AccPassword,AccDate)values(@AN,@AG,@AT,@AB,@ATP,@AR,@AA,@AP,@AD)", Con);
+                        cmd.Parameters.AddWithValue("@AN", newAccNameTB.Text);
+                        cmd.Parameters.AddWithValue("@AG", newAccGenderCB.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@AT", newAccPhoneTB.Text);
+                        cmd.Parameters.AddWithValue("@AB", 0);
+                        cmd.Parameters.AddWithValue("@ATP", newAccCurrencyCB.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@AR", newAccTellerIdTB.Text);
+                        cmd.Parameters.AddWithValue("@AA", newAccAddressTB.Text);
+                        cmd.Parameters.AddWithValue("@AP", customerPasswordTB.Text);
+                        cmd.Parameters.AddWithValue("@AD", newAccDatePicker.Value.ToShortDateString());
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Account Created!");
+
+                        Con.Close();
+                        displayCustomerInfo();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            
+        }
+
+        private void btnRemoveCustomer_Click(object sender, EventArgs e)
+        {
+            if (Key == 0)
             {
-                MessageBox.Show("Fill all the Cells before Submitting");
+                MessageBox.Show("Select the Account to be Deleted");
             }
             else
             {
-                try 
+                try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into AccountTbl(AccName,AccGender,AccPhone,AccBalance,AccType,AccTeller,AccAddress,AccPassword,AccDate)values(@AN,@AG,@AT,@AB,@ATP,@AR,@AA,@AP,@AD)", Con);
-                    cmd.Parameters.AddWithValue("@AN", newAccNameTB.Text);
-                    cmd.Parameters.AddWithValue("@AG", newAccGenderCB.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@AT", newAccPhoneTB.Text);
-                    cmd.Parameters.AddWithValue("@AB", 0);
-                    cmd.Parameters.AddWithValue("@ATP", newAccCurrencyCB.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@AR", newAccTellerIdTB.Text);
-                    cmd.Parameters.AddWithValue("@AA", newAccAddressTB.Text);
-                    cmd.Parameters.AddWithValue("@AP", customerPasswordTB.Text);
-                    cmd.Parameters.AddWithValue("@AD", newAccDatePicker.Value.ToShortDateString());
+                    SqlCommand cmd = new SqlCommand("DELETE FROM AccountTbl WHERE AccNum = @AcKey", Con);
+                    cmd.Parameters.AddWithValue("@AcKey", Key);
+           
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Account Created!");
+                    MessageBox.Show("Account Deleted!");
 
                     Con.Close();
                     displayCustomerInfo();
 
-                } catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }   
-                
+                }
+
             }
-       
+        }
+        
+        int Key = 0;
+        private void customerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
-
+        
     }
 }
