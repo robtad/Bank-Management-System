@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankMS.customerChildForm
+namespace BankMS.tellerChildForm
 {
-    public partial class hesapAcmaForm : Form
+    public partial class taleplerForm : Form
     {
-        public hesapAcmaForm()
+        public taleplerForm()
         {
             InitializeComponent();
         }

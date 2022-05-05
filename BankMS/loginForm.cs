@@ -83,7 +83,7 @@ namespace BankMS
                 login_check(query, obj);
 
             }
-            else if(roleCB.SelectedIndex == 1)//for teller (bank clerk)
+            else if (roleCB.SelectedIndex == 1)//for teller (bank clerk)
             {
                 string query = "SELECT COUNT(*) FROM ClerkTbl WHERE tName = @username AND tPassword = @password ";
                 tellerForm obj = new tellerForm();
@@ -95,6 +95,9 @@ namespace BankMS
                 customerForm obj = new customerForm();
                 login_check(query, obj);
             }
+
+
+
         }
 
 
@@ -138,10 +141,9 @@ namespace BankMS
             }
         }
 
+        private void userNameTB_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }

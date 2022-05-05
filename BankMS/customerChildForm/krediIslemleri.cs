@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BankMS.customerChildForm
 {
-    public partial class paraYatirForm : Form
+    public partial class krediIslemleri : Form
     {
-        public paraYatirForm()
+        public krediIslemleri()
         {
             InitializeComponent();
         }

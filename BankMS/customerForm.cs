@@ -36,34 +36,22 @@ namespace BankMS
 
         }
 
-        private void btnCek_Click(object sender, EventArgs e)
+
+        private void btnYatirCek_Click(object sender, EventArgs e)
         {
-            loadForm(new customerChildForm.paraCekForm());
+            loadForm(new customerChildForm.paraYatirCekForm());
+
+        }
+       
+        private void btnHesapTalepleri_Click(object sender, EventArgs e)
+        {
+            loadForm(new customerChildForm.hesapTalepleriForm());
 
         }
 
-        private void btnYatir_Click(object sender, EventArgs e)
+        private void btnKrediIslemleri_Click(object sender, EventArgs e)
         {
-            loadForm(new customerChildForm.paraYatirForm());
-
-        }
-
-        private void btnHesapAc_Click(object sender, EventArgs e)
-        {
-            loadForm(new customerChildForm.hesapAcmaForm());
-
-        }
-
-        private void btnHesapSil_Click(object sender, EventArgs e)
-        {
-            loadForm(new customerChildForm.hesapSilmeForm());
-
-        }
-
-        private void btnKrediTaleb_Click(object sender, EventArgs e)
-        {
-            loadForm(new customerChildForm.krediTalebiForm());
-
+            loadForm(new customerChildForm.krediIslemleri());
         }
 
         private void btnAylikOzet_Click(object sender, EventArgs e)
@@ -76,6 +64,13 @@ namespace BankMS
         {
             loadForm(new customerChildForm.bilgiGuncelleForm());
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loginForm obj = new loginForm();
+            obj.Show();
+            this.Hide();
         }
     }
 }
