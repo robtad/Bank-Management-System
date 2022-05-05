@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(krediIslemleri));
             this.label8 = new System.Windows.Forms.Label();
             this.loanDatePicker = new System.Windows.Forms.DateTimePicker();
             this.loanCurrencyCB = new System.Windows.Forms.ComboBox();
             this.pnlLoanPayment = new System.Windows.Forms.Panel();
-            this.btnCancelLoan = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnConfirmLoan = new Bunifu.Framework.UI.BunifuThinButton2();
             this.loanAmountTB = new System.Windows.Forms.TextBox();
             this.loanNoteTB = new System.Windows.Forms.TextBox();
             this.loanAccountTB = new System.Windows.Forms.TextBox();
@@ -43,8 +40,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.creditDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.btnCancelCredit = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnConfirmCredit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.creditAmountTB = new System.Windows.Forms.TextBox();
             this.creditNoteTB = new System.Windows.Forms.TextBox();
             this.creditAccountTB = new System.Windows.Forms.TextBox();
@@ -53,7 +48,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlCreditRequest = new System.Windows.Forms.Panel();
-            this.btnCheckBalance = new Bunifu.Framework.UI.BunifuThinButton2();
             this.accountTB = new System.Windows.Forms.TextBox();
             this.lblBalance = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +55,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCheckBalance = new System.Windows.Forms.Button();
+            this.btnCancelCredit = new System.Windows.Forms.Button();
+            this.btnConfirmCredit = new System.Windows.Forms.Button();
+            this.btnCancelLoan = new System.Windows.Forms.Button();
+            this.btnConfirmLoan = new System.Windows.Forms.Button();
             this.pnlLoanPayment.SuspendLayout();
             this.pnlCreditRequest.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -106,10 +105,10 @@
             // pnlLoanPayment
             // 
             this.pnlLoanPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlLoanPayment.Controls.Add(this.btnConfirmLoan);
+            this.pnlLoanPayment.Controls.Add(this.btnCancelLoan);
             this.pnlLoanPayment.Controls.Add(this.loanDatePicker);
             this.pnlLoanPayment.Controls.Add(this.loanCurrencyCB);
-            this.pnlLoanPayment.Controls.Add(this.btnCancelLoan);
-            this.pnlLoanPayment.Controls.Add(this.btnConfirmLoan);
             this.pnlLoanPayment.Controls.Add(this.loanAmountTB);
             this.pnlLoanPayment.Controls.Add(this.loanNoteTB);
             this.pnlLoanPayment.Controls.Add(this.loanAccountTB);
@@ -121,58 +120,6 @@
             this.pnlLoanPayment.Name = "pnlLoanPayment";
             this.pnlLoanPayment.Size = new System.Drawing.Size(402, 311);
             this.pnlLoanPayment.TabIndex = 13;
-            // 
-            // btnCancelLoan
-            // 
-            this.btnCancelLoan.ActiveBorderThickness = 1;
-            this.btnCancelLoan.ActiveCornerRadius = 20;
-            this.btnCancelLoan.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelLoan.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCancelLoan.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelLoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelLoan.BackColor = System.Drawing.Color.White;
-            this.btnCancelLoan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelLoan.BackgroundImage")));
-            this.btnCancelLoan.ButtonText = "İptal et";
-            this.btnCancelLoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelLoan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelLoan.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelLoan.IdleBorderThickness = 1;
-            this.btnCancelLoan.IdleCornerRadius = 20;
-            this.btnCancelLoan.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelLoan.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCancelLoan.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelLoan.Location = new System.Drawing.Point(290, 259);
-            this.btnCancelLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelLoan.Name = "btnCancelLoan";
-            this.btnCancelLoan.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelLoan.TabIndex = 4;
-            this.btnCancelLoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirmLoan
-            // 
-            this.btnConfirmLoan.ActiveBorderThickness = 1;
-            this.btnConfirmLoan.ActiveCornerRadius = 20;
-            this.btnConfirmLoan.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmLoan.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnConfirmLoan.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmLoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmLoan.BackColor = System.Drawing.Color.White;
-            this.btnConfirmLoan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmLoan.BackgroundImage")));
-            this.btnConfirmLoan.ButtonText = "Onayla";
-            this.btnConfirmLoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmLoan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmLoan.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnConfirmLoan.IdleBorderThickness = 1;
-            this.btnConfirmLoan.IdleCornerRadius = 20;
-            this.btnConfirmLoan.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmLoan.IdleForecolor = System.Drawing.Color.Black;
-            this.btnConfirmLoan.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmLoan.Location = new System.Drawing.Point(207, 259);
-            this.btnConfirmLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmLoan.Name = "btnConfirmLoan";
-            this.btnConfirmLoan.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmLoan.TabIndex = 4;
-            this.btnConfirmLoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loanAmountTB
             // 
@@ -252,58 +199,6 @@
             this.creditDatePicker.Size = new System.Drawing.Size(223, 22);
             this.creditDatePicker.TabIndex = 6;
             // 
-            // btnCancelCredit
-            // 
-            this.btnCancelCredit.ActiveBorderThickness = 1;
-            this.btnCancelCredit.ActiveCornerRadius = 20;
-            this.btnCancelCredit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelCredit.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCancelCredit.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelCredit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelCredit.BackColor = System.Drawing.Color.White;
-            this.btnCancelCredit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelCredit.BackgroundImage")));
-            this.btnCancelCredit.ButtonText = "İptal et";
-            this.btnCancelCredit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelCredit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelCredit.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelCredit.IdleBorderThickness = 1;
-            this.btnCancelCredit.IdleCornerRadius = 20;
-            this.btnCancelCredit.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelCredit.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCancelCredit.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelCredit.Location = new System.Drawing.Point(290, 259);
-            this.btnCancelCredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelCredit.Name = "btnCancelCredit";
-            this.btnCancelCredit.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelCredit.TabIndex = 4;
-            this.btnCancelCredit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirmCredit
-            // 
-            this.btnConfirmCredit.ActiveBorderThickness = 1;
-            this.btnConfirmCredit.ActiveCornerRadius = 20;
-            this.btnConfirmCredit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmCredit.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnConfirmCredit.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmCredit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmCredit.BackColor = System.Drawing.Color.White;
-            this.btnConfirmCredit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmCredit.BackgroundImage")));
-            this.btnConfirmCredit.ButtonText = "Onayla";
-            this.btnConfirmCredit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmCredit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmCredit.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnConfirmCredit.IdleBorderThickness = 1;
-            this.btnConfirmCredit.IdleCornerRadius = 20;
-            this.btnConfirmCredit.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmCredit.IdleForecolor = System.Drawing.Color.Black;
-            this.btnConfirmCredit.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmCredit.Location = new System.Drawing.Point(207, 259);
-            this.btnConfirmCredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmCredit.Name = "btnConfirmCredit";
-            this.btnConfirmCredit.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmCredit.TabIndex = 4;
-            this.btnConfirmCredit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // creditAmountTB
             // 
             this.creditAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -377,9 +272,9 @@
             // pnlCreditRequest
             // 
             this.pnlCreditRequest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlCreditRequest.Controls.Add(this.creditDatePicker);
-            this.pnlCreditRequest.Controls.Add(this.btnCancelCredit);
             this.pnlCreditRequest.Controls.Add(this.btnConfirmCredit);
+            this.pnlCreditRequest.Controls.Add(this.btnCancelCredit);
+            this.pnlCreditRequest.Controls.Add(this.creditDatePicker);
             this.pnlCreditRequest.Controls.Add(this.creditAmountTB);
             this.pnlCreditRequest.Controls.Add(this.creditNoteTB);
             this.pnlCreditRequest.Controls.Add(this.creditAccountTB);
@@ -391,32 +286,6 @@
             this.pnlCreditRequest.Name = "pnlCreditRequest";
             this.pnlCreditRequest.Size = new System.Drawing.Size(402, 311);
             this.pnlCreditRequest.TabIndex = 12;
-            // 
-            // btnCheckBalance
-            // 
-            this.btnCheckBalance.ActiveBorderThickness = 1;
-            this.btnCheckBalance.ActiveCornerRadius = 20;
-            this.btnCheckBalance.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCheckBalance.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCheckBalance.BackColor = System.Drawing.Color.White;
-            this.btnCheckBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCheckBalance.BackgroundImage")));
-            this.btnCheckBalance.ButtonText = "Göster";
-            this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckBalance.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCheckBalance.IdleBorderThickness = 1;
-            this.btnCheckBalance.IdleCornerRadius = 20;
-            this.btnCheckBalance.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCheckBalance.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.Location = new System.Drawing.Point(317, 55);
-            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCheckBalance.Name = "btnCheckBalance";
-            this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
-            this.btnCheckBalance.TabIndex = 4;
-            this.btnCheckBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // accountTB
             // 
@@ -494,7 +363,87 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "KREDİ TALEBİ VE KREDİ BORCU ÖDEME";
             // 
-            // krediTalebiForm
+            // btnCheckBalance
+            // 
+            this.btnCheckBalance.ForeColor = System.Drawing.Color.Black;
+            this.btnCheckBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCheckBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCheckBalance.Text = "Göster";
+            this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckBalance.Location = new System.Drawing.Point(317, 55);
+            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckBalance.Name = "btnCheckBalance";
+            this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
+            this.btnCheckBalance.TabIndex = 4;
+            this.btnCheckBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancelCredit
+            // 
+            this.btnCancelCredit.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelCredit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelCredit.Text = "İptal et";
+            this.btnCancelCredit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelCredit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelCredit.Location = new System.Drawing.Point(290, 259);
+            this.btnCancelCredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelCredit.Name = "btnCancelCredit";
+            this.btnCancelCredit.Size = new System.Drawing.Size(76, 35);
+            this.btnCancelCredit.TabIndex = 4;
+            this.btnCancelCredit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmCredit
+            // 
+            this.btnConfirmCredit.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmCredit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConfirmCredit.Text = "Onayla";
+            this.btnConfirmCredit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmCredit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmCredit.Location = new System.Drawing.Point(207, 259);
+            this.btnConfirmCredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmCredit.Name = "btnConfirmCredit";
+            this.btnConfirmCredit.Size = new System.Drawing.Size(75, 35);
+            this.btnConfirmCredit.TabIndex = 4;
+            this.btnConfirmCredit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancelLoan
+            // 
+            this.btnCancelLoan.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelLoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelLoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelLoan.Text = "İptal et";
+            this.btnCancelLoan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelLoan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelLoan.Location = new System.Drawing.Point(290, 259);
+            this.btnCancelLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelLoan.Name = "btnCancelLoan";
+            this.btnCancelLoan.Size = new System.Drawing.Size(76, 35);
+            this.btnCancelLoan.TabIndex = 4;
+            this.btnCancelLoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmLoan
+            // 
+            this.btnConfirmLoan.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmLoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmLoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConfirmLoan.Text = "Onayla";
+            this.btnConfirmLoan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmLoan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmLoan.Location = new System.Drawing.Point(207, 259);
+            this.btnConfirmLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmLoan.Name = "btnConfirmLoan";
+            this.btnConfirmLoan.Size = new System.Drawing.Size(75, 35);
+            this.btnConfirmLoan.TabIndex = 4;
+            this.btnConfirmLoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // krediIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -507,7 +456,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "krediTalebiForm";
+            this.Name = "krediIslemleri";
             this.Text = "krediTalebi";
             this.pnlLoanPayment.ResumeLayout(false);
             this.pnlLoanPayment.PerformLayout();
@@ -526,8 +475,8 @@
         private System.Windows.Forms.DateTimePicker loanDatePicker;
         private System.Windows.Forms.ComboBox loanCurrencyCB;
         private System.Windows.Forms.Panel pnlLoanPayment;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelLoan;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmLoan;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnCancelLoan;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmLoan;
         private System.Windows.Forms.TextBox loanAmountTB;
         private System.Windows.Forms.TextBox loanNoteTB;
         private System.Windows.Forms.TextBox loanAccountTB;
@@ -536,8 +485,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker creditDatePicker;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelCredit;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmCredit;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnCancelCredit;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmCredit;
         private System.Windows.Forms.TextBox creditAmountTB;
         private System.Windows.Forms.TextBox creditNoteTB;
         private System.Windows.Forms.TextBox creditAccountTB;
@@ -546,7 +495,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlCreditRequest;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCheckBalance;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnCheckBalance;
         private System.Windows.Forms.TextBox accountTB;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label label2;
@@ -554,5 +503,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnConfirmLoan;
+        private System.Windows.Forms.Button btnCancelLoan;
+        private System.Windows.Forms.Button btnConfirmCredit;
+        private System.Windows.Forms.Button btnCancelCredit;
+        private System.Windows.Forms.Button btnCheckBalance;
     }
 }

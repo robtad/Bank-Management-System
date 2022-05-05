@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(hesapTalepleriForm));
             this.pnlDeleteAcc = new System.Windows.Forms.Panel();
             this.deleteAccDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.btnCancelDeleteAcc = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnConfirmDeleteAcc = new Bunifu.Framework.UI.BunifuThinButton2();
             this.deleteAccNoteTB = new System.Windows.Forms.TextBox();
             this.deleteAccNumberTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +43,6 @@
             this.newAccLastNameTB = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.newAccDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.btnCancelNewAcc = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnConfirmNewAcc = new Bunifu.Framework.UI.BunifuThinButton2();
             this.newAccNoteTB = new System.Windows.Forms.TextBox();
             this.newAccFirstNameTB = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,7 +53,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlCheckBalance = new System.Windows.Forms.Panel();
-            this.btnCheckBalance = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnCheckBalance = new System.Windows.Forms.Button();
             this.accountTB = new System.Windows.Forms.TextBox();
             this.lblBalance = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,6 +61,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelNewAcc = new System.Windows.Forms.Button();
+            this.btnConfirmNewAcc = new System.Windows.Forms.Button();
+            this.btnCancelDeleteAcc = new System.Windows.Forms.Button();
+            this.btnConfirmDeleteAcc = new System.Windows.Forms.Button();
             this.pnlDeleteAcc.SuspendLayout();
             this.pnlNewAcc.SuspendLayout();
             this.pnlCheckBalance.SuspendLayout();
@@ -74,9 +73,9 @@
             // pnlDeleteAcc
             // 
             this.pnlDeleteAcc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlDeleteAcc.Controls.Add(this.deleteAccDatePicker);
-            this.pnlDeleteAcc.Controls.Add(this.btnCancelDeleteAcc);
             this.pnlDeleteAcc.Controls.Add(this.btnConfirmDeleteAcc);
+            this.pnlDeleteAcc.Controls.Add(this.btnCancelDeleteAcc);
+            this.pnlDeleteAcc.Controls.Add(this.deleteAccDatePicker);
             this.pnlDeleteAcc.Controls.Add(this.deleteAccNoteTB);
             this.pnlDeleteAcc.Controls.Add(this.deleteAccNumberTB);
             this.pnlDeleteAcc.Controls.Add(this.label3);
@@ -94,58 +93,6 @@
             this.deleteAccDatePicker.Name = "deleteAccDatePicker";
             this.deleteAccDatePicker.Size = new System.Drawing.Size(223, 22);
             this.deleteAccDatePicker.TabIndex = 14;
-            // 
-            // btnCancelDeleteAcc
-            // 
-            this.btnCancelDeleteAcc.ActiveBorderThickness = 1;
-            this.btnCancelDeleteAcc.ActiveCornerRadius = 20;
-            this.btnCancelDeleteAcc.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeleteAcc.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCancelDeleteAcc.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeleteAcc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelDeleteAcc.BackColor = System.Drawing.Color.White;
-            this.btnCancelDeleteAcc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelDeleteAcc.BackgroundImage")));
-            this.btnCancelDeleteAcc.ButtonText = "İptal et";
-            this.btnCancelDeleteAcc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelDeleteAcc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelDeleteAcc.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelDeleteAcc.IdleBorderThickness = 1;
-            this.btnCancelDeleteAcc.IdleCornerRadius = 20;
-            this.btnCancelDeleteAcc.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeleteAcc.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCancelDeleteAcc.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeleteAcc.Location = new System.Drawing.Point(274, 116);
-            this.btnCancelDeleteAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelDeleteAcc.Name = "btnCancelDeleteAcc";
-            this.btnCancelDeleteAcc.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelDeleteAcc.TabIndex = 12;
-            this.btnCancelDeleteAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirmDeleteAcc
-            // 
-            this.btnConfirmDeleteAcc.ActiveBorderThickness = 1;
-            this.btnConfirmDeleteAcc.ActiveCornerRadius = 20;
-            this.btnConfirmDeleteAcc.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeleteAcc.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnConfirmDeleteAcc.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeleteAcc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmDeleteAcc.BackColor = System.Drawing.Color.White;
-            this.btnConfirmDeleteAcc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmDeleteAcc.BackgroundImage")));
-            this.btnConfirmDeleteAcc.ButtonText = "Onayla";
-            this.btnConfirmDeleteAcc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmDeleteAcc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmDeleteAcc.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnConfirmDeleteAcc.IdleBorderThickness = 1;
-            this.btnConfirmDeleteAcc.IdleCornerRadius = 20;
-            this.btnConfirmDeleteAcc.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeleteAcc.IdleForecolor = System.Drawing.Color.Black;
-            this.btnConfirmDeleteAcc.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeleteAcc.Location = new System.Drawing.Point(191, 116);
-            this.btnConfirmDeleteAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmDeleteAcc.Name = "btnConfirmDeleteAcc";
-            this.btnConfirmDeleteAcc.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmDeleteAcc.TabIndex = 13;
-            this.btnConfirmDeleteAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // deleteAccNoteTB
             // 
@@ -201,6 +148,8 @@
             // pnlNewAcc
             // 
             this.pnlNewAcc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlNewAcc.Controls.Add(this.btnConfirmNewAcc);
+            this.pnlNewAcc.Controls.Add(this.btnCancelNewAcc);
             this.pnlNewAcc.Controls.Add(this.newAccGenderCB);
             this.pnlNewAcc.Controls.Add(this.newAccCurrencyCB);
             this.pnlNewAcc.Controls.Add(this.newAccPhoneTB);
@@ -208,8 +157,6 @@
             this.pnlNewAcc.Controls.Add(this.newAccLastNameTB);
             this.pnlNewAcc.Controls.Add(this.label14);
             this.pnlNewAcc.Controls.Add(this.newAccDatePicker);
-            this.pnlNewAcc.Controls.Add(this.btnCancelNewAcc);
-            this.pnlNewAcc.Controls.Add(this.btnConfirmNewAcc);
             this.pnlNewAcc.Controls.Add(this.newAccNoteTB);
             this.pnlNewAcc.Controls.Add(this.newAccFirstNameTB);
             this.pnlNewAcc.Controls.Add(this.label10);
@@ -303,58 +250,6 @@
             this.newAccDatePicker.Name = "newAccDatePicker";
             this.newAccDatePicker.Size = new System.Drawing.Size(213, 22);
             this.newAccDatePicker.TabIndex = 6;
-            // 
-            // btnCancelNewAcc
-            // 
-            this.btnCancelNewAcc.ActiveBorderThickness = 1;
-            this.btnCancelNewAcc.ActiveCornerRadius = 20;
-            this.btnCancelNewAcc.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelNewAcc.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCancelNewAcc.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelNewAcc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelNewAcc.BackColor = System.Drawing.Color.White;
-            this.btnCancelNewAcc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelNewAcc.BackgroundImage")));
-            this.btnCancelNewAcc.ButtonText = "İptal et";
-            this.btnCancelNewAcc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelNewAcc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelNewAcc.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelNewAcc.IdleBorderThickness = 1;
-            this.btnCancelNewAcc.IdleCornerRadius = 20;
-            this.btnCancelNewAcc.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelNewAcc.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCancelNewAcc.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelNewAcc.Location = new System.Drawing.Point(374, 272);
-            this.btnCancelNewAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelNewAcc.Name = "btnCancelNewAcc";
-            this.btnCancelNewAcc.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelNewAcc.TabIndex = 4;
-            this.btnCancelNewAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirmNewAcc
-            // 
-            this.btnConfirmNewAcc.ActiveBorderThickness = 1;
-            this.btnConfirmNewAcc.ActiveCornerRadius = 20;
-            this.btnConfirmNewAcc.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmNewAcc.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnConfirmNewAcc.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmNewAcc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmNewAcc.BackColor = System.Drawing.Color.White;
-            this.btnConfirmNewAcc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmNewAcc.BackgroundImage")));
-            this.btnConfirmNewAcc.ButtonText = "Onayla";
-            this.btnConfirmNewAcc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmNewAcc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmNewAcc.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnConfirmNewAcc.IdleBorderThickness = 1;
-            this.btnConfirmNewAcc.IdleCornerRadius = 20;
-            this.btnConfirmNewAcc.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmNewAcc.IdleForecolor = System.Drawing.Color.Black;
-            this.btnConfirmNewAcc.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmNewAcc.Location = new System.Drawing.Point(291, 272);
-            this.btnConfirmNewAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmNewAcc.Name = "btnConfirmNewAcc";
-            this.btnConfirmNewAcc.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmNewAcc.TabIndex = 4;
-            this.btnConfirmNewAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // newAccNoteTB
             // 
@@ -466,29 +361,19 @@
             // 
             // btnCheckBalance
             // 
-            this.btnCheckBalance.ActiveBorderThickness = 1;
-            this.btnCheckBalance.ActiveCornerRadius = 20;
-            this.btnCheckBalance.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCheckBalance.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
             this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCheckBalance.BackColor = System.Drawing.Color.White;
-            this.btnCheckBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCheckBalance.BackgroundImage")));
-            this.btnCheckBalance.ButtonText = "Göster";
+            this.btnCheckBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
             this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckBalance.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCheckBalance.IdleBorderThickness = 1;
-            this.btnCheckBalance.IdleCornerRadius = 20;
-            this.btnCheckBalance.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCheckBalance.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCheckBalance.ForeColor = System.Drawing.Color.Black;
             this.btnCheckBalance.Location = new System.Drawing.Point(317, 55);
-            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckBalance.Name = "btnCheckBalance";
             this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
             this.btnCheckBalance.TabIndex = 4;
-            this.btnCheckBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCheckBalance.Text = "Göster";
+            this.btnCheckBalance.UseVisualStyleBackColor = false;
             // 
             // accountTB
             // 
@@ -564,6 +449,71 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "HESAP AÇMA VE SİLME TALEPLERİ";
             // 
+            // btnCancelNewAcc
+            // 
+            this.btnCancelNewAcc.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelNewAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelNewAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelNewAcc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelNewAcc.Text = "İptal et";
+            this.btnCancelNewAcc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelNewAcc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelNewAcc.Location = new System.Drawing.Point(374, 272);
+            this.btnCancelNewAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelNewAcc.Name = "btnCancelNewAcc";
+            this.btnCancelNewAcc.Size = new System.Drawing.Size(76, 35);
+            this.btnCancelNewAcc.TabIndex = 4;
+            this.btnCancelNewAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmNewAcc
+            // 
+            this.btnConfirmNewAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmNewAcc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConfirmNewAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmNewAcc.Text = "Onayla";
+            this.btnConfirmNewAcc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmNewAcc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmNewAcc.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmNewAcc.Location = new System.Drawing.Point(291, 272);
+            this.btnConfirmNewAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmNewAcc.Name = "btnConfirmNewAcc";
+            this.btnConfirmNewAcc.Size = new System.Drawing.Size(75, 35);
+            this.btnConfirmNewAcc.TabIndex = 4;
+            this.btnConfirmNewAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancelDeleteAcc
+            // 
+            this.btnCancelDeleteAcc.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelDeleteAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelDeleteAcc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelDeleteAcc.Text = "İptal et";
+            this.btnCancelDeleteAcc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelDeleteAcc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelDeleteAcc.Location = new System.Drawing.Point(274, 116);
+            this.btnCancelDeleteAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelDeleteAcc.Name = "btnCancelDeleteAcc";
+            this.btnCancelDeleteAcc.Size = new System.Drawing.Size(76, 35);
+            this.btnCancelDeleteAcc.TabIndex = 12;
+            this.btnCancelDeleteAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmDeleteAcc
+            // 
+
+            this.btnConfirmDeleteAcc.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmDeleteAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmDeleteAcc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConfirmDeleteAcc.Text = "Onayla";
+            this.btnConfirmDeleteAcc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmDeleteAcc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmDeleteAcc.Location = new System.Drawing.Point(191, 116);
+            this.btnConfirmDeleteAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmDeleteAcc.Name = "btnConfirmDeleteAcc";
+            this.btnConfirmDeleteAcc.Size = new System.Drawing.Size(75, 35);
+            this.btnConfirmDeleteAcc.TabIndex = 13;
+            this.btnConfirmDeleteAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // hesapTalepleriForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,8 +545,8 @@
         private System.Windows.Forms.Panel pnlDeleteAcc;
         private System.Windows.Forms.Panel pnlNewAcc;
         private System.Windows.Forms.DateTimePicker newAccDatePicker;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelNewAcc;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmNewAcc;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnCancelNewAcc;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmNewAcc;
         private System.Windows.Forms.TextBox newAccNoteTB;
         private System.Windows.Forms.TextBox newAccFirstNameTB;
         private System.Windows.Forms.Label label10;
@@ -604,7 +554,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlCheckBalance;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCheckBalance;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnCheckBalance;
         private System.Windows.Forms.TextBox accountTB;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label label2;
@@ -613,8 +563,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker deleteAccDatePicker;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelDeleteAcc;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmDeleteAcc;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnCancelDeleteAcc;
+        //private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmDeleteAcc;
         private System.Windows.Forms.TextBox deleteAccNoteTB;
         private System.Windows.Forms.TextBox deleteAccNumberTB;
         private System.Windows.Forms.Label label3;
@@ -629,5 +579,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox newAccGenderCB;
         private System.Windows.Forms.ComboBox newAccCurrencyCB;
+        private System.Windows.Forms.Button btnCheckBalance;
+        private System.Windows.Forms.Button btnConfirmDeleteAcc;
+        private System.Windows.Forms.Button btnCancelDeleteAcc;
+        private System.Windows.Forms.Button btnConfirmNewAcc;
+        private System.Windows.Forms.Button btnCancelNewAcc;
     }
 }

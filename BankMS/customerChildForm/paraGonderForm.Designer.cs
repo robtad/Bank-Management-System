@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(paraGonderForm));
             this.pnlDeposit = new System.Windows.Forms.Panel();
-            this.btnCancelTransfer = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnConfirmTransfer = new Bunifu.Framework.UI.BunifuThinButton2();
             this.transferDatePicker = new System.Windows.Forms.DateTimePicker();
             this.transferNoteTB = new System.Windows.Forms.TextBox();
             this.transferCurrencyCB = new System.Windows.Forms.ComboBox();
@@ -44,12 +41,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCheckBalance = new Bunifu.Framework.UI.BunifuThinButton2();
             this.accountTB = new System.Windows.Forms.TextBox();
             this.lblBalance = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCheckBalance = new System.Windows.Forms.Button();
+            this.btnConfirmTransfer = new System.Windows.Forms.Button();
+            this.btnCancelTransfer = new System.Windows.Forms.Button();
             this.pnlDeposit.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,58 +73,6 @@
             this.pnlDeposit.Name = "pnlDeposit";
             this.pnlDeposit.Size = new System.Drawing.Size(845, 166);
             this.pnlDeposit.TabIndex = 12;
-            // 
-            // btnCancelTransfer
-            // 
-            this.btnCancelTransfer.ActiveBorderThickness = 1;
-            this.btnCancelTransfer.ActiveCornerRadius = 20;
-            this.btnCancelTransfer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelTransfer.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCancelTransfer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelTransfer.BackColor = System.Drawing.Color.White;
-            this.btnCancelTransfer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelTransfer.BackgroundImage")));
-            this.btnCancelTransfer.ButtonText = "İptal et";
-            this.btnCancelTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelTransfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelTransfer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelTransfer.IdleBorderThickness = 1;
-            this.btnCancelTransfer.IdleCornerRadius = 20;
-            this.btnCancelTransfer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelTransfer.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCancelTransfer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelTransfer.Location = new System.Drawing.Point(740, 127);
-            this.btnCancelTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelTransfer.Name = "btnCancelTransfer";
-            this.btnCancelTransfer.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelTransfer.TabIndex = 10;
-            this.btnCancelTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirmTransfer
-            // 
-            this.btnConfirmTransfer.ActiveBorderThickness = 1;
-            this.btnConfirmTransfer.ActiveCornerRadius = 20;
-            this.btnConfirmTransfer.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmTransfer.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnConfirmTransfer.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmTransfer.BackColor = System.Drawing.Color.White;
-            this.btnConfirmTransfer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmTransfer.BackgroundImage")));
-            this.btnConfirmTransfer.ButtonText = "Onayla";
-            this.btnConfirmTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmTransfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmTransfer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnConfirmTransfer.IdleBorderThickness = 1;
-            this.btnConfirmTransfer.IdleCornerRadius = 20;
-            this.btnConfirmTransfer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmTransfer.IdleForecolor = System.Drawing.Color.Black;
-            this.btnConfirmTransfer.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmTransfer.Location = new System.Drawing.Point(657, 127);
-            this.btnConfirmTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmTransfer.Name = "btnConfirmTransfer";
-            this.btnConfirmTransfer.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmTransfer.TabIndex = 11;
-            this.btnConfirmTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // transferDatePicker
             // 
@@ -255,32 +202,6 @@
             this.panel1.Size = new System.Drawing.Size(785, 112);
             this.panel1.TabIndex = 11;
             // 
-            // btnCheckBalance
-            // 
-            this.btnCheckBalance.ActiveBorderThickness = 1;
-            this.btnCheckBalance.ActiveCornerRadius = 20;
-            this.btnCheckBalance.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnCheckBalance.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCheckBalance.BackColor = System.Drawing.Color.White;
-            this.btnCheckBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCheckBalance.BackgroundImage")));
-            this.btnCheckBalance.ButtonText = "Göster";
-            this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckBalance.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCheckBalance.IdleBorderThickness = 1;
-            this.btnCheckBalance.IdleCornerRadius = 20;
-            this.btnCheckBalance.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.IdleForecolor = System.Drawing.Color.Black;
-            this.btnCheckBalance.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.Location = new System.Drawing.Point(220, 49);
-            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCheckBalance.Name = "btnCheckBalance";
-            this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
-            this.btnCheckBalance.TabIndex = 4;
-            this.btnCheckBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // accountTB
             // 
             this.accountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -333,6 +254,54 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "PARA TRANSFERİ";
             // 
+            // btnCheckBalance
+            // 
+            this.btnCheckBalance.ForeColor = System.Drawing.Color.Black;
+            this.btnCheckBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCheckBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCheckBalance.Text = "Göster";
+            this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckBalance.Location = new System.Drawing.Point(220, 49);
+            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckBalance.Name = "btnCheckBalance";
+            this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
+            this.btnCheckBalance.TabIndex = 4;
+            this.btnCheckBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmTransfer
+            // 
+            this.btnConfirmTransfer.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnConfirmTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConfirmTransfer.Text = "Onayla";
+            this.btnConfirmTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmTransfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmTransfer.Location = new System.Drawing.Point(657, 127);
+            this.btnConfirmTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmTransfer.Name = "btnConfirmTransfer";
+            this.btnConfirmTransfer.Size = new System.Drawing.Size(75, 35);
+            this.btnConfirmTransfer.TabIndex = 11;
+            this.btnConfirmTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancelTransfer
+            // 
+            this.btnCancelTransfer.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCancelTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelTransfer.Text = "İptal et";
+            this.btnCancelTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelTransfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelTransfer.Location = new System.Drawing.Point(740, 127);
+            this.btnCancelTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelTransfer.Name = "btnCancelTransfer";
+            this.btnCancelTransfer.Size = new System.Drawing.Size(76, 35);
+            this.btnCancelTransfer.TabIndex = 10;
+            this.btnCancelTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // paraGonderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,7 +332,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCheckBalance;
         private System.Windows.Forms.TextBox accountTB;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label label2;
@@ -375,7 +343,8 @@
         private System.Windows.Forms.TextBox transferAmountTB;
         private System.Windows.Forms.DateTimePicker transferDatePicker;
         private System.Windows.Forms.TextBox transferNoteTB;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelTransfer;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmTransfer;
+        private System.Windows.Forms.Button btnCancelTransfer;
+        private System.Windows.Forms.Button btnConfirmTransfer;
+        private System.Windows.Forms.Button btnCheckBalance;
     }
 }

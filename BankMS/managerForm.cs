@@ -16,5 +16,12 @@ namespace BankMS
         {
             InitializeComponent();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loginForm obj = new loginForm();
+            obj.Show();
+            this.Hide();
+        }
     }
 }
