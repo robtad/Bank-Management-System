@@ -22,5 +22,10 @@ namespace BankMS.managerChildForm
             //Change with date in database
             labelDate.Text = DateTime.Now.ToLongDateString();
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
