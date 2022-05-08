@@ -16,5 +16,7 @@ namespace BankMS.managerChildForm
         {
             InitializeComponent();
         }
+
+
     }
 }
