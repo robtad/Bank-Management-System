@@ -216,6 +216,9 @@
     <EmbeddedResource Include="managerChildForm\dovizForm.resx">
       <DependentUpon>dovizForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\krediIslemForm.resx">
+      <DependentUpon>krediIslemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="managerChildForm\musteriForm.resx">
       <DependentUpon>musteriForm.cs</DependentUpon>
     </EmbeddedResource>

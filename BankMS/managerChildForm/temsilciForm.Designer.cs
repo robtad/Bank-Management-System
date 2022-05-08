@@ -55,10 +55,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.boxAmount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.labelAmount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -349,9 +349,9 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBoxAmount);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.boxAmount);
+            this.tabPage2.Controls.Add(this.labelAmount);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -361,14 +361,6 @@
             this.tabPage2.Text = "Salary";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // textBoxAmount
-            // 
-            this.textBoxAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAmount.Location = new System.Drawing.Point(170, 17);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(107, 13);
-            this.textBoxAmount.TabIndex = 3;
             // 
             // btnUpdate
             // 
@@ -396,6 +388,16 @@
             this.label3.Size = new System.Drawing.Size(148, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Current Salary Amount : ";
+            // 
+            // labelAmount
+            // 
+            this.labelAmount.AutoSize = true;
+            this.labelAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAmount.Location = new System.Drawing.Point(173, 14);
+            this.labelAmount.Name = "labelAmount";
+            this.labelAmount.Size = new System.Drawing.Size(52, 16);
+            this.labelAmount.TabIndex = 0;
+            this.labelAmount.Text = "Amount";
             // 
             // temsilciForm
             // 
@@ -433,7 +435,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox boxAmount;
-        private System.Windows.Forms.TextBox textBoxAmount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -453,5 +454,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox newAccGenderCB;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelAmount;
     }
 }

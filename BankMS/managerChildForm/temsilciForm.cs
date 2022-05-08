@@ -46,7 +46,7 @@ namespace BankMS.managerChildForm
             
             while (dr.Read())
             {
-                textBoxAmount.Text = dr.GetValue(0).ToString()+" TL";
+                labelAmount.Text = dr.GetValue(0).ToString()+" TL";
             }
             
             con.Close();
