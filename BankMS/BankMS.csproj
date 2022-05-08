@@ -210,6 +210,9 @@
     <EmbeddedResource Include="managerChildForm\anaSayfaForm.resx">
       <DependentUpon>anaSayfaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\bankaTarihiForm.resx">
+      <DependentUpon>bankaTarihiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="managerChildForm\dovizForm.resx">
       <DependentUpon>dovizForm.cs</DependentUpon>
     </EmbeddedResource>

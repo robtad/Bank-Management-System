@@ -16,5 +16,11 @@ namespace BankMS.managerChildForm
         {
             InitializeComponent();
         }
+
+        private void bankaTarihiForm_Load(object sender, EventArgs e)
+        {
+            //Change with date in database
+            labelDate.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }
