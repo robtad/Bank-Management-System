@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BankMS.managerChildForm
 {
-    public partial class dovizFormu : Form
+    public partial class krediIslemForm : Form
     {
-        public dovizFormu()
+        public krediIslemForm()
         {
             InitializeComponent();
         }

@@ -60,11 +60,11 @@
     <Compile Include="managerChildForm\bankaTarihiForm.Designer.cs">
       <DependentUpon>bankaTarihiForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="managerChildForm\dovizFormu.cs">
+    <Compile Include="managerChildForm\dovizForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="managerChildForm\dovizFormu.Designer.cs">
-      <DependentUpon>dovizFormu.cs</DependentUpon>
+    <Compile Include="managerChildForm\dovizForm.Designer.cs">
+      <DependentUpon>dovizForm.cs</DependentUpon>
     </Compile>
     <Compile Include="managerChildForm\genelDurumForm.cs">
       <SubType>Form</SubType>
@@ -78,11 +78,11 @@
     <Compile Include="managerChildForm\islemKaydiForm.Designer.cs">
       <DependentUpon>islemKaydiForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="managerChildForm\krediIslemleriForm.cs">
+    <Compile Include="managerChildForm\krediIslemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="managerChildForm\krediIslemleriForm.Designer.cs">
-      <DependentUpon>krediIslemleriForm.cs</DependentUpon>
+    <Compile Include="managerChildForm\krediIslemForm.Designer.cs">
+      <DependentUpon>krediIslemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="managerChildForm\musteriForm.cs">
       <SubType>Form</SubType>
@@ -200,6 +200,9 @@
     <EmbeddedResource Include="customerForm.resx">
       <DependentUpon>customerForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\temsilciForm.resx">
+      <DependentUpon>temsilciForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managerForm.resx">
       <DependentUpon>managerForm.cs</DependentUpon>
