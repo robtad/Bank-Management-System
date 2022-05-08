@@ -213,7 +213,6 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(239, 516);
             this.panelSideMenu.TabIndex = 14;
-            //this.panelSideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSideMenu_Paint);
             // 
             // panel1
             // 
@@ -307,6 +306,7 @@
             this.btnAnaSayfa.Text = "ANA SAYFA";
             this.btnAnaSayfa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAnaSayfa.UseVisualStyleBackColor = false;
+            this.btnAnaSayfa.Click += new System.EventHandler(this.btnAnaSayfa_Click);
             // 
             // panelSideMenuBottom
             // 

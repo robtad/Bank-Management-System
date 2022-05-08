@@ -77,7 +77,7 @@ namespace BankMS
 
         private void managerForm_Load(object sender, EventArgs e)
         {
-
+            loadForm(new managerChildForm.anaSayfaForm());
         }
 
         private void btnGenelDurum_Click(object sender, EventArgs e)
@@ -103,6 +103,11 @@ namespace BankMS
         private void btnTarih_Click(object sender, EventArgs e)
         {
             loadForm(new managerChildForm.bankaTarihiForm());
+        }
+
+        private void btnAnaSayfa_Click(object sender, EventArgs e)
+        {
+            loadForm(new managerChildForm.anaSayfaForm());
         }
     }
 }
