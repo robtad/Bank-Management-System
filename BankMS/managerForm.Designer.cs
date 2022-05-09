@@ -92,7 +92,7 @@
             // 
             // panelSideMenu
             // 
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(199)))));
             this.panelSideMenu.Controls.Add(this.panel1);
             this.panelSideMenu.Controls.Add(this.panelSideMenuBottom);
             this.panelSideMenu.Controls.Add(this.panelTopLogo);
@@ -135,7 +135,7 @@
             // 
             // btnMusteriler
             // 
-            this.btnMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(199)))));
             this.btnMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMusteriler.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMusteriler.FlatAppearance.BorderSize = 0;
@@ -155,7 +155,7 @@
             // 
             // btnTemsilciler
             // 
-            this.btnTemsilciler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnTemsilciler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(199)))));
             this.btnTemsilciler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTemsilciler.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTemsilciler.FlatAppearance.BorderSize = 0;
@@ -175,7 +175,7 @@
             // 
             // btnTarih
             // 
-            this.btnTarih.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(150)))));
+            this.btnTarih.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.btnTarih.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTarih.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTarih.FlatAppearance.BorderSize = 0;
@@ -195,7 +195,7 @@
             // 
             // btnDoviz
             // 
-            this.btnDoviz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(150)))));
+            this.btnDoviz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.btnDoviz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDoviz.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDoviz.FlatAppearance.BorderSize = 0;
@@ -215,7 +215,7 @@
             // 
             // btnKrediIslem
             // 
-            this.btnKrediIslem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(150)))));
+            this.btnKrediIslem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.btnKrediIslem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnKrediIslem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnKrediIslem.FlatAppearance.BorderSize = 0;
@@ -235,7 +235,7 @@
             // 
             // btnIslemKaydi
             // 
-            this.btnIslemKaydi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(150)))));
+            this.btnIslemKaydi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.btnIslemKaydi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnIslemKaydi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnIslemKaydi.FlatAppearance.BorderSize = 0;
@@ -255,7 +255,7 @@
             // 
             // btnGenelDurum
             // 
-            this.btnGenelDurum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(150)))));
+            this.btnGenelDurum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.btnGenelDurum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGenelDurum.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGenelDurum.FlatAppearance.BorderSize = 0;
@@ -275,7 +275,7 @@
             // 
             // btnBankaIslemleri
             // 
-            this.btnBankaIslemleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnBankaIslemleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(199)))));
             this.btnBankaIslemleri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBankaIslemleri.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBankaIslemleri.FlatAppearance.BorderSize = 0;
@@ -295,7 +295,7 @@
             // 
             // btnAnaSayfa
             // 
-            this.btnAnaSayfa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnAnaSayfa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(199)))));
             this.btnAnaSayfa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAnaSayfa.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAnaSayfa.FlatAppearance.BorderSize = 0;
@@ -315,7 +315,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
