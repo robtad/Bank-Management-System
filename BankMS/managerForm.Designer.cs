@@ -31,28 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(managerForm));
             this.label2 = new System.Windows.Forms.Label();
             this.panelTopLogo = new System.Windows.Forms.Panel();
-            this.bankLogo = new System.Windows.Forms.PictureBox();
             this.panelBankaSubmenu = new System.Windows.Forms.Panel();
+            this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSideMenuBottom = new System.Windows.Forms.Panel();
+            this.panelCenter = new System.Windows.Forms.Panel();
+            this.btnMusteriler = new System.Windows.Forms.Button();
+            this.btnTemsilciler = new System.Windows.Forms.Button();
             this.btnTarih = new System.Windows.Forms.Button();
             this.btnDoviz = new System.Windows.Forms.Button();
             this.btnKrediIslem = new System.Windows.Forms.Button();
             this.btnIslemKaydi = new System.Windows.Forms.Button();
             this.btnGenelDurum = new System.Windows.Forms.Button();
-            this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMusteriler = new System.Windows.Forms.Button();
-            this.btnTemsilciler = new System.Windows.Forms.Button();
             this.btnBankaIslemleri = new System.Windows.Forms.Button();
             this.btnAnaSayfa = new System.Windows.Forms.Button();
-            this.panelSideMenuBottom = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.panelCenter = new System.Windows.Forms.Panel();
+            this.bankLogo = new System.Windows.Forms.PictureBox();
             this.panelTopLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bankLogo)).BeginInit();
             this.panelBankaSubmenu.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSideMenuBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bankLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -76,18 +76,6 @@
             this.panelTopLogo.Size = new System.Drawing.Size(239, 178);
             this.panelTopLogo.TabIndex = 15;
             // 
-            // bankLogo
-            // 
-            this.bankLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bankLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bankLogo.Image = ((System.Drawing.Image)(resources.GetObject("bankLogo.Image")));
-            this.bankLogo.Location = new System.Drawing.Point(84, 37);
-            this.bankLogo.Name = "bankLogo";
-            this.bankLogo.Size = new System.Drawing.Size(74, 73);
-            this.bankLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bankLogo.TabIndex = 2;
-            this.bankLogo.TabStop = false;
-            // 
             // panelBankaSubmenu
             // 
             this.panelBankaSubmenu.Controls.Add(this.btnTarih);
@@ -101,6 +89,89 @@
             this.panelBankaSubmenu.Name = "panelBankaSubmenu";
             this.panelBankaSubmenu.Size = new System.Drawing.Size(222, 180);
             this.panelBankaSubmenu.TabIndex = 16;
+            // 
+            // panelSideMenu
+            // 
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.panelSideMenu.Controls.Add(this.panel1);
+            this.panelSideMenu.Controls.Add(this.panelSideMenuBottom);
+            this.panelSideMenu.Controls.Add(this.panelTopLogo);
+            this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelSideMenu.Name = "panelSideMenu";
+            this.panelSideMenu.Size = new System.Drawing.Size(239, 516);
+            this.panelSideMenu.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.btnMusteriler);
+            this.panel1.Controls.Add(this.btnTemsilciler);
+            this.panel1.Controls.Add(this.panelBankaSubmenu);
+            this.panel1.Controls.Add(this.btnBankaIslemleri);
+            this.panel1.Controls.Add(this.btnAnaSayfa);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 178);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(239, 248);
+            this.panel1.TabIndex = 21;
+            // 
+            // panelSideMenuBottom
+            // 
+            this.panelSideMenuBottom.Controls.Add(this.btnLogout);
+            this.panelSideMenuBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelSideMenuBottom.Location = new System.Drawing.Point(0, 447);
+            this.panelSideMenuBottom.Name = "panelSideMenuBottom";
+            this.panelSideMenuBottom.Size = new System.Drawing.Size(239, 69);
+            this.panelSideMenuBottom.TabIndex = 20;
+            // 
+            // panelCenter
+            // 
+            this.panelCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCenter.Location = new System.Drawing.Point(239, 0);
+            this.panelCenter.Name = "panelCenter";
+            this.panelCenter.Size = new System.Drawing.Size(659, 516);
+            this.panelCenter.TabIndex = 15;
+            // 
+            // btnMusteriler
+            // 
+            this.btnMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMusteriler.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMusteriler.FlatAppearance.BorderSize = 0;
+            this.btnMusteriler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMusteriler.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMusteriler.ForeColor = System.Drawing.Color.Black;
+            this.btnMusteriler.Image = global::BankMS.Properties.Resources.depositCashIcon2;
+            this.btnMusteriler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMusteriler.Location = new System.Drawing.Point(0, 285);
+            this.btnMusteriler.Name = "btnMusteriler";
+            this.btnMusteriler.Size = new System.Drawing.Size(222, 35);
+            this.btnMusteriler.TabIndex = 19;
+            this.btnMusteriler.Text = "MÜŞTERİLER";
+            this.btnMusteriler.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMusteriler.UseVisualStyleBackColor = false;
+            this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
+            // 
+            // btnTemsilciler
+            // 
+            this.btnTemsilciler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnTemsilciler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTemsilciler.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTemsilciler.FlatAppearance.BorderSize = 0;
+            this.btnTemsilciler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTemsilciler.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTemsilciler.ForeColor = System.Drawing.Color.Black;
+            this.btnTemsilciler.Image = global::BankMS.Properties.Resources.depositCashIcon2;
+            this.btnTemsilciler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTemsilciler.Location = new System.Drawing.Point(0, 250);
+            this.btnTemsilciler.Name = "btnTemsilciler";
+            this.btnTemsilciler.Size = new System.Drawing.Size(222, 35);
+            this.btnTemsilciler.TabIndex = 18;
+            this.btnTemsilciler.Text = "TEMSİLCİLER";
+            this.btnTemsilciler.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTemsilciler.UseVisualStyleBackColor = false;
+            this.btnTemsilciler.Click += new System.EventHandler(this.btnTemsilciler_Click);
             // 
             // btnTarih
             // 
@@ -202,72 +273,6 @@
             this.btnGenelDurum.UseVisualStyleBackColor = false;
             this.btnGenelDurum.Click += new System.EventHandler(this.btnGenelDurum_Click);
             // 
-            // panelSideMenu
-            // 
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.panelSideMenu.Controls.Add(this.panel1);
-            this.panelSideMenu.Controls.Add(this.panelSideMenuBottom);
-            this.panelSideMenu.Controls.Add(this.panelTopLogo);
-            this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(239, 516);
-            this.panelSideMenu.TabIndex = 14;
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.btnMusteriler);
-            this.panel1.Controls.Add(this.btnTemsilciler);
-            this.panel1.Controls.Add(this.panelBankaSubmenu);
-            this.panel1.Controls.Add(this.btnBankaIslemleri);
-            this.panel1.Controls.Add(this.btnAnaSayfa);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 178);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(239, 248);
-            this.panel1.TabIndex = 21;
-            // 
-            // btnMusteriler
-            // 
-            this.btnMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMusteriler.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMusteriler.FlatAppearance.BorderSize = 0;
-            this.btnMusteriler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMusteriler.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMusteriler.ForeColor = System.Drawing.Color.Black;
-            this.btnMusteriler.Image = global::BankMS.Properties.Resources.depositCashIcon2;
-            this.btnMusteriler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusteriler.Location = new System.Drawing.Point(0, 285);
-            this.btnMusteriler.Name = "btnMusteriler";
-            this.btnMusteriler.Size = new System.Drawing.Size(222, 35);
-            this.btnMusteriler.TabIndex = 19;
-            this.btnMusteriler.Text = "MÜŞTERİLER";
-            this.btnMusteriler.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMusteriler.UseVisualStyleBackColor = false;
-            this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
-            // 
-            // btnTemsilciler
-            // 
-            this.btnTemsilciler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnTemsilciler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTemsilciler.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTemsilciler.FlatAppearance.BorderSize = 0;
-            this.btnTemsilciler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTemsilciler.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTemsilciler.ForeColor = System.Drawing.Color.Black;
-            this.btnTemsilciler.Image = global::BankMS.Properties.Resources.depositCashIcon2;
-            this.btnTemsilciler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTemsilciler.Location = new System.Drawing.Point(0, 250);
-            this.btnTemsilciler.Name = "btnTemsilciler";
-            this.btnTemsilciler.Size = new System.Drawing.Size(222, 35);
-            this.btnTemsilciler.TabIndex = 18;
-            this.btnTemsilciler.Text = "TEMSİLCİLER";
-            this.btnTemsilciler.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTemsilciler.UseVisualStyleBackColor = false;
-            this.btnTemsilciler.Click += new System.EventHandler(this.btnTemsilciler_Click);
-            // 
             // btnBankaIslemleri
             // 
             this.btnBankaIslemleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
@@ -308,15 +313,6 @@
             this.btnAnaSayfa.UseVisualStyleBackColor = false;
             this.btnAnaSayfa.Click += new System.EventHandler(this.btnAnaSayfa_Click);
             // 
-            // panelSideMenuBottom
-            // 
-            this.panelSideMenuBottom.Controls.Add(this.btnLogout);
-            this.panelSideMenuBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelSideMenuBottom.Location = new System.Drawing.Point(0, 447);
-            this.panelSideMenuBottom.Name = "panelSideMenuBottom";
-            this.panelSideMenuBottom.Size = new System.Drawing.Size(239, 69);
-            this.panelSideMenuBottom.TabIndex = 20;
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
@@ -336,13 +332,17 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // panelCenter
+            // bankLogo
             // 
-            this.panelCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCenter.Location = new System.Drawing.Point(239, 0);
-            this.panelCenter.Name = "panelCenter";
-            this.panelCenter.Size = new System.Drawing.Size(659, 516);
-            this.panelCenter.TabIndex = 15;
+            this.bankLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bankLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bankLogo.Image = ((System.Drawing.Image)(resources.GetObject("bankLogo.Image")));
+            this.bankLogo.Location = new System.Drawing.Point(84, 37);
+            this.bankLogo.Name = "bankLogo";
+            this.bankLogo.Size = new System.Drawing.Size(74, 73);
+            this.bankLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bankLogo.TabIndex = 2;
+            this.bankLogo.TabStop = false;
             // 
             // managerForm
             // 
@@ -353,14 +353,14 @@
             this.Controls.Add(this.panelCenter);
             this.Controls.Add(this.panelSideMenu);
             this.Name = "managerForm";
-            this.Text = "manager";
+            this.Text = "Müdür Dashboard";
             this.Load += new System.EventHandler(this.managerForm_Load);
             this.panelTopLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bankLogo)).EndInit();
             this.panelBankaSubmenu.ResumeLayout(false);
             this.panelSideMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelSideMenuBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bankLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
