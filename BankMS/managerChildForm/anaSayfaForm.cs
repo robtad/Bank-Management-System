@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SLRDbConnector;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace BankMS.managerChildForm
 {
     public partial class anaSayfaForm : Form
     {
+        DbConnector db = new DbConnector();
+
         public anaSayfaForm()
         {
             InitializeComponent();
@@ -20,6 +23,11 @@ namespace BankMS.managerChildForm
 
         private void anaSayfaForm_Load(object sender, EventArgs e)
         {
+            string temp;
+            db.getSingleValue("SELECT COUNT(id) FROM Teller", out temp, 0);
+            labelTemsilciSayisi.Text = temp;
+            //Normal connection to DB
+            /*
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-LP6V62U;Initial Catalog=BankDB;Integrated Security=True");
             con.Open();
 
@@ -32,6 +40,7 @@ namespace BankMS.managerChildForm
             }
 
             con.Close();
+            */
         }
     }
 }

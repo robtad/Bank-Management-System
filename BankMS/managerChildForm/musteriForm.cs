@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SLRDbConnector;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,15 @@ namespace BankMS.managerChildForm
             InitializeComponent();
         }
 
+        DbConnector db = new DbConnector();
 
+        private void tableShow()
+        {
+            db.fillDataGridView("SELECT * FROM Customer", dataGridView1);
+        }
+        private void musteriForm_Load(object sender, EventArgs e)
+        {
+            tableShow();
+        }
     }
 }

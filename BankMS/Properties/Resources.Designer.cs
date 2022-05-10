@@ -223,6 +223,16 @@ namespace BankMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap reloadsmall {
+            get {
+                object obj = ResourceManager.GetObject("reloadsmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap request2Icon {
             get {
                 object obj = ResourceManager.GetObject("request2Icon", resourceCulture);
