@@ -18,6 +18,7 @@ namespace BankMS
         {
             InitializeComponent();
         }
+        public static string userId = "";
         //Sql connection string
         //string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30";
         
@@ -47,23 +48,33 @@ namespace BankMS
 
                 cmd.Parameters.AddWithValue("username", userNameTB.Text);
                 cmd.Parameters.AddWithValue("password", passwordTB.Text);
-
                 DataTable dt = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt);
-                if (dt.Rows[0][0].ToString() == "1")
+                try
                 {
-                    //destinationForm obj = new destinationForm();
-                    destinationForm.Show();
-                    this.Hide();
-                    Con.Close();
+                    
+                    sda.Fill(dt);
+                    if (dt.Rows[0][0].ToString() == "1")
+                    {
+                        //destinationForm obj = new destinationForm();
+                        userId = userNameTB.Text;
+                        destinationForm.Show();
+                        this.Hide();
+                        Con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Username or Password");
+                        userNameTB.Text = "";
+                        passwordTB.Text = "";
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Wrong Username or Password");
-                    userNameTB.Text = "";
-                    passwordTB.Text = "";
+                catch (Exception)
+                {               
+                    string msg = "Please enter only integer values for Username!\nYour User name is your TCK!";
+                    MessageBox.Show(msg);
                 }
+               
                 Con.Close();
 
             }
@@ -90,7 +101,7 @@ namespace BankMS
             }
             else //for customer
             {
-                string query = "SELECT COUNT(*) FROM MusteriTbl WHERE cName = @username AND cPassword = @password ";
+                string query = "SELECT COUNT(*) FROM customerProfileTbl WHERE cId = @username AND cPassword = @password ";
                 customerForm obj = new customerForm();
                 login_check(query, obj);
             }
@@ -102,6 +113,7 @@ namespace BankMS
 
 
         //place holders for username and password
+        /*
         private void userNameTB_Enter(object sender, EventArgs e)
         {
             if(userNameTB.Text == "Username")
@@ -139,12 +151,12 @@ namespace BankMS
 
             }
         }
-
+        
         private void userNameTB_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        */
        
     }
 }

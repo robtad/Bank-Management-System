@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlCheckBalance = new System.Windows.Forms.Panel();
+            this.newAccLoanTB = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.newAccBalanceTB = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.newAccAccountNoTB = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.newAccCustomerIdTB = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnRemoveCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
@@ -57,6 +65,14 @@
             // pnlCheckBalance
             // 
             this.pnlCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlCheckBalance.Controls.Add(this.newAccLoanTB);
+            this.pnlCheckBalance.Controls.Add(this.label10);
+            this.pnlCheckBalance.Controls.Add(this.newAccBalanceTB);
+            this.pnlCheckBalance.Controls.Add(this.label8);
+            this.pnlCheckBalance.Controls.Add(this.newAccAccountNoTB);
+            this.pnlCheckBalance.Controls.Add(this.label5);
+            this.pnlCheckBalance.Controls.Add(this.newAccCustomerIdTB);
+            this.pnlCheckBalance.Controls.Add(this.label4);
             this.pnlCheckBalance.Controls.Add(this.btnAddCustomer);
             this.pnlCheckBalance.Controls.Add(this.btnRemoveCustomer);
             this.pnlCheckBalance.Controls.Add(this.btnEditCustomer);
@@ -76,10 +92,86 @@
             this.pnlCheckBalance.Controls.Add(this.label9);
             this.pnlCheckBalance.Controls.Add(this.label11);
             this.pnlCheckBalance.Controls.Add(this.label7);
-            this.pnlCheckBalance.Location = new System.Drawing.Point(125, 57);
+            this.pnlCheckBalance.Location = new System.Drawing.Point(109, 43);
             this.pnlCheckBalance.Name = "pnlCheckBalance";
-            this.pnlCheckBalance.Size = new System.Drawing.Size(797, 213);
+            this.pnlCheckBalance.Size = new System.Drawing.Size(797, 226);
             this.pnlCheckBalance.TabIndex = 13;
+            // 
+            // newAccLoanTB
+            // 
+            this.newAccLoanTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newAccLoanTB.Location = new System.Drawing.Point(520, 181);
+            this.newAccLoanTB.Name = "newAccLoanTB";
+            this.newAccLoanTB.Size = new System.Drawing.Size(103, 26);
+            this.newAccLoanTB.TabIndex = 59;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(516, 158);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 20);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "Borç";
+            // 
+            // newAccBalanceTB
+            // 
+            this.newAccBalanceTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newAccBalanceTB.Location = new System.Drawing.Point(403, 181);
+            this.newAccBalanceTB.Name = "newAccBalanceTB";
+            this.newAccBalanceTB.Size = new System.Drawing.Size(97, 26);
+            this.newAccBalanceTB.TabIndex = 57;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(399, 158);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 20);
+            this.label8.TabIndex = 58;
+            this.label8.Text = "Bakiye:";
+            // 
+            // newAccAccountNoTB
+            // 
+            this.newAccAccountNoTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newAccAccountNoTB.Location = new System.Drawing.Point(233, 181);
+            this.newAccAccountNoTB.Name = "newAccAccountNoTB";
+            this.newAccAccountNoTB.Size = new System.Drawing.Size(145, 26);
+            this.newAccAccountNoTB.TabIndex = 55;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(229, 158);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 20);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Hesap No:";
+            // 
+            // newAccCustomerIdTB
+            // 
+            this.newAccCustomerIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newAccCustomerIdTB.Location = new System.Drawing.Point(26, 135);
+            this.newAccCustomerIdTB.Name = "newAccCustomerIdTB";
+            this.newAccCustomerIdTB.Size = new System.Drawing.Size(177, 26);
+            this.newAccCustomerIdTB.TabIndex = 53;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "TC Kimlik:";
             // 
             // btnAddCustomer
             // 
@@ -135,7 +227,7 @@
             // customerPasswordTB
             // 
             this.customerPasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerPasswordTB.Location = new System.Drawing.Point(26, 136);
+            this.customerPasswordTB.Location = new System.Drawing.Point(26, 181);
             this.customerPasswordTB.Name = "customerPasswordTB";
             this.customerPasswordTB.Size = new System.Drawing.Size(177, 26);
             this.customerPasswordTB.TabIndex = 51;
@@ -145,7 +237,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 112);
+            this.label3.Location = new System.Drawing.Point(22, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 52;
@@ -177,7 +269,7 @@
             this.newAccAddressTB.Multiline = true;
             this.newAccAddressTB.Name = "newAccAddressTB";
             this.newAccAddressTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.newAccAddressTB.Size = new System.Drawing.Size(220, 78);
+            this.newAccAddressTB.Size = new System.Drawing.Size(220, 72);
             this.newAccAddressTB.TabIndex = 45;
             // 
             // newAccGenderCB
@@ -206,9 +298,9 @@
             this.newAccCurrencyCB.ForeColor = System.Drawing.Color.Black;
             this.newAccCurrencyCB.FormattingEnabled = true;
             this.newAccCurrencyCB.Items.AddRange(new object[] {
-            "Lira",
-            "Dollar",
-            "Euro"});
+            "euro",
+            "lira",
+            "dollar"});
             this.newAccCurrencyCB.Location = new System.Drawing.Point(233, 136);
             this.newAccCurrencyCB.Name = "newAccCurrencyCB";
             this.newAccCurrencyCB.Size = new System.Drawing.Size(145, 25);
@@ -291,9 +383,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(229, 112);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(96, 20);
+            this.label11.Size = new System.Drawing.Size(114, 20);
             this.label11.TabIndex = 37;
-            this.label11.Text = "Hesap Türü:";
+            this.label11.Text = "Hesap Türü Id:";
             // 
             // label7
             // 
@@ -340,6 +432,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "hesaplarForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "hesaplarForm";
             this.pnlCheckBalance.ResumeLayout(false);
             this.pnlCheckBalance.PerformLayout();
@@ -373,6 +466,13 @@
         private System.Windows.Forms.Button btnRemoveCustomer;
         private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.DataGridView customerDataGrid;
-       
+        private System.Windows.Forms.TextBox newAccLoanTB;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox newAccBalanceTB;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox newAccAccountNoTB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox newAccCustomerIdTB;
+        private System.Windows.Forms.Label label4;
     }
 }

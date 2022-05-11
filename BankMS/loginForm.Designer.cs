@@ -113,15 +113,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.userNameTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTB.ForeColor = System.Drawing.Color.LightGray;
+            this.userNameTB.ForeColor = System.Drawing.Color.Black;
             this.userNameTB.Location = new System.Drawing.Point(314, 187);
             this.userNameTB.Name = "userNameTB";
             this.userNameTB.Size = new System.Drawing.Size(223, 31);
             this.userNameTB.TabIndex = 2;
-            this.userNameTB.Text = "Username";
-            this.userNameTB.TextChanged += new System.EventHandler(this.userNameTB_TextChanged);
-            this.userNameTB.Enter += new System.EventHandler(this.userNameTB_Enter);
-            this.userNameTB.Leave += new System.EventHandler(this.userNameTB_Leave);
             // 
             // label5
             // 
@@ -132,9 +128,9 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(310, 156);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 19);
+            this.label5.Size = new System.Drawing.Size(55, 19);
             this.label5.TabIndex = 1;
-            this.label5.Text = "UserName";
+            this.label5.Text = "UserId";
             // 
             // label6
             // 
@@ -155,15 +151,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTB.ForeColor = System.Drawing.Color.LightGray;
+            this.passwordTB.ForeColor = System.Drawing.Color.Black;
             this.passwordTB.Location = new System.Drawing.Point(314, 268);
             this.passwordTB.Name = "passwordTB";
             this.passwordTB.PasswordChar = '*';
             this.passwordTB.Size = new System.Drawing.Size(223, 31);
             this.passwordTB.TabIndex = 2;
-            this.passwordTB.Text = "Password";
-            this.passwordTB.Enter += new System.EventHandler(this.passwordTB_Enter);
-            this.passwordTB.Leave += new System.EventHandler(this.passwordTB_Leave);
             // 
             // roleCB
             // 

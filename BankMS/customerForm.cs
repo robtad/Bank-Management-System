@@ -15,6 +15,7 @@ namespace BankMS
         public customerForm()
         {
             InitializeComponent();
+            //welcomelbl.Text = loginForm.userId;
         }
 
 
@@ -72,5 +73,7 @@ namespace BankMS
             obj.Show();
             this.Hide();
         }
+
+       
     }
 }
