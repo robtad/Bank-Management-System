@@ -30,12 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCheckBalance = new System.Windows.Forms.Panel();
-            this.newAccLoanTB = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.newAccBalanceTB = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.newAccAccountNoTB = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.newAccCustomerIdTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEditCustomer = new System.Windows.Forms.Button();
@@ -45,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.newAccAddressTB = new System.Windows.Forms.TextBox();
             this.newAccGenderCB = new System.Windows.Forms.ComboBox();
-            this.newAccCurrencyCB = new System.Windows.Forms.ComboBox();
             this.newAccPhoneTB = new System.Windows.Forms.TextBox();
             this.newAccDatePicker = new System.Windows.Forms.DateTimePicker();
             this.newAccNameTB = new System.Windows.Forms.TextBox();
@@ -53,9 +46,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.customerDataGrid = new System.Windows.Forms.DataGridView();
+            this.userIdlbl = new System.Windows.Forms.Label();
             this.pnlCheckBalance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -74,12 +67,6 @@
             // pnlCheckBalance
             // 
             this.pnlCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlCheckBalance.Controls.Add(this.newAccLoanTB);
-            this.pnlCheckBalance.Controls.Add(this.label10);
-            this.pnlCheckBalance.Controls.Add(this.newAccBalanceTB);
-            this.pnlCheckBalance.Controls.Add(this.label8);
-            this.pnlCheckBalance.Controls.Add(this.newAccAccountNoTB);
-            this.pnlCheckBalance.Controls.Add(this.label5);
             this.pnlCheckBalance.Controls.Add(this.newAccCustomerIdTB);
             this.pnlCheckBalance.Controls.Add(this.label4);
             this.pnlCheckBalance.Controls.Add(this.btnEditCustomer);
@@ -89,7 +76,6 @@
             this.pnlCheckBalance.Controls.Add(this.label2);
             this.pnlCheckBalance.Controls.Add(this.newAccAddressTB);
             this.pnlCheckBalance.Controls.Add(this.newAccGenderCB);
-            this.pnlCheckBalance.Controls.Add(this.newAccCurrencyCB);
             this.pnlCheckBalance.Controls.Add(this.newAccPhoneTB);
             this.pnlCheckBalance.Controls.Add(this.newAccDatePicker);
             this.pnlCheckBalance.Controls.Add(this.newAccNameTB);
@@ -97,69 +83,11 @@
             this.pnlCheckBalance.Controls.Add(this.label17);
             this.pnlCheckBalance.Controls.Add(this.label15);
             this.pnlCheckBalance.Controls.Add(this.label9);
-            this.pnlCheckBalance.Controls.Add(this.label11);
             this.pnlCheckBalance.Controls.Add(this.label7);
             this.pnlCheckBalance.Location = new System.Drawing.Point(121, 52);
             this.pnlCheckBalance.Name = "pnlCheckBalance";
             this.pnlCheckBalance.Size = new System.Drawing.Size(797, 226);
             this.pnlCheckBalance.TabIndex = 16;
-            // 
-            // newAccLoanTB
-            // 
-            this.newAccLoanTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccLoanTB.Location = new System.Drawing.Point(520, 181);
-            this.newAccLoanTB.Name = "newAccLoanTB";
-            this.newAccLoanTB.Size = new System.Drawing.Size(103, 26);
-            this.newAccLoanTB.TabIndex = 59;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(516, 158);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 20);
-            this.label10.TabIndex = 60;
-            this.label10.Text = "Borç";
-            // 
-            // newAccBalanceTB
-            // 
-            this.newAccBalanceTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccBalanceTB.Location = new System.Drawing.Point(403, 181);
-            this.newAccBalanceTB.Name = "newAccBalanceTB";
-            this.newAccBalanceTB.Size = new System.Drawing.Size(97, 26);
-            this.newAccBalanceTB.TabIndex = 57;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(399, 158);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 20);
-            this.label8.TabIndex = 58;
-            this.label8.Text = "Bakiye:";
-            // 
-            // newAccAccountNoTB
-            // 
-            this.newAccAccountNoTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccAccountNoTB.Location = new System.Drawing.Point(233, 181);
-            this.newAccAccountNoTB.Name = "newAccAccountNoTB";
-            this.newAccAccountNoTB.Size = new System.Drawing.Size(145, 26);
-            this.newAccAccountNoTB.TabIndex = 55;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(229, 158);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 20);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "Hesap No:";
             // 
             // newAccCustomerIdTB
             // 
@@ -188,7 +116,7 @@
             this.btnEditCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditCustomer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditCustomer.ForeColor = System.Drawing.Color.Black;
-            this.btnEditCustomer.Location = new System.Drawing.Point(679, 83);
+            this.btnEditCustomer.Location = new System.Drawing.Point(614, 181);
             this.btnEditCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(88, 35);
@@ -238,7 +166,7 @@
             // newAccAddressTB
             // 
             this.newAccAddressTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccAddressTB.Location = new System.Drawing.Point(403, 83);
+            this.newAccAddressTB.Location = new System.Drawing.Point(233, 135);
             this.newAccAddressTB.Multiline = true;
             this.newAccAddressTB.Name = "newAccAddressTB";
             this.newAccAddressTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -258,41 +186,23 @@
             "Kadın"});
             this.newAccGenderCB.Location = new System.Drawing.Point(233, 34);
             this.newAccGenderCB.Name = "newAccGenderCB";
-            this.newAccGenderCB.Size = new System.Drawing.Size(145, 25);
+            this.newAccGenderCB.Size = new System.Drawing.Size(220, 25);
             this.newAccGenderCB.TabIndex = 44;
             this.newAccGenderCB.Text = "Cinsiyet Seç";
-            // 
-            // newAccCurrencyCB
-            // 
-            this.newAccCurrencyCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.newAccCurrencyCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccCurrencyCB.ForeColor = System.Drawing.Color.Black;
-            this.newAccCurrencyCB.FormattingEnabled = true;
-            this.newAccCurrencyCB.Items.AddRange(new object[] {
-            "euro",
-            "lira",
-            "dollar"});
-            this.newAccCurrencyCB.Location = new System.Drawing.Point(233, 136);
-            this.newAccCurrencyCB.Name = "newAccCurrencyCB";
-            this.newAccCurrencyCB.Size = new System.Drawing.Size(145, 25);
-            this.newAccCurrencyCB.TabIndex = 43;
-            this.newAccCurrencyCB.Text = "Hesap Türü Seç";
             // 
             // newAccPhoneTB
             // 
             this.newAccPhoneTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newAccPhoneTB.Location = new System.Drawing.Point(233, 83);
             this.newAccPhoneTB.Name = "newAccPhoneTB";
-            this.newAccPhoneTB.Size = new System.Drawing.Size(145, 26);
+            this.newAccPhoneTB.Size = new System.Drawing.Size(220, 26);
             this.newAccPhoneTB.TabIndex = 42;
             // 
             // newAccDatePicker
             // 
             this.newAccDatePicker.CustomFormat = "";
             this.newAccDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccDatePicker.Location = new System.Drawing.Point(403, 32);
+            this.newAccDatePicker.Location = new System.Drawing.Point(482, 32);
             this.newAccDatePicker.Name = "newAccDatePicker";
             this.newAccDatePicker.Size = new System.Drawing.Size(220, 22);
             this.newAccDatePicker.TabIndex = 39;
@@ -310,7 +220,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(399, 8);
+            this.label6.Location = new System.Drawing.Point(478, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 33;
@@ -343,22 +253,11 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(399, 60);
+            this.label9.Location = new System.Drawing.Point(229, 112);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 20);
             this.label9.TabIndex = 36;
             this.label9.Text = "Adres:";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(229, 112);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 20);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Hesap Türü Id:";
             // 
             // label7
             // 
@@ -379,9 +278,19 @@
             this.customerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerDataGrid.Location = new System.Drawing.Point(31, 289);
             this.customerDataGrid.Name = "customerDataGrid";
-            this.customerDataGrid.Size = new System.Drawing.Size(1023, 232);
+            this.customerDataGrid.Size = new System.Drawing.Size(1023, 158);
             this.customerDataGrid.TabIndex = 17;
             this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
+            // 
+            // userIdlbl
+            // 
+            this.userIdlbl.AutoSize = true;
+            this.userIdlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIdlbl.Location = new System.Drawing.Point(960, 52);
+            this.userIdlbl.Name = "userIdlbl";
+            this.userIdlbl.Size = new System.Drawing.Size(46, 18);
+            this.userIdlbl.TabIndex = 55;
+            this.userIdlbl.Text = "label5";
             // 
             // bilgiGuncelleForm
             // 
@@ -389,11 +298,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 533);
+            this.Controls.Add(this.userIdlbl);
             this.Controls.Add(this.customerDataGrid);
             this.Controls.Add(this.pnlCheckBalance);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "bilgiGuncelleForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "bilgiGuncelle";
             this.pnlCheckBalance.ResumeLayout(false);
             this.pnlCheckBalance.PerformLayout();
@@ -406,12 +317,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlCheckBalance;
-        private System.Windows.Forms.TextBox newAccLoanTB;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox newAccBalanceTB;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox newAccAccountNoTB;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox newAccCustomerIdTB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEditCustomer;
@@ -421,7 +326,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox newAccAddressTB;
         private System.Windows.Forms.ComboBox newAccGenderCB;
-        private System.Windows.Forms.ComboBox newAccCurrencyCB;
         private System.Windows.Forms.TextBox newAccPhoneTB;
         private System.Windows.Forms.DateTimePicker newAccDatePicker;
         private System.Windows.Forms.TextBox newAccNameTB;
@@ -429,8 +333,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView customerDataGrid;
+        private System.Windows.Forms.Label userIdlbl;
     }
 }
