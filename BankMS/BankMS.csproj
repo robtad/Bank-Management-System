@@ -33,11 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\Users\RobTad\Downloads\OTHERS\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\Users\RobTad\Downloads\OTHERS\Bunifu_UI_v1.52.dll</HintPath>
+=======
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SLRDbConnector">
+      <HintPath>..\..\..\..\Users\RobTad\Documents\SLRDbConnector.dll</HintPath>
+>>>>>>> Stashed changes
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
