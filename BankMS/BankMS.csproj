@@ -33,19 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\Users\RobTad\Downloads\OTHERS\Bunifu_UI_v1.5.3.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\Users\RobTad\Downloads\OTHERS\Bunifu_UI_v1.52.dll</HintPath>
-=======
+
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="SLRDbConnector">
-      <HintPath>..\..\..\..\Users\RobTad\Documents\SLRDbConnector.dll</HintPath>
->>>>>>> Stashed changes
+      <HintPath>..\..\..\SLRDbConnector.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -60,6 +52,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="managerChildForm\anaSayfaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerChildForm\anaSayfaForm.Designer.cs">
+      <DependentUpon>anaSayfaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerChildForm\bankaTarihiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerChildForm\bankaTarihiForm.Designer.cs">
+      <DependentUpon>bankaTarihiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerChildForm\dovizForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerChildForm\dovizForm.Designer.cs">
+      <DependentUpon>dovizForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerChildForm\genelDurumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerChildForm\genelDurumForm.Designer.cs">
+      <DependentUpon>genelDurumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerChildForm\islemKaydiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerChildForm\islemKaydiForm.Designer.cs">
+      <DependentUpon>islemKaydiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerChildForm\krediIslemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerChildForm\krediIslemForm.Designer.cs">
+      <DependentUpon>krediIslemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerChildForm\musteriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerChildForm\musteriForm.Designer.cs">
+      <DependentUpon>musteriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerChildForm\temsilciForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerChildForm\temsilciForm.Designer.cs">
+      <DependentUpon>temsilciForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="tellerChildForm\hesaplarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +203,31 @@
     </EmbeddedResource>
     <EmbeddedResource Include="customerForm.resx">
       <DependentUpon>customerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\anaSayfaForm.resx">
+      <DependentUpon>anaSayfaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\bankaTarihiForm.resx">
+      <DependentUpon>bankaTarihiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\dovizForm.resx">
+      <DependentUpon>dovizForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\genelDurumForm.resx">
+      <DependentUpon>genelDurumForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\islemKaydiForm.resx">
+      <DependentUpon>islemKaydiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\krediIslemForm.resx">
+      <DependentUpon>krediIslemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\musteriForm.resx">
+      <DependentUpon>musteriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerChildForm\temsilciForm.resx">
+      <DependentUpon>temsilciForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managerForm.resx">
       <DependentUpon>managerForm.cs</DependentUpon>
@@ -273,6 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\previewIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reloadsmall.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

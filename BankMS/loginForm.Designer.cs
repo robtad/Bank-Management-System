@@ -154,6 +154,7 @@
             this.passwordTB.ForeColor = System.Drawing.Color.Black;
             this.passwordTB.Location = new System.Drawing.Point(314, 268);
             this.passwordTB.Name = "passwordTB";
+            this.passwordTB.PasswordChar = '*';
             this.passwordTB.Size = new System.Drawing.Size(223, 31);
             this.passwordTB.TabIndex = 2;
             // 
