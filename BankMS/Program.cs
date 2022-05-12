@@ -22,8 +22,7 @@ namespace BankMS
             //Application.Run(new customerChildForm.paraGonderForm());
             //Application.Run(new tellerChildForm.hesaplarForm());
             //Application.Run(new customerChildForm.bilgiGuncelleForm());
-
-
+            //Application.Run(new managerChildForm.anaSayfaForm());
 
 
         }

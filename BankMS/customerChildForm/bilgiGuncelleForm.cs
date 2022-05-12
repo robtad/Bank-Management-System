@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SLRDbConnector;
 
 namespace BankMS.customerChildForm
 {
@@ -19,10 +20,11 @@ namespace BankMS.customerChildForm
             displayCustomerInfo();
             
             userIdlbl.Text = loginForm.userId;
-            
-            
-            
+                                  
         }
+
+        DbConnector db = new DbConnector();
+
         public static string ID = loginForm.userId;
 
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30");
@@ -36,25 +38,13 @@ namespace BankMS.customerChildForm
         }
         private void displayCustomerInfo()
         {
-            openConnection();
-           
-            SqlCommand query = new SqlCommand(@"SELECT cp.*, ct.tellerId, ca.cAccountNo, ai.accCurrencyName,ai.accBalance,ai.accLoan 
+
+            db.fillDataGridView(@"SELECT cp.*, ct.tellerId, ca.cAccountNo, ai.accCurrencyName,ai.accBalance,ai.accLoan 
                             FROM customerProfileTbl cp 
                             INNER JOIN customerTellerTbl ct ON cp.cId=ct.cId 
                             INNER JOIN customerAccountTbl ca ON ct.cId=ca.cId 
                             INNER JOIN accountInfoTbl ai ON ca.cAccountNo=ai.accNo
-                            WHERE cp.cId = @ID", Con);
-
-            query.Parameters.AddWithValue("@ID", ID);
-
-            
-
-            SqlDataAdapter sda = new SqlDataAdapter(query);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            customerDataGrid.DataSource = ds.Tables[0];
-            Con.Close();
+                            WHERE cp.cId = '"+ID+"' ", customerDataGrid);
         }
         private void reset()
         {

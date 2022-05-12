@@ -29,28 +29,22 @@
         private void InitializeComponent()
         {
             this.pnlCheckBalance = new System.Windows.Forms.Panel();
-            this.newAccLoanTB = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.newAccBalanceTB = new System.Windows.Forms.TextBox();
+            this.EmailTB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.newAccAccountNoTB = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.newAccCustomerIdTB = new System.Windows.Forms.TextBox();
+            this.LastNameTB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CustomerIdTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnRemoveCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
-            this.customerPasswordTB = new System.Windows.Forms.TextBox();
+            this.PasswordTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.newAccTellerIdTB = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.newAccAddressTB = new System.Windows.Forms.TextBox();
-            this.newAccGenderCB = new System.Windows.Forms.ComboBox();
-            this.newAccCurrencyCB = new System.Windows.Forms.ComboBox();
-            this.newAccPhoneTB = new System.Windows.Forms.TextBox();
-            this.newAccDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.newAccNameTB = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.AddressTB = new System.Windows.Forms.TextBox();
+            this.GenderCB = new System.Windows.Forms.ComboBox();
+            this.CurrencyCB = new System.Windows.Forms.ComboBox();
+            this.PhoneTB = new System.Windows.Forms.TextBox();
+            this.FirstNameTB = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,6 +52,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.customerDataGrid = new System.Windows.Forms.DataGridView();
+            this.TellerId = new System.Windows.Forms.Label();
             this.pnlCheckBalance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -65,28 +60,22 @@
             // pnlCheckBalance
             // 
             this.pnlCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlCheckBalance.Controls.Add(this.newAccLoanTB);
-            this.pnlCheckBalance.Controls.Add(this.label10);
-            this.pnlCheckBalance.Controls.Add(this.newAccBalanceTB);
+            this.pnlCheckBalance.Controls.Add(this.EmailTB);
             this.pnlCheckBalance.Controls.Add(this.label8);
-            this.pnlCheckBalance.Controls.Add(this.newAccAccountNoTB);
-            this.pnlCheckBalance.Controls.Add(this.label5);
-            this.pnlCheckBalance.Controls.Add(this.newAccCustomerIdTB);
+            this.pnlCheckBalance.Controls.Add(this.LastNameTB);
+            this.pnlCheckBalance.Controls.Add(this.label2);
+            this.pnlCheckBalance.Controls.Add(this.CustomerIdTB);
             this.pnlCheckBalance.Controls.Add(this.label4);
             this.pnlCheckBalance.Controls.Add(this.btnAddCustomer);
             this.pnlCheckBalance.Controls.Add(this.btnRemoveCustomer);
             this.pnlCheckBalance.Controls.Add(this.btnEditCustomer);
-            this.pnlCheckBalance.Controls.Add(this.customerPasswordTB);
+            this.pnlCheckBalance.Controls.Add(this.PasswordTB);
             this.pnlCheckBalance.Controls.Add(this.label3);
-            this.pnlCheckBalance.Controls.Add(this.newAccTellerIdTB);
-            this.pnlCheckBalance.Controls.Add(this.label2);
-            this.pnlCheckBalance.Controls.Add(this.newAccAddressTB);
-            this.pnlCheckBalance.Controls.Add(this.newAccGenderCB);
-            this.pnlCheckBalance.Controls.Add(this.newAccCurrencyCB);
-            this.pnlCheckBalance.Controls.Add(this.newAccPhoneTB);
-            this.pnlCheckBalance.Controls.Add(this.newAccDatePicker);
-            this.pnlCheckBalance.Controls.Add(this.newAccNameTB);
-            this.pnlCheckBalance.Controls.Add(this.label6);
+            this.pnlCheckBalance.Controls.Add(this.AddressTB);
+            this.pnlCheckBalance.Controls.Add(this.GenderCB);
+            this.pnlCheckBalance.Controls.Add(this.CurrencyCB);
+            this.pnlCheckBalance.Controls.Add(this.PhoneTB);
+            this.pnlCheckBalance.Controls.Add(this.FirstNameTB);
             this.pnlCheckBalance.Controls.Add(this.label17);
             this.pnlCheckBalance.Controls.Add(this.label15);
             this.pnlCheckBalance.Controls.Add(this.label9);
@@ -97,70 +86,51 @@
             this.pnlCheckBalance.Size = new System.Drawing.Size(797, 226);
             this.pnlCheckBalance.TabIndex = 13;
             // 
-            // newAccLoanTB
+            // EmailTB
             // 
-            this.newAccLoanTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccLoanTB.Location = new System.Drawing.Point(520, 181);
-            this.newAccLoanTB.Name = "newAccLoanTB";
-            this.newAccLoanTB.Size = new System.Drawing.Size(103, 26);
-            this.newAccLoanTB.TabIndex = 59;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(516, 158);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 20);
-            this.label10.TabIndex = 60;
-            this.label10.Text = "Borç";
-            // 
-            // newAccBalanceTB
-            // 
-            this.newAccBalanceTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccBalanceTB.Location = new System.Drawing.Point(403, 181);
-            this.newAccBalanceTB.Name = "newAccBalanceTB";
-            this.newAccBalanceTB.Size = new System.Drawing.Size(97, 26);
-            this.newAccBalanceTB.TabIndex = 57;
+            this.EmailTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailTB.Location = new System.Drawing.Point(233, 83);
+            this.EmailTB.Name = "EmailTB";
+            this.EmailTB.Size = new System.Drawing.Size(145, 26);
+            this.EmailTB.TabIndex = 60;
             // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(399, 158);
+            this.label8.Location = new System.Drawing.Point(229, 60);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 20);
-            this.label8.TabIndex = 58;
-            this.label8.Text = "Bakiye:";
+            this.label8.Size = new System.Drawing.Size(70, 20);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "E-Posta:";
             // 
-            // newAccAccountNoTB
+            // LastNameTB
             // 
-            this.newAccAccountNoTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccAccountNoTB.Location = new System.Drawing.Point(233, 181);
-            this.newAccAccountNoTB.Name = "newAccAccountNoTB";
-            this.newAccAccountNoTB.Size = new System.Drawing.Size(145, 26);
-            this.newAccAccountNoTB.TabIndex = 55;
+            this.LastNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameTB.Location = new System.Drawing.Point(26, 83);
+            this.LastNameTB.Name = "LastNameTB";
+            this.LastNameTB.Size = new System.Drawing.Size(125, 26);
+            this.LastNameTB.TabIndex = 57;
             // 
-            // label5
+            // label2
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(229, 158);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 20);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "Hesap No:";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Soyad:";
             // 
-            // newAccCustomerIdTB
+            // CustomerIdTB
             // 
-            this.newAccCustomerIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccCustomerIdTB.Location = new System.Drawing.Point(26, 135);
-            this.newAccCustomerIdTB.Name = "newAccCustomerIdTB";
-            this.newAccCustomerIdTB.Size = new System.Drawing.Size(177, 26);
-            this.newAccCustomerIdTB.TabIndex = 53;
+            this.CustomerIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerIdTB.Location = new System.Drawing.Point(26, 135);
+            this.CustomerIdTB.Name = "CustomerIdTB";
+            this.CustomerIdTB.Size = new System.Drawing.Size(125, 26);
+            this.CustomerIdTB.TabIndex = 53;
             // 
             // label4
             // 
@@ -169,9 +139,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(22, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 54;
-            this.label4.Text = "TC Kimlik:";
+            this.label4.Text = "TCKN:";
             // 
             // btnAddCustomer
             // 
@@ -224,13 +194,13 @@
             this.btnEditCustomer.UseVisualStyleBackColor = false;
             this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
-            // customerPasswordTB
+            // PasswordTB
             // 
-            this.customerPasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerPasswordTB.Location = new System.Drawing.Point(26, 181);
-            this.customerPasswordTB.Name = "customerPasswordTB";
-            this.customerPasswordTB.Size = new System.Drawing.Size(177, 26);
-            this.customerPasswordTB.TabIndex = 51;
+            this.PasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordTB.Location = new System.Drawing.Point(26, 181);
+            this.PasswordTB.Name = "PasswordTB";
+            this.PasswordTB.Size = new System.Drawing.Size(125, 26);
+            this.PasswordTB.TabIndex = 51;
             // 
             // label3
             // 
@@ -243,112 +213,69 @@
             this.label3.TabIndex = 52;
             this.label3.Text = "Şifre:";
             // 
-            // newAccTellerIdTB
+            // AddressTB
             // 
-            this.newAccTellerIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccTellerIdTB.Location = new System.Drawing.Point(26, 83);
-            this.newAccTellerIdTB.Name = "newAccTellerIdTB";
-            this.newAccTellerIdTB.Size = new System.Drawing.Size(177, 26);
-            this.newAccTellerIdTB.TabIndex = 46;
+            this.AddressTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressTB.Location = new System.Drawing.Point(403, 85);
+            this.AddressTB.Multiline = true;
+            this.AddressTB.Name = "AddressTB";
+            this.AddressTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.AddressTB.Size = new System.Drawing.Size(220, 72);
+            this.AddressTB.TabIndex = 45;
             // 
-            // label2
+            // GenderCB
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Temsilci Id:";
-            // 
-            // newAccAddressTB
-            // 
-            this.newAccAddressTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccAddressTB.Location = new System.Drawing.Point(403, 83);
-            this.newAccAddressTB.Multiline = true;
-            this.newAccAddressTB.Name = "newAccAddressTB";
-            this.newAccAddressTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.newAccAddressTB.Size = new System.Drawing.Size(220, 72);
-            this.newAccAddressTB.TabIndex = 45;
-            // 
-            // newAccGenderCB
-            // 
-            this.newAccGenderCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GenderCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.newAccGenderCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccGenderCB.ForeColor = System.Drawing.Color.Black;
-            this.newAccGenderCB.FormattingEnabled = true;
-            this.newAccGenderCB.Items.AddRange(new object[] {
+            this.GenderCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenderCB.ForeColor = System.Drawing.Color.Black;
+            this.GenderCB.FormattingEnabled = true;
+            this.GenderCB.Items.AddRange(new object[] {
             "Erkek",
             "Kadın"});
-            this.newAccGenderCB.Location = new System.Drawing.Point(233, 34);
-            this.newAccGenderCB.Name = "newAccGenderCB";
-            this.newAccGenderCB.Size = new System.Drawing.Size(145, 25);
-            this.newAccGenderCB.TabIndex = 44;
-            this.newAccGenderCB.Text = "Cinsiyet Seç";
+            this.GenderCB.Location = new System.Drawing.Point(403, 34);
+            this.GenderCB.Name = "GenderCB";
+            this.GenderCB.Size = new System.Drawing.Size(145, 25);
+            this.GenderCB.TabIndex = 44;
+            this.GenderCB.Text = "Cinsiyet Seç";
             // 
-            // newAccCurrencyCB
+            // CurrencyCB
             // 
-            this.newAccCurrencyCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CurrencyCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.newAccCurrencyCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccCurrencyCB.ForeColor = System.Drawing.Color.Black;
-            this.newAccCurrencyCB.FormattingEnabled = true;
-            this.newAccCurrencyCB.Items.AddRange(new object[] {
-            "euro",
-            "lira",
-            "dollar"});
-            this.newAccCurrencyCB.Location = new System.Drawing.Point(233, 136);
-            this.newAccCurrencyCB.Name = "newAccCurrencyCB";
-            this.newAccCurrencyCB.Size = new System.Drawing.Size(145, 25);
-            this.newAccCurrencyCB.TabIndex = 43;
-            this.newAccCurrencyCB.Text = "Hesap Türü Seç";
+            this.CurrencyCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrencyCB.ForeColor = System.Drawing.Color.Black;
+            this.CurrencyCB.FormattingEnabled = true;
+            this.CurrencyCB.Location = new System.Drawing.Point(233, 136);
+            this.CurrencyCB.Name = "CurrencyCB";
+            this.CurrencyCB.Size = new System.Drawing.Size(145, 25);
+            this.CurrencyCB.TabIndex = 43;
+            this.CurrencyCB.Text = "Hesap Türü Seç";
             // 
-            // newAccPhoneTB
+            // PhoneTB
             // 
-            this.newAccPhoneTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccPhoneTB.Location = new System.Drawing.Point(233, 83);
-            this.newAccPhoneTB.Name = "newAccPhoneTB";
-            this.newAccPhoneTB.Size = new System.Drawing.Size(145, 26);
-            this.newAccPhoneTB.TabIndex = 42;
+            this.PhoneTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneTB.Location = new System.Drawing.Point(233, 31);
+            this.PhoneTB.Name = "PhoneTB";
+            this.PhoneTB.Size = new System.Drawing.Size(145, 26);
+            this.PhoneTB.TabIndex = 42;
             // 
-            // newAccDatePicker
+            // FirstNameTB
             // 
-            this.newAccDatePicker.CustomFormat = "";
-            this.newAccDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccDatePicker.Location = new System.Drawing.Point(403, 32);
-            this.newAccDatePicker.Name = "newAccDatePicker";
-            this.newAccDatePicker.Size = new System.Drawing.Size(220, 22);
-            this.newAccDatePicker.TabIndex = 39;
-            // 
-            // newAccNameTB
-            // 
-            this.newAccNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccNameTB.Location = new System.Drawing.Point(26, 31);
-            this.newAccNameTB.Name = "newAccNameTB";
-            this.newAccNameTB.Size = new System.Drawing.Size(177, 26);
-            this.newAccNameTB.TabIndex = 32;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(399, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Tarih:";
+            this.FirstNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameTB.Location = new System.Drawing.Point(26, 31);
+            this.FirstNameTB.Name = "FirstNameTB";
+            this.FirstNameTB.Size = new System.Drawing.Size(125, 26);
+            this.FirstNameTB.TabIndex = 32;
             // 
             // label17
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(229, 8);
+            this.label17.Location = new System.Drawing.Point(399, 8);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(68, 20);
             this.label17.TabIndex = 34;
@@ -359,7 +286,7 @@
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(229, 60);
+            this.label15.Location = new System.Drawing.Point(229, 8);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(66, 20);
             this.label15.TabIndex = 35;
@@ -370,7 +297,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(399, 60);
+            this.label9.Location = new System.Drawing.Point(399, 62);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 20);
             this.label9.TabIndex = 36;
@@ -394,9 +321,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(22, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 20);
+            this.label7.Size = new System.Drawing.Size(33, 20);
             this.label7.TabIndex = 38;
-            this.label7.Text = "Ad-Soyad:";
+            this.label7.Text = "Ad:";
             // 
             // label1
             // 
@@ -421,12 +348,23 @@
             this.customerDataGrid.TabIndex = 14;
             this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
             // 
+            // TellerId
+            // 
+            this.TellerId.AutoSize = true;
+            this.TellerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TellerId.Location = new System.Drawing.Point(932, 43);
+            this.TellerId.Name = "TellerId";
+            this.TellerId.Size = new System.Drawing.Size(51, 20);
+            this.TellerId.TabIndex = 61;
+            this.TellerId.Text = "label5";
+            // 
             // hesaplarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1047, 533);
+            this.Controls.Add(this.TellerId);
             this.Controls.Add(this.customerDataGrid);
             this.Controls.Add(this.pnlCheckBalance);
             this.Controls.Add(this.label1);
@@ -446,33 +384,28 @@
 
         private System.Windows.Forms.Panel pnlCheckBalance;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox newAccTellerIdTB;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox newAccAddressTB;
-        private System.Windows.Forms.ComboBox newAccGenderCB;
-        private System.Windows.Forms.ComboBox newAccCurrencyCB;
-        private System.Windows.Forms.TextBox newAccPhoneTB;
-        private System.Windows.Forms.DateTimePicker newAccDatePicker;
-        private System.Windows.Forms.TextBox newAccNameTB;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox AddressTB;
+        private System.Windows.Forms.ComboBox GenderCB;
+        private System.Windows.Forms.ComboBox CurrencyCB;
+        private System.Windows.Forms.TextBox PhoneTB;
+        private System.Windows.Forms.TextBox FirstNameTB;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox customerPasswordTB;
+        private System.Windows.Forms.TextBox PasswordTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnRemoveCustomer;
         private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.DataGridView customerDataGrid;
-        private System.Windows.Forms.TextBox newAccLoanTB;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox newAccBalanceTB;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox newAccAccountNoTB;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox newAccCustomerIdTB;
+        private System.Windows.Forms.TextBox CustomerIdTB;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox LastNameTB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox EmailTB;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label TellerId;
     }
 }

@@ -19,6 +19,7 @@ namespace BankMS
             InitializeComponent();
         }
         public static string userId = "";
+        public static string userPassword = "";
         //Sql connection string
         //string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30";
         
@@ -58,6 +59,7 @@ namespace BankMS
                     {
                         //destinationForm obj = new destinationForm();
                         userId = userNameTB.Text;
+                        userPassword = passwordTB.Text;
                         destinationForm.Show();
                         this.Hide();
                         Con.Close();
@@ -95,7 +97,7 @@ namespace BankMS
             }
             else if (roleCB.SelectedIndex == 1)//for teller (bank clerk)
             {
-                string query = "SELECT COUNT(*) FROM ClerkTbl WHERE tName = @username AND tPassword = @password ";
+                string query = "SELECT COUNT(*) FROM ClerkTbl WHERE tId = @username AND tPassword = @password ";
                 tellerForm obj = new tellerForm();
                 login_check(query, obj);
             }
@@ -109,54 +111,7 @@ namespace BankMS
 
 
         }
-
-
-
-        //place holders for username and password
-        /*
-        private void userNameTB_Enter(object sender, EventArgs e)
-        {
-            if(userNameTB.Text == "Username")
-            {
-                userNameTB.Text = "";
-                userNameTB.ForeColor = Color.Black;          }
-        }
-
-        private void userNameTB_Leave(object sender, EventArgs e)
-        {
-            if( userNameTB.Text == "")
-            {
-                userNameTB.Text = "Username";
-                userNameTB.ForeColor= Color.LightGray; 
-
-            }
-        }
-
-        private void passwordTB_Enter(object sender, EventArgs e)
-        {
-            if (passwordTB.Text == "Password")
-            {
-                passwordTB.Text = "";
-                passwordTB.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void passwordTB_Leave(object sender, EventArgs e)
-        {
-            if (passwordTB.Text == "")
-            {
-                passwordTB.Text = "Password";
-                passwordTB.ForeColor = Color.LightGray;
-
-            }
-        }
-        
-        private void userNameTB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        */
+       
        
     }
 }
