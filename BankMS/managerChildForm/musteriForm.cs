@@ -130,16 +130,32 @@ namespace BankMS.managerChildForm
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
+            string message;
+            message = db.performCRUD("DELETE FROM Customer WHERE TCKN = '" + textBoxTCKN.Text + "'");
 
+            MessageBox.Show(message);
+            tableShow();
         }
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+            string message;
+            message = db.performCRUD(@"UPDATE Customer SET TCKN = '" + textBoxTCKN.Text + "', FirstName = '" + textBoxAd.Text +
+                                    "', LastName = '" + textBoxSoyad.Text + "', Gender = '" + comboBoxCinsiyet.SelectedItem.ToString() +
+                                    "', Telephone = '" + textBoxTel.Text + "', Address = '" + richTextBoxAdres.Text + "', DateUpdated = GETDATE() " +
+                                    "WHERE TCKN = '" + textBoxTCKN.Text + "'");
 
+            message += db.performCRUD("UPDATE CustomerLogin SET Password = '" + textBoxPassword.Text + "' WHERE TCKN = '" + textBoxTCKN.Text + "'");
+
+            MessageBox.Show(message);
+            tableShow();
+            clearForm();
         }
         private void btnAra_Click(object sender, EventArgs e)
         {
-            //string message = db.fillDataGridView("SELECT C.id, TCKN, Name, Surname, Gender, Telephone, Address, Email, Password, CreateTime, TellerID FROM Customer C, CustomerProfile P WHERE C.id = P.CustomerID AND Surname = '" + textBoxSoyad.Text + "'", dataGridView1);
-            //MessageBox.Show(message);
+            string message = db.fillDataGridView("SELECT C.TCKN, C.FirstName, C.LastName, C.Telephone, C.Gender, C.Address, C.Email, L.Password, C.DateCreated, C.DateUpdated, T.FirstName, T.LastName " +
+                                "FROM Customer C, CustomerLogin L , TellerCustomer TC, Teller T " +
+                                "WHERE C.TCKN = L.TCKN AND C.TCKN = TC.CustomerTCKN AND T.TCKN = TC.TellerTCKN AND C.LastName = '"+textBoxSoyad.Text+"'", dataGridView1);
+            MessageBox.Show(message);
         }
 
         #endregion

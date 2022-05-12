@@ -24,8 +24,8 @@ namespace BankMS.managerChildForm
         private void anaSayfaForm_Load(object sender, EventArgs e)
         {
             string musteri, temsilci;
-            db.getSingleValue("SELECT COUNT(id) FROM Teller", out temsilci, 0);
-            db.getSingleValue("SELECT COUNT(id) FROM Customer", out musteri, 0);
+            db.getSingleValue("SELECT COUNT(TCKN) FROM Teller", out temsilci, 0);
+            db.getSingleValue("SELECT COUNT(TCKN) FROM Customer", out musteri, 0);
             labelTemsilciSayisi.Text = temsilci;
             labelMusteriSayisi.Text = musteri;
 
