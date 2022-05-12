@@ -36,9 +36,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBoxCinsiyet = new System.Windows.Forms.ComboBox();
             this.richTextBoxAdres = new System.Windows.Forms.RichTextBox();
-            this.textBoxTC = new System.Windows.Forms.TextBox();
+            this.textBoxTCKN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBoxTel = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPass = new System.Windows.Forms.TextBox();
@@ -47,7 +46,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxSoyad = new System.Windows.Forms.TextBox();
             this.textBoxAd = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -132,9 +130,8 @@
             // 
             this.panel2.Controls.Add(this.comboBoxCinsiyet);
             this.panel2.Controls.Add(this.richTextBoxAdres);
-            this.panel2.Controls.Add(this.textBoxTC);
+            this.panel2.Controls.Add(this.textBoxTCKN);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBoxID);
             this.panel2.Controls.Add(this.textBoxTel);
             this.panel2.Controls.Add(this.textBoxEmail);
             this.panel2.Controls.Add(this.textBoxPass);
@@ -143,7 +140,6 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.textBoxSoyad);
             this.panel2.Controls.Add(this.textBoxAd);
-            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label2);
@@ -182,13 +178,13 @@
             this.richTextBoxAdres.TabIndex = 7;
             this.richTextBoxAdres.Text = "";
             // 
-            // textBoxTC
+            // textBoxTCKN
             // 
-            this.textBoxTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTC.Location = new System.Drawing.Point(122, 76);
-            this.textBoxTC.Name = "textBoxTC";
-            this.textBoxTC.Size = new System.Drawing.Size(198, 22);
-            this.textBoxTC.TabIndex = 2;
+            this.textBoxTCKN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTCKN.Location = new System.Drawing.Point(122, 11);
+            this.textBoxTCKN.Name = "textBoxTCKN";
+            this.textBoxTCKN.Size = new System.Drawing.Size(198, 22);
+            this.textBoxTCKN.TabIndex = 0;
             // 
             // label5
             // 
@@ -199,15 +195,6 @@
             this.label5.Size = new System.Drawing.Size(75, 18);
             this.label5.TabIndex = 16;
             this.label5.Text = "Password";
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Enabled = false;
-            this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxID.Location = new System.Drawing.Point(413, 144);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(198, 22);
-            this.textBoxID.TabIndex = 5;
             // 
             // textBoxTel
             // 
@@ -220,10 +207,10 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(122, 11);
+            this.textBoxEmail.Location = new System.Drawing.Point(122, 76);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(198, 22);
-            this.textBoxEmail.TabIndex = 0;
+            this.textBoxEmail.TabIndex = 2;
             // 
             // textBoxPass
             // 
@@ -238,17 +225,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 77);
+            this.label6.Location = new System.Drawing.Point(58, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 18);
+            this.label6.Size = new System.Drawing.Size(49, 18);
             this.label6.TabIndex = 16;
-            this.label6.Text = "TC Kimlik No";
+            this.label6.Text = "TCKN";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 13);
+            this.label4.Location = new System.Drawing.Point(62, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 18);
             this.label4.TabIndex = 16;
@@ -279,16 +266,6 @@
             this.textBoxAd.Name = "textBoxAd";
             this.textBoxAd.Size = new System.Drawing.Size(198, 22);
             this.textBoxAd.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(353, 145);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 18);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "ID No";
             // 
             // label9
             // 
@@ -492,7 +469,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxTC;
+        private System.Windows.Forms.TextBox textBoxTCKN;
         private System.Windows.Forms.TextBox textBoxPass;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxAd;
@@ -507,8 +484,6 @@
         private System.Windows.Forms.ComboBox comboBoxCinsiyet;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelAmount;
-        private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnReload;
     }
 }

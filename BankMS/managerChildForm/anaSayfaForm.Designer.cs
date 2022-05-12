@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelMusteriSayisi = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -87,22 +87,22 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LimeGreen;
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.labelMusteriSayisi);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 200);
             this.panel3.TabIndex = 1;
             // 
-            // label3
+            // labelMusteriSayisi
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 25);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "musteriSayisi";
+            this.labelMusteriSayisi.AutoSize = true;
+            this.labelMusteriSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMusteriSayisi.Location = new System.Drawing.Point(31, 113);
+            this.labelMusteriSayisi.Name = "labelMusteriSayisi";
+            this.labelMusteriSayisi.Size = new System.Drawing.Size(140, 25);
+            this.labelMusteriSayisi.TabIndex = 13;
+            this.labelMusteriSayisi.Text = "musteriSayisi";
             // 
             // panel5
             // 
@@ -265,7 +265,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelMusteriSayisi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelTemsilciSayisi;
     }

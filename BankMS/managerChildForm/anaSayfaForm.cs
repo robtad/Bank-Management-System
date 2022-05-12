@@ -23,9 +23,12 @@ namespace BankMS.managerChildForm
 
         private void anaSayfaForm_Load(object sender, EventArgs e)
         {
-            string temp;
-            db.getSingleValue("SELECT COUNT(id) FROM Teller", out temp, 0);
-            labelTemsilciSayisi.Text = temp;
+            string musteri, temsilci;
+            db.getSingleValue("SELECT COUNT(id) FROM Teller", out temsilci, 0);
+            db.getSingleValue("SELECT COUNT(id) FROM Customer", out musteri, 0);
+            labelTemsilciSayisi.Text = temsilci;
+            labelMusteriSayisi.Text = musteri;
+
             //Normal connection to DB
             /*
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-LP6V62U;Initial Catalog=BankDB;Integrated Security=True");

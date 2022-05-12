@@ -32,30 +32,30 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxTemsilciID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.newAccGenderCB = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBoxCinsiyet = new System.Windows.Forms.ComboBox();
+            this.richTextBoxAdres = new System.Windows.Forms.RichTextBox();
+            this.textBoxTC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxTel = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxSoyad = new System.Windows.Forms.TextBox();
+            this.textBoxAd = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAra = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnEkle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -85,51 +85,53 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 243);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(751, 293);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.textBoxTemsilciID);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.textBoxID);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.newAccGenderCB);
-            this.panel2.Controls.Add(this.richTextBox1);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.comboBoxCinsiyet);
+            this.panel2.Controls.Add(this.richTextBoxAdres);
+            this.panel2.Controls.Add(this.textBoxTC);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBoxTel);
+            this.panel2.Controls.Add(this.textBoxEmail);
+            this.panel2.Controls.Add(this.textBoxPassword);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.textBoxSoyad);
+            this.panel2.Controls.Add(this.textBoxAd);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnAra);
+            this.panel2.Controls.Add(this.btnGuncelle);
+            this.panel2.Controls.Add(this.btnSil);
+            this.panel2.Controls.Add(this.btnEkle);
             this.panel2.Location = new System.Drawing.Point(17, 60);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(751, 177);
             this.panel2.TabIndex = 18;
             // 
-            // textBox7
+            // textBoxTemsilciID
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(536, 144);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(75, 22);
-            this.textBox7.TabIndex = 19;
+            this.textBoxTemsilciID.Enabled = false;
+            this.textBoxTemsilciID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTemsilciID.Location = new System.Drawing.Point(536, 144);
+            this.textBoxTemsilciID.Name = "textBoxTemsilciID";
+            this.textBoxTemsilciID.Size = new System.Drawing.Size(75, 22);
+            this.textBoxTemsilciID.TabIndex = 19;
             // 
             // label3
             // 
@@ -160,38 +162,38 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "ID No";
             // 
-            // newAccGenderCB
+            // comboBoxCinsiyet
             // 
-            this.newAccGenderCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.comboBoxCinsiyet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.newAccGenderCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAccGenderCB.ForeColor = System.Drawing.Color.Black;
-            this.newAccGenderCB.FormattingEnabled = true;
-            this.newAccGenderCB.Items.AddRange(new object[] {
+            this.comboBoxCinsiyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCinsiyet.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxCinsiyet.FormattingEnabled = true;
+            this.comboBoxCinsiyet.Items.AddRange(new object[] {
             "Erkek",
             "Kadın"});
-            this.newAccGenderCB.Location = new System.Drawing.Point(413, 10);
-            this.newAccGenderCB.Name = "newAccGenderCB";
-            this.newAccGenderCB.Size = new System.Drawing.Size(105, 24);
-            this.newAccGenderCB.TabIndex = 5;
-            this.newAccGenderCB.Text = "Cinsiyet Seç";
+            this.comboBoxCinsiyet.Location = new System.Drawing.Point(413, 10);
+            this.comboBoxCinsiyet.Name = "comboBoxCinsiyet";
+            this.comboBoxCinsiyet.Size = new System.Drawing.Size(105, 24);
+            this.comboBoxCinsiyet.TabIndex = 5;
+            this.comboBoxCinsiyet.Text = "Cinsiyet Seç";
             // 
-            // richTextBox1
+            // richTextBoxAdres
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(413, 76);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(198, 58);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.richTextBoxAdres.Location = new System.Drawing.Point(413, 76);
+            this.richTextBoxAdres.Name = "richTextBoxAdres";
+            this.richTextBoxAdres.Size = new System.Drawing.Size(198, 58);
+            this.richTextBoxAdres.TabIndex = 7;
+            this.richTextBoxAdres.Text = "";
             // 
-            // textBox3
+            // textBoxTC
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(122, 76);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(198, 22);
-            this.textBox3.TabIndex = 2;
+            this.textBoxTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTC.Location = new System.Drawing.Point(122, 76);
+            this.textBoxTC.Name = "textBoxTC";
+            this.textBoxTC.Size = new System.Drawing.Size(198, 22);
+            this.textBoxTC.TabIndex = 2;
             // 
             // label5
             // 
@@ -203,29 +205,29 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Password";
             // 
-            // textBox6
+            // textBoxTel
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(413, 45);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(198, 22);
-            this.textBox6.TabIndex = 6;
+            this.textBoxTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTel.Location = new System.Drawing.Point(413, 45);
+            this.textBoxTel.Name = "textBoxTel";
+            this.textBoxTel.Size = new System.Drawing.Size(198, 22);
+            this.textBoxTel.TabIndex = 6;
             // 
-            // textBox1
+            // textBoxEmail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(122, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 22);
-            this.textBox1.TabIndex = 0;
+            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(122, 11);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(198, 22);
+            this.textBoxEmail.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(122, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 22);
-            this.textBox2.TabIndex = 1;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(122, 44);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(198, 22);
+            this.textBoxPassword.TabIndex = 1;
             // 
             // label6
             // 
@@ -257,21 +259,21 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Ad";
             // 
-            // textBox5
+            // textBoxSoyad
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(122, 140);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(198, 22);
-            this.textBox5.TabIndex = 4;
+            this.textBoxSoyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSoyad.Location = new System.Drawing.Point(122, 140);
+            this.textBoxSoyad.Name = "textBoxSoyad";
+            this.textBoxSoyad.Size = new System.Drawing.Size(198, 22);
+            this.textBoxSoyad.TabIndex = 4;
             // 
-            // textBox4
+            // textBoxAd
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(122, 108);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(198, 22);
-            this.textBox4.TabIndex = 3;
+            this.textBoxAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAd.Location = new System.Drawing.Point(122, 108);
+            this.textBoxAd.Name = "textBoxAd";
+            this.textBoxAd.Size = new System.Drawing.Size(198, 22);
+            this.textBoxAd.TabIndex = 3;
             // 
             // label9
             // 
@@ -313,57 +315,58 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Soyad";
             // 
-            // button4
+            // btnAra
             // 
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(641, 133);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 29);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Ara";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAra.BackColor = System.Drawing.Color.Gray;
+            this.btnAra.FlatAppearance.BorderSize = 0;
+            this.btnAra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAra.Location = new System.Drawing.Point(641, 133);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(94, 29);
+            this.btnAra.TabIndex = 11;
+            this.btnAra.Text = "Ara";
+            this.btnAra.UseVisualStyleBackColor = false;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
-            // button3
+            // btnGuncelle
             // 
-            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(641, 92);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Güncelle";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnGuncelle.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnGuncelle.FlatAppearance.BorderSize = 0;
+            this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuncelle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGuncelle.Location = new System.Drawing.Point(641, 92);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(94, 29);
+            this.btnGuncelle.TabIndex = 10;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnSil
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(641, 52);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Sil";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSil.BackColor = System.Drawing.Color.Red;
+            this.btnSil.FlatAppearance.BorderSize = 0;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSil.Location = new System.Drawing.Point(641, 52);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(94, 29);
+            this.btnSil.TabIndex = 9;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnEkle
             // 
-            this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(641, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Ekle";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEkle.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnEkle.FlatAppearance.BorderSize = 0;
+            this.btnEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEkle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEkle.Location = new System.Drawing.Point(641, 11);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(94, 29);
+            this.btnEkle.TabIndex = 8;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = false;
             // 
             // musteriForm
             // 
@@ -390,30 +393,30 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox newAccGenderCB;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox comboBoxCinsiyet;
+        private System.Windows.Forms.RichTextBox richTextBoxAdres;
+        private System.Windows.Forms.TextBox textBoxTC;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxTel;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxSoyad;
+        private System.Windows.Forms.TextBox textBoxAd;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAra;
+        private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxTemsilciID;
         private System.Windows.Forms.Label label3;
     }
 }
