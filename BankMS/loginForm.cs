@@ -20,10 +20,7 @@ namespace BankMS
         }
         public static string userId = "";
         public static string userPassword = "";
-        //Sql connection string
-        //string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30";
         
-        //initializing sql connection
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30");
         private void resetLabel_Click(object sender, EventArgs e)
         {
@@ -43,8 +40,7 @@ namespace BankMS
             else
             {
                 Con.Open();
-                //string query = "SELECT COUNT(*) FROM ManagerTbl WHERE mName = @username AND mPassword = @password ";
-                //SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM ManagerTbl WHERE mName = '"+userNameTB.Text+"' AND mPassword = '"+passwordTB.Text+"' ", Con);
+                
                 SqlCommand cmd = new SqlCommand(query, Con);
 
                 cmd.Parameters.AddWithValue("username", userNameTB.Text);
@@ -103,7 +99,7 @@ namespace BankMS
             }
             else //for customer
             {
-                string query = "SELECT COUNT(*) FROM customerProfileTbl WHERE cId = @username AND cPassword = @password ";
+                string query = "SELECT COUNT(*) FROM CustomerLogin WHERE TCKN = @username AND Password = @password ";
                 customerForm obj = new customerForm();
                 login_check(query, obj);
             }

@@ -228,6 +228,7 @@
             this.GenderCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GenderCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GenderCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GenderCB.ForeColor = System.Drawing.Color.Black;
             this.GenderCB.FormattingEnabled = true;
@@ -238,13 +239,13 @@
             this.GenderCB.Name = "GenderCB";
             this.GenderCB.Size = new System.Drawing.Size(145, 25);
             this.GenderCB.TabIndex = 44;
-            this.GenderCB.Text = "Cinsiyet Seç";
             // 
             // CurrencyCB
             // 
             this.CurrencyCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.CurrencyCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CurrencyCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrencyCB.ForeColor = System.Drawing.Color.Black;
             this.CurrencyCB.FormattingEnabled = true;
@@ -252,7 +253,6 @@
             this.CurrencyCB.Name = "CurrencyCB";
             this.CurrencyCB.Size = new System.Drawing.Size(145, 25);
             this.CurrencyCB.TabIndex = 43;
-            this.CurrencyCB.Text = "Hesap Türü Seç";
             // 
             // PhoneTB
             // 

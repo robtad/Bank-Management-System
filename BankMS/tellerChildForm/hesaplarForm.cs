@@ -49,7 +49,8 @@ namespace BankMS.tellerChildForm
             CurrencyCB.SelectedIndex = -1;           
         }
         string message;
-        int AccountNum;
+        string AccNum;
+
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
                 if (FirstNameTB.Text == "" || LastNameTB.Text == "" || GenderCB.SelectedIndex == -1 || EmailTB.Text == "" || PhoneTB.Text == "" || AddressTB.Text == "" || PasswordTB.Text == "" || CurrencyCB.SelectedIndex == -1 || CustomerIdTB.Text == "")
@@ -71,12 +72,7 @@ namespace BankMS.tellerChildForm
 
                     }
 
-                    string AccountNo;
-                    db.getSingleValue("select AccountNo from Account where CurrencyName = '"+ CurrencyCB.SelectedItem.ToString() + "'", out AccountNo, 0);
-                    AccountNum = Convert.ToInt32(AccountNo);
-                    //message += db.performCRUD(@"insert into CustomerAccounts(CustomerTCKN) values ('" + CustomerIdTB.Text + "')") + "\n";
-                    //MessageBox.Show(message);
-                    string AccNum;
+                    
                     db.getSingleValue("select AccountNo from Account; select scope_identity();", out AccNum, 0);
 
 
@@ -120,12 +116,7 @@ namespace BankMS.tellerChildForm
                 {
 
 
-                    // SqlCommand cmd = new SqlCommand("DELETE FROM customerProfileTbl WHERE cId = @AccKey", Con);
-
-                    //cmd.Parameters.AddWithValue("@AccKey", Key);
-
-                    //cmd.ExecuteNonQuery();
-                    string msg = db.performCRUD("delete from Account where AccountNo = '" + AccountNum + "'");
+                    string msg = db.performCRUD("delete from Account where AccountNo = '" + AccNum + "'");
                     MessageBox.Show(msg);
 
                     db.performCRUD("delete from Customer where TCKN = '" +CustomerIdTB.Text+ "'");
@@ -147,7 +138,8 @@ namespace BankMS.tellerChildForm
         }
 
         int Key = 0;
-        //int key2 = 0;
+        int acc;
+        string tc;
         int index;
         private void customerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -169,11 +161,14 @@ namespace BankMS.tellerChildForm
             if (FirstNameTB.Text == "")
             {
                 Key = 0;
+                
             }
             else
             {
                 Key =  Convert.ToInt32(row.Cells[0].Value.ToString());
-                //key2 = Convert.ToInt32(row.Cells[9].Value.ToString());
+                acc = Convert.ToInt32(row.Cells[10].Value.ToString());
+                tc = row.Cells[0].Value.ToString();
+
             }
 
 
@@ -182,7 +177,8 @@ namespace BankMS.tellerChildForm
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
         {
-            if (FirstNameTB.Text == "" || GenderCB.SelectedIndex == -1 || PhoneTB.Text == "" || AddressTB.Text == "" ||  PasswordTB.Text == "" || CurrencyCB.SelectedIndex == -1 || CustomerIdTB.Text == "" )
+            
+            if (FirstNameTB.Text == "" || LastNameTB.Text == "" || EmailTB.Text == "" || GenderCB.SelectedIndex == -1 || PhoneTB.Text == "" || AddressTB.Text == "" ||  PasswordTB.Text == "" || CustomerIdTB.Text == "" )
             {
                     MessageBox.Show(" Select the Account to be Updated and \n Fill all the Cells before Submitting");
             }
@@ -191,20 +187,17 @@ namespace BankMS.tellerChildForm
                 try
                 {                                                                          
 
-                    db.performCRUD(@"update Customer set TCKN = '" + CustomerIdTB.Text + "',FirstName = '" + FirstNameTB.Text + "'," +
+                    message = db.performCRUD(@"update Customer set TCKN = '" + CustomerIdTB.Text + "',FirstName = '" + FirstNameTB.Text + "'," +
                                     "LastName = '" + LastNameTB.Text + "',Telephone = '" + PhoneTB.Text + "',Address = '" + AddressTB.Text + "'," +
                                     "Gender = '" + GenderCB.SelectedItem.ToString() + "'," +
-                                    "Email = '" + EmailTB.Text + "',DateUpdated = getdate() ");
-
-
-                    message += db.performCRUD(@"update Account set CurrencyName = '" + CurrencyCB.SelectedItem.ToString() + "' ") + "\n";
-                  
-                    message += db.performCRUD(@"update CustomerAccounts set CustomerTCKN = '" + CustomerIdTB.Text + "'") + "\n";
-
-                    message += db.performCRUD(@"update TellerCustomer set CustomerTCKN = '" + CustomerIdTB.Text + "'") + "\n";
-
-                    
-                    message += db.performCRUD(@"update CustomerLogin set TCKN = '" + CustomerIdTB.Text + "',Password = '" + PasswordTB.Text + "'") + "\n";
+                                    "Email = '" + EmailTB.Text + "',DateUpdated = getdate() " +
+                                    "where TCKN = '" + tc + "'") + "\n";
+                    //teller cannot change currency!thats why the next line is commented out.
+                    //message += db.performCRUD(@"update Account set CurrencyName = '" + CurrencyCB.SelectedItem.ToString() + "' " +
+                                                    //"where AccountNo = '" + acc + "'") + "\n";
+                    message += db.performCRUD(@"update CustomerLogin set Password = '" + PasswordTB.Text + "'" +
+                                                "where TCKN = '" + CustomerIdTB.Text + "'") + "\n";
+                   
 
 
                     MessageBox.Show(message);
