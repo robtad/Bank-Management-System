@@ -75,43 +75,66 @@ namespace BankMS.managerChildForm
         private void btnEkle_Click(object sender, EventArgs e)
         {
             string message;
-            
-            message = db.performCRUD("INSERT INTO Teller(TCKN, FirstName, LastName, Telephone, Address, Gender, Email) " +
-                                    "values('" + textBoxTCKN.Text + "','" + textBoxAd.Text + "','" + textBoxSoyad.Text + "','" + textBoxTel.Text + "','" + richTextBoxAdres.Text + "','" + comboBoxCinsiyet.SelectedItem.ToString() + "','" + textBoxEmail.Text + "')");
+            if (textBoxTCKN.Text == "" || textBoxAd.Text == "" || textBoxSoyad.Text == "" ||
+                textBoxTel.Text == "" || richTextBoxAdres.Text == "" || textBoxEmail.Text == "" ||
+                textBoxPass.Text == "")
+            {
+                MessageBox.Show("TÜM ALANLAR DOLDURULMALIDIR!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                message = db.performCRUD("INSERT INTO Teller(TCKN, FirstName, LastName, Telephone, Address, Gender, Email) " +
+                                        "values('" + textBoxTCKN.Text + "','" + textBoxAd.Text + "','" + textBoxSoyad.Text + "','" + textBoxTel.Text + "','" + richTextBoxAdres.Text + "','" + comboBoxCinsiyet.SelectedItem.ToString() + "','" + textBoxEmail.Text + "')");
 
-            message += db.performCRUD("INSERT INTO TellerLogin(TCKN, Password) " +
-                                    "values('" + textBoxTCKN.Text + "','" + textBoxPass.Text + "')");
+                message += db.performCRUD("INSERT INTO TellerLogin(TCKN, Password) " +
+                                        "values('" + textBoxTCKN.Text + "','" + textBoxPass.Text + "')");
 
-            MessageBox.Show(message);
-            tableShow();
-            clearForm();
+                //MessageBox.Show(message);
+                if (!message.Contains("failed"))
+                {
+                    MessageBox.Show("TEMSİLCİ EKLENMİŞTİR", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("TEMSİLCİ EKLENMEMİŞTİR", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                tableShow();
+                clearForm();
+            }
         }      
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             string message;
-            message = db.performCRUD(@"UPDATE Teller SET TCKN = '" + textBoxTCKN.Text + "', FirstName = '" + textBoxAd.Text + 
+            message = db.performCRUD(@"UPDATE Teller SET Email = '"+textBoxEmail.Text+", 'TCKN = '" + textBoxTCKN.Text + "', FirstName = '" + textBoxAd.Text + 
                                     "', LastName = '" + textBoxSoyad.Text + "', Gender = '" + comboBoxCinsiyet.SelectedItem.ToString() + 
                                     "', Telephone = '" + textBoxTel.Text + "', Address = '" + richTextBoxAdres.Text + "', DateUpdated = GETDATE() " +
                                     "WHERE TCKN = '" + textBoxTCKN.Text + "'");
 
             message += db.performCRUD("UPDATE TellerLogin SET Password = '" + textBoxPass.Text + "' WHERE TCKN = '" + textBoxTCKN.Text + "'");
 
-            MessageBox.Show(message);
+            //MessageBox.Show(message);
+            MessageBox.Show("Updated Successfully!");
             tableShow();
             clearForm();
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
             string message;
-            message = db.performCRUD("DELETE FROM Teller WHERE TCKN = '" + textBoxTCKN.Text + "'");
-
-            MessageBox.Show(message);
-            tableShow();
+            var result = MessageBox.Show("\"" + textBoxTCKN.Text + "\" TCKN'Lİ TEMSİLCİ SİLİNECEKTİR!!!",
+                                        "EMİN MİSİNİZ?!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning
+                                        );
+            if (result == DialogResult.OK)
+            {
+                message = db.performCRUD("DELETE FROM Teller WHERE TCKN = '" + textBoxTCKN.Text + "'");
+                //MessageBox.Show(message);
+                MessageBox.Show("\"" + textBoxTCKN.Text + "\" TCKN'Lİ TEMSİLCİ SİLİNMİŞTİR!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tableShow();
+            }
         }
         private void btnAra_Click(object sender, EventArgs e)
         {
             string message = db.fillDataGridView("SELECT T.TCKN, FirstName, LastName, Telephone, Gender, Address, Email, Password, DateCreated, DateUpdated FROM Teller T, TellerLogin L WHERE T.TCKN = L.TCKN AND LastName = '" + textBoxSoyad.Text + "'", dataGridView1);
-            MessageBox.Show(message);
+            //MessageBox.Show(message);
         }
 
         #endregion

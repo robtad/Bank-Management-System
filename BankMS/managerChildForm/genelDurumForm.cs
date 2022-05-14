@@ -20,6 +20,7 @@ namespace BankMS.managerChildForm
         {
             InitializeComponent();
             totalSalaryCount();
+            bankDate();
         }
 
         private void genelDurumForm_Load(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace BankMS.managerChildForm
             string num = comboBox1.SelectedItem.ToString();
             if (!num.Contains("Hepsi"))
             {
-                db.fillDataGridView("SELECT DISTINCT TOP "+num+ "  PaymentDate, TotalAmount " +
+                db.fillDataGridView("SELECT DISTINCT TOP " + num + "  PaymentDate, TotalAmount " +
                                     "FROM PayrollLog PL, Payroll P " +
                                     "WHERE PL.id = P.PayrollLogID " +
                                     "ORDER BY PaymentDate DESC", dataGridPayroll
@@ -51,13 +52,20 @@ namespace BankMS.managerChildForm
         private void totalSalaryCount()
         {
             db.getSingleValue("SELECT SUM(TotalAmount) FROM PayrollLog", out totalSalary, 0);
-            
-            labelTotalSalary.Text = Convert.ToInt32(totalSalary).ToString("N0"); //ToString("#,##0") for adding comma to number
+            labelTotalSalary.Text = "TLY " + Convert.ToInt32(totalSalary).ToString("N0"); //ToString("#,##0") for adding comma to number
         }
  
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             showPayrollLogTab();
+        }
+
+        private void bankDate()
+        {
+            string dateTemp;
+            db.getSingleValue("Select * From Date", out dateTemp, 0);
+            DateTime bankDate = DateTime.Parse(dateTemp);
+            labelBankaaTarihi.Text = bankDate.ToString("ddd, dd/MMM/yyyy");
         }
     }
 }

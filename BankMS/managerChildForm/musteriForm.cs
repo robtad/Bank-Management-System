@@ -115,49 +115,86 @@ namespace BankMS.managerChildForm
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            string message;
+            string message, message2;
 
-            message = db.performCRUD("INSERT INTO Customer(TCKN, FirstName, LastName, Telephone, Address, Gender, Email) " +
-                                    "values('" + textBoxTCKN.Text + "','" + textBoxAd.Text + "','" + textBoxSoyad.Text + "','" + textBoxTel.Text + "','" + richTextBoxAdres.Text + "','" + comboBoxCinsiyet.SelectedItem.ToString() + "','" + textBoxEmail.Text + "')");
-            message += db.performCRUD("INSERT INTO CustomerLogin(TCKN, Password) " +
-                                    "values('" + textBoxTCKN.Text + "','" + textBoxPassword.Text + "')");
-            MessageBox.Show(message);
+            if (textBoxTCKN.Text == "" || textBoxAd.Text == "" || textBoxSoyad.Text == "" ||
+                textBoxTel.Text == "" || richTextBoxAdres.Text == "" || textBoxEmail.Text == "" ||
+                textBoxPassword.Text == "")
+            {
+                MessageBox.Show("TÜM ALANLAR DOLDURULMALIDIR!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                message = db.performCRUD("INSERT INTO Customer(TCKN, FirstName, LastName, Telephone, Address, Gender, Email) " +
+                                        "values('" + textBoxTCKN.Text + "','" + textBoxAd.Text + "','" + textBoxSoyad.Text + "'," +
+                                        "'" + textBoxTel.Text + "','" + richTextBoxAdres.Text + "','" + comboBoxCinsiyet.SelectedItem.ToString() + "','" + textBoxEmail.Text + "')"
+                                        );
+                message += db.performCRUD("INSERT INTO CustomerLogin(TCKN, Password) " +
+                                        "values('" + textBoxTCKN.Text + "','" + textBoxPassword.Text + "')"
+                                        );
+                //MessageBox.Show(message);
 
-            string enAzMusteri = assginTeller();
+                string enAzMusteri = assginTeller();
 
-            message = db.performCRUD("INSERT INTO TellerCustomer(CustomerTCKN, TellerTCKN) VALUES('"+ textBoxTCKN.Text +"', '"+enAzMusteri+"')");
-            MessageBox.Show(message);
-            tableShow();
-            clearForm();
+                message2 = db.performCRUD("INSERT INTO TellerCustomer(CustomerTCKN, TellerTCKN) VALUES('" + textBoxTCKN.Text + "', '" + enAzMusteri + "')");
+                if (!message.Contains("failed"))
+                {
+                    MessageBox.Show("MÜŞTERİ EKLENMİŞTİR","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    if (!message2.Contains("failed"))
+                    {
+                        MessageBox.Show("\"" + textBoxTCKN.Text + "\" TCKN'Lİ MÜŞTERİ, \n\""+enAzMusteri+"\" TCKN'Lİ TEMSİLCİYE ATANMIŞTIR", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("MÜŞTERİ EKLENMEMİŞTİR","", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                //MessageBox.Show(message);
+                tableShow();
+                clearForm();
+            }
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
             string message;
-            message = db.performCRUD("DELETE FROM Customer WHERE TCKN = '" + textBoxTCKN.Text + "'");
-
-            MessageBox.Show(message);
-            tableShow();
+            var result = MessageBox.Show("\""+ textBoxTCKN.Text +"\" TCKN'Lİ MÜŞTERİ SİLİNECEKTİR!!!",
+                                        "EMİN MİSİNİZ?!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning
+                                        );
+            if (result == DialogResult.OK)
+            {
+                message = db.performCRUD("DELETE FROM Customer WHERE TCKN = '" + textBoxTCKN.Text + "'");
+                //MessageBox.Show(message);
+                MessageBox.Show("\"" + textBoxTCKN.Text + "\" TCKN'Lİ MÜŞTERİ SİLİNMİŞTİR!!!","",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tableShow();
+            }
         }
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             string message;
-            message = db.performCRUD(@"UPDATE Customer SET TCKN = '" + textBoxTCKN.Text + "', FirstName = '" + textBoxAd.Text +
+            message = db.performCRUD(@"UPDATE Customer SET Email = '"+textBoxEmail.Text+"', TCKN = '" + textBoxTCKN.Text + "', FirstName = '" + textBoxAd.Text +
                                     "', LastName = '" + textBoxSoyad.Text + "', Gender = '" + comboBoxCinsiyet.SelectedItem.ToString() +
                                     "', Telephone = '" + textBoxTel.Text + "', Address = '" + richTextBoxAdres.Text + "', DateUpdated = GETDATE() " +
-                                    "WHERE TCKN = '" + textBoxTCKN.Text + "'");
+                                    "WHERE TCKN = '" + textBoxTCKN.Text + "'"
+                                    );
 
             message += db.performCRUD("UPDATE CustomerLogin SET Password = '" + textBoxPassword.Text + "' WHERE TCKN = '" + textBoxTCKN.Text + "'");
-
-            MessageBox.Show(message);
+            //MessageBox.Show(message);
+            MessageBox.Show("Updated Successfully!");
             tableShow();
             clearForm();
         }
         private void btnAra_Click(object sender, EventArgs e)
         {
-            string message = db.fillDataGridView("SELECT C.TCKN, C.FirstName, C.LastName, C.Telephone, C.Gender, C.Address, C.Email, L.Password, C.DateCreated, C.DateUpdated, T.FirstName, T.LastName " +
-                                "FROM Customer C, CustomerLogin L , TellerCustomer TC, Teller T " +
-                                "WHERE C.TCKN = L.TCKN AND C.TCKN = TC.CustomerTCKN AND T.TCKN = TC.TellerTCKN AND C.LastName = '"+textBoxSoyad.Text+"'", dataGridView1);
-            MessageBox.Show(message);
+            string message = db.fillDataGridView("SELECT C.TCKN, C.FirstName, C.LastName, " +
+                                                "C.Telephone, C.Gender, C.Address, C.Email, L.Password, " +
+                                                "C.DateCreated, C.DateUpdated, T.FirstName, T.LastName " +
+                                                "FROM Customer C, CustomerLogin L , TellerCustomer TC, Teller T " +
+                                                "WHERE C.TCKN = L.TCKN AND C.TCKN = TC.CustomerTCKN " +
+                                                "AND T.TCKN = TC.TellerTCKN AND C.LastName = '"+textBoxSoyad.Text+"'", 
+                                                dataGridView1
+                                                );
+            //MessageBox.Show(message);
         }
 
         #endregion

@@ -60,6 +60,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -69,11 +70,13 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.Controls.Add(this.groupBox2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 78);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(618, 370);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(605, 417);
             this.flowLayoutPanel1.TabIndex = 24;
             // 
             // groupBox1
@@ -199,6 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -207,6 +211,7 @@
             this.Text = "krediIslemleriForm";
             this.Load += new System.EventHandler(this.krediIslemForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -55,7 +55,6 @@
             this.label4.Size = new System.Drawing.Size(39, 18);
             this.label4.TabIndex = 22;
             this.label4.Text = "Son ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // comboBox1
             // 
@@ -81,7 +80,7 @@
             this.label2.Size = new System.Drawing.Size(129, 18);
             this.label2.TabIndex = 22;
             this.label2.Text = "Adet İşlemi Listele.";
-            this.label2.Click += new System.EventHandler(this.label4_Click);
+            
             // 
             // dataGridView1
             // 

@@ -154,7 +154,7 @@
             this.comboBoxCinsiyet.Name = "comboBoxCinsiyet";
             this.comboBoxCinsiyet.Size = new System.Drawing.Size(105, 24);
             this.comboBoxCinsiyet.TabIndex = 5;
-            this.comboBoxCinsiyet.Text = "Cinsiyet Seç";
+            this.comboBoxCinsiyet.Text = "Erkek";
             // 
             // label6
             // 

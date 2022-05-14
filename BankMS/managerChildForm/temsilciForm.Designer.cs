@@ -168,7 +168,7 @@
             this.comboBoxCinsiyet.Name = "comboBoxCinsiyet";
             this.comboBoxCinsiyet.Size = new System.Drawing.Size(99, 24);
             this.comboBoxCinsiyet.TabIndex = 5;
-            this.comboBoxCinsiyet.Text = "Cinsiyet Seç";
+            this.comboBoxCinsiyet.Text = "Erkek";
             // 
             // richTextBoxAdres
             // 

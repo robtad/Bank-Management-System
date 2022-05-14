@@ -39,6 +39,7 @@
             this.dataGridPayroll = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.labelTotalSalary = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -48,6 +49,8 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,6 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelBankaaTarihi = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -82,6 +86,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.labelBankaaTarihi);
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel5);
@@ -185,6 +190,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Red;
+            this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.labelTotalSalary);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.panel8);
@@ -193,12 +199,23 @@
             this.panel4.Size = new System.Drawing.Size(170, 150);
             this.panel4.TabIndex = 0;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(17, 78);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 25);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "totalCredit";
+            // 
             // labelTotalSalary
             // 
             this.labelTotalSalary.AutoSize = true;
             this.labelTotalSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotalSalary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelTotalSalary.Location = new System.Drawing.Point(17, 58);
+            this.labelTotalSalary.Location = new System.Drawing.Point(17, 53);
             this.labelTotalSalary.Name = "labelTotalSalary";
             this.labelTotalSalary.Size = new System.Drawing.Size(114, 25);
             this.labelTotalSalary.TabIndex = 15;
@@ -209,7 +226,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(17, 83);
+            this.label7.Location = new System.Drawing.Point(17, 117);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 25);
             this.label7.TabIndex = 14;
@@ -281,6 +298,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Location = new System.Drawing.Point(17, 68);
@@ -288,12 +307,34 @@
             this.panel3.Size = new System.Drawing.Size(170, 150);
             this.panel3.TabIndex = 0;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label15.Location = new System.Drawing.Point(18, 78);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(162, 25);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "totalRepayment";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label14.Location = new System.Drawing.Point(18, 53);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(124, 25);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "totalInterest";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(18, 83);
+            this.label6.Location = new System.Drawing.Point(18, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(126, 25);
             this.label6.TabIndex = 14;
@@ -335,7 +376,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(16, 83);
+            this.label8.Location = new System.Drawing.Point(16, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(115, 25);
             this.label8.TabIndex = 14;
@@ -362,6 +403,17 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Kâr";
             // 
+            // labelBankaaTarihi
+            // 
+            this.labelBankaaTarihi.AutoSize = true;
+            this.labelBankaaTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBankaaTarihi.Location = new System.Drawing.Point(444, 27);
+            this.labelBankaaTarihi.Name = "labelBankaaTarihi";
+            this.labelBankaaTarihi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelBankaaTarihi.Size = new System.Drawing.Size(93, 20);
+            this.labelBankaaTarihi.TabIndex = 2;
+            this.labelBankaaTarihi.Text = "BankaTarihi";
+            // 
             // genelDurumForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +427,7 @@
             this.Text = "genelDurumForm";
             this.Load += new System.EventHandler(this.genelDurumForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -429,5 +482,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelTotalSalary;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label labelBankaaTarihi;
     }
 }
