@@ -117,7 +117,7 @@ namespace BankMS.tellerChildForm
 
 
                     string msg = db.performCRUD("delete from Account where AccountNo = '" + AccNum + "'");
-                    MessageBox.Show(msg);
+                    //MessageBox.Show(msg);
 
                     db.performCRUD("delete from Customer where TCKN = '" +CustomerIdTB.Text+ "'");
                     
