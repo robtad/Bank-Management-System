@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -20,6 +21,7 @@ namespace BankMS.managerChildForm
         }
 
         DbConnector db = new DbConnector();
+        private string ConnectionString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
 
         private void musteriForm_Load(object sender, EventArgs e)
         {
@@ -30,7 +32,7 @@ namespace BankMS.managerChildForm
 
         private string assginTeller()
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-LP6V62U;Initial Catalog=BankDB;Integrated Security=True");
+            SqlConnection con = new SqlConnection(ConnectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM TellerCustomer", con);
             SqlDataReader reader = cmd.ExecuteReader();

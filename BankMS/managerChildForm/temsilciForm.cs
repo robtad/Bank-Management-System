@@ -29,7 +29,15 @@ namespace BankMS.managerChildForm
 
         private void tableShow()
         {
-            db.fillDataGridView("SELECT T.TCKN, FirstName, LastName, Telephone, Gender, Address, Email, Password, DateCreated, DateUpdated FROM Teller T, TellerLogin L WHERE T.TCKN = L.TCKN", dataGridView1);
+            //the old query without MusteriSayisi
+            //SELECT T.TCKN, FirstName, LastName, Telephone, Gender, Address, Email, Password, DateCreated, DateUpdated FROM Teller T, TellerLogin L WHERE T.TCKN = L.TCKN
+            db.fillDataGridView(@"SELECT T.TCKN, FirstName, LastName, Telephone, Gender, Address, Email, Password, DateCreated, DateUpdated,
+                                        (SELECT COUNT(CustomerTCKN)
+                                        FROM TellerCustomer TL
+                                        WHERE TL.TellerTCKN = T.TCKN
+                                        GROUP BY TellerTCKN) AS 'MüşteriSayısı'
+                                FROM Teller T, TellerLogin L
+                                WHERE T.TCKN = L.TCKN", dataGridView1);
         }
 
         private void clearForm()
@@ -123,7 +131,7 @@ namespace BankMS.managerChildForm
                 MessageBox.Show("LÜTFEN MAAŞ MİKTARI GİRİNİZ!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                db.performCRUD("UPDATE Salary set Amount = '" + boxAmount.Text + "'");
+                db.performCRUD("INSERT INTO Salary(Amount) VALUES('" + boxAmount.Text + "')");
                 MessageBox.Show("Successfully Updated!");
                 updateSalaryForm();
             }

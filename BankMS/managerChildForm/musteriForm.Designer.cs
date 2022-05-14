@@ -127,7 +127,7 @@
             this.textBoxTemsilci.Location = new System.Drawing.Point(413, 143);
             this.textBoxTemsilci.Name = "textBoxTemsilci";
             this.textBoxTemsilci.Size = new System.Drawing.Size(105, 22);
-            this.textBoxTemsilci.TabIndex = 19;
+            this.textBoxTemsilci.TabIndex = 8;
             // 
             // label3
             // 
@@ -180,7 +180,7 @@
             this.textBoxTCKN.Location = new System.Drawing.Point(122, 10);
             this.textBoxTCKN.Name = "textBoxTCKN";
             this.textBoxTCKN.Size = new System.Drawing.Size(198, 22);
-            this.textBoxTCKN.TabIndex = 2;
+            this.textBoxTCKN.TabIndex = 0;
             // 
             // label5
             // 
@@ -206,7 +206,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(122, 76);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(198, 22);
-            this.textBoxEmail.TabIndex = 0;
+            this.textBoxEmail.TabIndex = 2;
             // 
             // textBoxPassword
             // 
@@ -301,7 +301,7 @@
             this.btnAra.Location = new System.Drawing.Point(641, 133);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(94, 29);
-            this.btnAra.TabIndex = 11;
+            this.btnAra.TabIndex = 12;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = false;
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
@@ -315,7 +315,7 @@
             this.btnGuncelle.Location = new System.Drawing.Point(641, 92);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(94, 29);
-            this.btnGuncelle.TabIndex = 10;
+            this.btnGuncelle.TabIndex = 11;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
@@ -329,7 +329,7 @@
             this.btnSil.Location = new System.Drawing.Point(641, 52);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(94, 29);
-            this.btnSil.TabIndex = 9;
+            this.btnSil.TabIndex = 10;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -343,7 +343,7 @@
             this.btnEkle.Location = new System.Drawing.Point(641, 11);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(94, 29);
-            this.btnEkle.TabIndex = 8;
+            this.btnEkle.TabIndex = 9;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
