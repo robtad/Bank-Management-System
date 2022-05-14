@@ -34,11 +34,15 @@ namespace BankMS.managerChildForm
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            bankDate = bankDate.AddMonths(1);
-            labelDate.Text = bankDate.ToLongDateString();
-            db.performCRUD("UPDATE Date SET BankDate = '"+bankDate+"'");
-            updateGeneral();
+            var result = MessageBox.Show("Banka Tarihi 1 Ay İlerlesin?", 
+                                        "EMİN MİSİNİZ?!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                bankDate = bankDate.AddMonths(1);
+                labelDate.Text = bankDate.ToLongDateString();
+                db.performCRUD("UPDATE Date SET BankDate = '"+bankDate+"'");
+                updateGeneral();
+            }
         }
 
         // maaşların ödenmesi, gelir-gider durumlarının
@@ -49,6 +53,7 @@ namespace BankMS.managerChildForm
         {
             paySalary();
         }
+
         private void paySalary()
         {
             SqlConnection con = new SqlConnection(ConnectionString);
@@ -71,7 +76,7 @@ namespace BankMS.managerChildForm
                 string message = db.performCRUD("INSERT INTO Payroll(TCKN, SalaryID, PaymentDate, PayrollLogID)" +
                                 "VALUES('"+TCKN+"','"+salaryID+"','"+bankDate+"', '"+ payrollLogID + "')");
                 count++;
-                MessageBox.Show(message);
+                //MessageBox.Show(message);
             }
             con.Close();
             
@@ -80,8 +85,7 @@ namespace BankMS.managerChildForm
             totalSalary = (Convert.ToInt32(salaryAmount)) * count;
             db.performCRUD("UPDATE PayrollLog SET TotalAmount = '"+ totalSalary + "' WHERE id = '"+payrollLogID+"'");
 
-            Console.WriteLine(totalSalary);
-            
+            MessageBox.Show("TÜM TEMSİLCİLERİN MAAŞLARI ÖDENMİŞTİR",bankDate.ToString("ddd, dd/MMM/yyyy"), MessageBoxButtons.OK,MessageBoxIcon.Asterisk);            
         }
     }
 }

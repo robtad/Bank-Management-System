@@ -18,6 +18,8 @@ namespace BankMS
             customizeDesign();
         }
 
+        #region DropDown Menu
+
         private void customizeDesign()
         {
             panelBankaSubmenu.Visible = false;
@@ -40,46 +42,27 @@ namespace BankMS
                 subMenu.Visible = false;
         }
 
-        public void loadForm(object Form)
-        {
-            if (this.panelCenter.Controls.Count > 0)
-                this.panelCenter.Controls.RemoveAt(0);
-            Form f = Form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.panelCenter.Controls.Add(f);
-            this.panelCenter.Tag = f;
-            f.Show();
-        }
-
         private void btnBankaIslemleri_Click(object sender, EventArgs e)
         {
             showSubMenu(panelBankaSubmenu);
         }
 
-       
-        private void btnTemsilciler_Click(object sender, EventArgs e)
+        #endregion
+
+        #region Load Forms
+
+        private void btnAnaSayfa_Click(object sender, EventArgs e)
         {
-            loadForm(new managerChildForm.temsilciForm());
+            loadForm(new managerChildForm.anaSayfaForm());
         }
 
-        private void btnMusteriler_Click(object sender, EventArgs e)
-        {
-            loadForm(new managerChildForm.musteriForm());
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            loginForm obj = new loginForm();
-            obj.Show();
-            this.Hide();
-        }
-
+        //when first open manager dashboard from login
         private void managerForm_Load(object sender, EventArgs e)
         {
             loadForm(new managerChildForm.anaSayfaForm());
         }
 
+        #region Banka Islemleri Forms
         private void btnGenelDurum_Click(object sender, EventArgs e)
         {
             loadForm(new managerChildForm.genelDurumForm());
@@ -104,10 +87,37 @@ namespace BankMS
         {
             loadForm(new managerChildForm.bankaTarihiForm());
         }
+        #endregion
 
-        private void btnAnaSayfa_Click(object sender, EventArgs e)
+        private void btnMusteriler_Click(object sender, EventArgs e)
         {
-            loadForm(new managerChildForm.anaSayfaForm());
+            loadForm(new managerChildForm.musteriForm());
+        }
+
+        private void btnTemsilciler_Click(object sender, EventArgs e)
+        {
+            loadForm(new managerChildForm.temsilciForm());
+        }
+
+        #endregion
+
+        public void loadForm(object Form)
+        {
+            if (this.panelCenter.Controls.Count > 0)
+                this.panelCenter.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.panelCenter.Controls.Add(f);
+            this.panelCenter.Tag = f;
+            f.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loginForm obj = new loginForm();
+            obj.Show();
+            this.Hide();
         }
     }
 }

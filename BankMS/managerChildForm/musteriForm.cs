@@ -27,7 +27,7 @@ namespace BankMS.managerChildForm
         {
             tableShow();
             var test = assginTeller();
-            Console.WriteLine(test);
+            //Console.WriteLine(test);
         }
 
         private string assginTeller()

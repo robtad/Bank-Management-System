@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Change this file name to App.config then change the connectionString to your own DB -->
+<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
 	<configSections>
  </configSections>
