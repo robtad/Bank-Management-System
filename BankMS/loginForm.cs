@@ -19,10 +19,8 @@ namespace BankMS
             InitializeComponent();
         }
         public static string userId = "";
-        //Sql connection string
-        //string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30";
+        public static string userPassword = "";
         
-        //initializing sql connection
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30");
         private void resetLabel_Click(object sender, EventArgs e)
         {
@@ -42,8 +40,7 @@ namespace BankMS
             else
             {
                 Con.Open();
-                //string query = "SELECT COUNT(*) FROM ManagerTbl WHERE mName = @username AND mPassword = @password ";
-                //SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM ManagerTbl WHERE mName = '"+userNameTB.Text+"' AND mPassword = '"+passwordTB.Text+"' ", Con);
+                
                 SqlCommand cmd = new SqlCommand(query, Con);
 
                 cmd.Parameters.AddWithValue("username", userNameTB.Text);
@@ -58,6 +55,7 @@ namespace BankMS
                     {
                         //destinationForm obj = new destinationForm();
                         userId = userNameTB.Text;
+                        userPassword = passwordTB.Text;
                         destinationForm.Show();
                         this.Hide();
                         Con.Close();
@@ -95,13 +93,13 @@ namespace BankMS
             }
             else if (roleCB.SelectedIndex == 1)//for teller (bank clerk)
             {
-                string query = "SELECT COUNT(*) FROM ClerkTbl WHERE tName = @username AND tPassword = @password ";
+                string query = "SELECT COUNT(*) FROM ClerkTbl WHERE tId = @username AND tPassword = @password ";
                 tellerForm obj = new tellerForm();
                 login_check(query, obj);
             }
             else //for customer
             {
-                string query = "SELECT COUNT(*) FROM customerProfileTbl WHERE cId = @username AND cPassword = @password ";
+                string query = "SELECT COUNT(*) FROM CustomerLogin WHERE TCKN = @username AND Password = @password ";
                 customerForm obj = new customerForm();
                 login_check(query, obj);
             }
@@ -109,54 +107,7 @@ namespace BankMS
 
 
         }
-
-
-
-        //place holders for username and password
-        /*
-        private void userNameTB_Enter(object sender, EventArgs e)
-        {
-            if(userNameTB.Text == "Username")
-            {
-                userNameTB.Text = "";
-                userNameTB.ForeColor = Color.Black;          }
-        }
-
-        private void userNameTB_Leave(object sender, EventArgs e)
-        {
-            if( userNameTB.Text == "")
-            {
-                userNameTB.Text = "Username";
-                userNameTB.ForeColor= Color.LightGray; 
-
-            }
-        }
-
-        private void passwordTB_Enter(object sender, EventArgs e)
-        {
-            if (passwordTB.Text == "Password")
-            {
-                passwordTB.Text = "";
-                passwordTB.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void passwordTB_Leave(object sender, EventArgs e)
-        {
-            if (passwordTB.Text == "")
-            {
-                passwordTB.Text = "Password";
-                passwordTB.ForeColor = Color.LightGray;
-
-            }
-        }
-        
-        private void userNameTB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        */
+       
        
     }
 }

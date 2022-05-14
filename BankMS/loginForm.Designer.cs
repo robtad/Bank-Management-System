@@ -117,7 +117,7 @@
             this.userNameTB.Location = new System.Drawing.Point(314, 187);
             this.userNameTB.Name = "userNameTB";
             this.userNameTB.Size = new System.Drawing.Size(223, 31);
-            this.userNameTB.TabIndex = 2;
+            this.userNameTB.TabIndex = 1;
             // 
             // label5
             // 
@@ -173,7 +173,7 @@
             this.roleCB.Location = new System.Drawing.Point(314, 121);
             this.roleCB.Name = "roleCB";
             this.roleCB.Size = new System.Drawing.Size(223, 30);
-            this.roleCB.TabIndex = 4;
+            this.roleCB.TabIndex = 0;
             this.roleCB.Text = "Role";
             // 
             // label1
@@ -208,7 +208,7 @@
             this.resetLabel.Location = new System.Drawing.Point(432, 403);
             this.resetLabel.Name = "resetLabel";
             this.resetLabel.Size = new System.Drawing.Size(48, 19);
-            this.resetLabel.TabIndex = 5;
+            this.resetLabel.TabIndex = 4;
             this.resetLabel.Text = "Reset";
             this.resetLabel.Click += new System.EventHandler(this.resetLabel_Click);
             // 

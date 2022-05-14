@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using SLRDbConnector;
 
 namespace BankMS.tellerChildForm
 {
@@ -18,54 +18,42 @@ namespace BankMS.tellerChildForm
         {
             InitializeComponent();
             displayCustomerInfo();
+            
+            db.FillCombobox("SELECT Name FROM Currency", CurrencyCB);
         }
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30");
-       private void openConnection()
-        {
-            if (Con.State == ConnectionState.Closed)
-            {
-                Con.Open();
-            }
-        }
+        
+        DbConnector db = new DbConnector();
+
+      
         private void displayCustomerInfo()
         {
-            openConnection();
 
-            string query = @"SELECT cp.*, ct.tellerId, ca.cAccountNo, ai.accCurrencyName,ai.accBalance,ai.accLoan 
-                            FROM customerProfileTbl cp 
-                            INNER JOIN customerTellerTbl ct ON cp.cId=ct.cId 
-                            INNER JOIN customerAccountTbl ca ON ct.cId=ca.cId 
-                            INNER JOIN accountInfoTbl ai ON ca.cAccountNo=ai.accNo";
-
-            SqlDataAdapter sda = new SqlDataAdapter(query,Con);
-            SqlCommandBuilder builder =  new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            customerDataGrid.DataSource = ds.Tables[0];
-            Con.Close();
+            db.fillDataGridView(@"SELECT c.*, tc.TellerTCKN, ca.AccountNo, a.CurrencyName,a.Balance,a.Loan,cl.Password 
+                            FROM customer c
+                            INNER JOIN TellerCustomer tc ON c.TCKN=tc.CustomerTCKN 
+                            INNER JOIN CustomerAccounts ca ON tc.CustomerTCKN=ca.CustomerTCKN 
+                            INNER JOIN Account a ON ca.AccountNo=a.AccountNo
+                            INNER JOIN CustomerLogin cl ON c.TCKN = cl.TCKN
+                            ", customerDataGrid);
         }
         private void reset()
         {
-           
-            newAccNameTB.Text = "";
-            newAccGenderCB.SelectedIndex = -1;
-            newAccPhoneTB.Text = "";
-            newAccAddressTB.Text = "";
-            newAccTellerIdTB.Text = "";
-            customerPasswordTB.Text = "";
-            newAccCurrencyCB.SelectedIndex = -1;
-            newAccDatePicker.Text = "";
-            newAccCustomerIdTB.Text = "";
-            newAccAccountNoTB.Text = "";
-            newAccBalanceTB.Text = "";
-            newAccLoanTB.Text = "";
-
+            CustomerIdTB.Text = "";
+            FirstNameTB.Text = "";
+            LastNameTB.Text = "";
+            PhoneTB.Text = "";
+            AddressTB.Text = "";
+            GenderCB.SelectedIndex = -1;
+            EmailTB.Text = "";
+            PasswordTB.Text = "";
+            CurrencyCB.SelectedIndex = -1;           
         }
+        string message;
+        string AccNum;
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            
-                if (newAccNameTB.Text == "" || newAccGenderCB.SelectedIndex == -1 || newAccPhoneTB.Text == "" || newAccAddressTB.Text == "" || newAccTellerIdTB.Text == "" || customerPasswordTB.Text == "" || newAccCurrencyCB.SelectedIndex == -1 || newAccDatePicker.Text == ""||newAccCustomerIdTB.Text == ""||newAccAccountNoTB.Text =="" || newAccBalanceTB.Text == "" || newAccLoanTB.Text == "")
+                if (FirstNameTB.Text == "" || LastNameTB.Text == "" || GenderCB.SelectedIndex == -1 || EmailTB.Text == "" || PhoneTB.Text == "" || AddressTB.Text == "" || PasswordTB.Text == "" || CurrencyCB.SelectedIndex == -1 || CustomerIdTB.Text == "")
                 {
                     MessageBox.Show("Fill all the Cells before Submitting");
                 }
@@ -73,55 +61,35 @@ namespace BankMS.tellerChildForm
                 {
                     try
                     {
-                    openConnection();
                     
-                    SqlCommand cmd1 = new SqlCommand("insert into customerProfileTbl(cId,cName,cGender,cPhone,cAddress,cPassword,cDateCreated)values(@CI,@CN,@CG,@CP,@CA,@CPW,@CDC)", Con);
-                    cmd1.Parameters.AddWithValue("@CI", newAccCustomerIdTB.Text);
-                    cmd1.Parameters.AddWithValue("@CN", newAccNameTB.Text);
-                    cmd1.Parameters.AddWithValue("@CG", newAccGenderCB.SelectedItem.ToString());
-                    cmd1.Parameters.AddWithValue("@CP", newAccPhoneTB.Text);
-                    cmd1.Parameters.AddWithValue("@CA", newAccAddressTB.Text);
-                    cmd1.Parameters.AddWithValue("@CPW", customerPasswordTB.Text);
-                    cmd1.Parameters.AddWithValue("@CDC", newAccDatePicker.Value.ToShortDateString());
-                    //cmd1.Parameters.AddWithValue("@CDU", null);
-                    cmd1.ExecuteNonQuery();
-                    cmd1.Parameters.Clear();
+                    message = db.performCRUD(@"insert into Customer(TCKN,FirstName,LastName,Telephone,Address,Gender,Email) 
+                                    values('" + CustomerIdTB.Text + "','" + FirstNameTB.Text + "','" + LastNameTB.Text + "', " +
+                                    "'" + PhoneTB.Text + "','" + AddressTB.Text + "','" + GenderCB.SelectedItem.ToString() + "'," +
+                                    "'" + EmailTB.Text + "')") + "\n";
+                    if (message.Contains("success"))
+                    {
+                        message += db.performCRUD(@"insert into Account(CurrencyName) values ('" + CurrencyCB.SelectedItem.ToString() + "')") + "\n";
 
-                    Con.Close();
+                    }
 
-                    openConnection();
+                    
+                    db.getSingleValue("select AccountNo from Account; select scope_identity();", out AccNum, 0);
 
-                    SqlCommand cmd4 = new SqlCommand("insert into customerTellerTbl(cId,tellerId)values(@CI,@TI)", Con);
-                    cmd4.Parameters.AddWithValue("@CI", newAccCustomerIdTB.Text);
-                    cmd4.Parameters.AddWithValue("@TI", newAccTellerIdTB.Text);
-                    cmd4.ExecuteNonQuery();
-                    cmd4.Parameters.Clear();
 
-                    Con.Close();
+                    message += db.performCRUD(@"insert into CustomerAccounts(CustomerTCKN,AccountNo) values ('" + CustomerIdTB.Text + "','" + AccNum + "')") + "\n";
 
-                    openConnection();
+                    if (message.Contains("success"))
+                    {
+                        message += db.performCRUD(@"insert into TellerCustomer(CustomerTCKN,TellerTCKN) values ('" + CustomerIdTB.Text + "'," +
+                                    "'" + loginForm.userId + "')") + "\n";
+                    }
+                    
+                    message += db.performCRUD(@"insert into CustomerLogin(TCKN,Password) values ('" + CustomerIdTB.Text + "'," +
+                                    "'" +PasswordTB.Text+ "')") + "\n";
 
-                    SqlCommand cmd3 = new SqlCommand("insert into customerAccountTbl(cId,cAccountNo)values(@CI,@CA)", Con);
-                    cmd3.Parameters.AddWithValue("@CI", newAccCustomerIdTB.Text);
-                    cmd3.Parameters.AddWithValue("@CA", newAccAccountNoTB.Text);
-                    cmd3.ExecuteNonQuery();
-                    cmd3.Parameters.Clear();
-
-                    Con.Close();
-
-                    openConnection();
-
-                    SqlCommand cmd2 = new SqlCommand("insert into accountInfoTbl(accNo,accCurrencyName,accBalance,accLoan)values(@AN,@AC,@AB,@AL)", Con);
-                    cmd2.Parameters.AddWithValue("@AN", newAccAccountNoTB.Text);
-                    cmd2.Parameters.AddWithValue("@AC", newAccCurrencyCB.SelectedItem.ToString());
-                    cmd2.Parameters.AddWithValue("@AB", newAccBalanceTB.Text);
-                    cmd2.Parameters.AddWithValue("@AL", newAccLoanTB.Text);
-                    cmd2.ExecuteNonQuery();
-                    cmd2.Parameters.Clear();
-
-                    MessageBox.Show("Account Created!");
-
-                     Con.Close();
+                    
+                    MessageBox.Show(message);
+                    
                      reset();
                      displayCustomerInfo();
 
@@ -146,17 +114,17 @@ namespace BankMS.tellerChildForm
             {
                 try
                 {
-                    openConnection();
 
-                    SqlCommand cmd = new SqlCommand("DELETE FROM customerProfileTbl WHERE cId = @AccKey", Con);
 
-                    cmd.Parameters.AddWithValue("@AccKey", Key);
-           
-                    cmd.ExecuteNonQuery();
+                    string msg = db.performCRUD("delete from Account where AccountNo = '" + AccNum + "'");
+                    MessageBox.Show(msg);
+
+                    db.performCRUD("delete from Customer where TCKN = '" +CustomerIdTB.Text+ "'");
+                    
 
                     MessageBox.Show("Account Deleted!");
 
-                    Con.Close();
+                   
                     reset();
                     displayCustomerInfo();
 
@@ -168,34 +136,39 @@ namespace BankMS.tellerChildForm
 
             }
         }
-        
-        int Key = 0, key2 = 0;
+
+        int Key = 0;
+        int acc;
+        string tc;
         int index;
         private void customerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
             DataGridViewRow row = customerDataGrid.Rows[index];
-            newAccCustomerIdTB.Text = row.Cells[0].Value.ToString();
-            newAccNameTB.Text = row.Cells[1].Value.ToString();
-            newAccGenderCB.SelectedItem = row.Cells[2].Value.ToString();
-            newAccPhoneTB.Text = row.Cells[3].Value.ToString();
-            newAccAddressTB.Text = row.Cells[4].Value.ToString();
-            customerPasswordTB.Text = row.Cells[5].Value.ToString();
-            newAccDatePicker.Text = row.Cells[6].Value.ToString();
-            newAccTellerIdTB.Text = row.Cells[8].Value.ToString();
-            newAccAccountNoTB.Text = row.Cells[9].Value.ToString();
-            newAccCurrencyCB.SelectedItem = row.Cells[10].Value.ToString();
-            newAccBalanceTB.Text = row.Cells[11].Value.ToString();
-            newAccLoanTB.Text = row.Cells[12].Value.ToString();
+            CustomerIdTB.Text = row.Cells[0].Value.ToString();
+            FirstNameTB.Text = row.Cells[1].Value.ToString();
+            LastNameTB.Text = row.Cells[2].Value.ToString();
+            PhoneTB.Text = row.Cells[3].Value.ToString();
+            AddressTB.Text = row.Cells[4].Value.ToString();
+            GenderCB.SelectedItem = row.Cells[5].Value.ToString();
+            EmailTB.Text = row.Cells[6].Value.ToString();
+            PasswordTB.Text = row.Cells[14].Value.ToString();           
+            CurrencyCB.SelectedItem = row.Cells[11].Value.ToString();
 
-            if (newAccNameTB.Text == "")
+
+
+
+            if (FirstNameTB.Text == "")
             {
                 Key = 0;
+                
             }
             else
             {
                 Key =  Convert.ToInt32(row.Cells[0].Value.ToString());
-                key2 = Convert.ToInt32(row.Cells[9].Value.ToString());
+                acc = Convert.ToInt32(row.Cells[10].Value.ToString());
+                tc = row.Cells[0].Value.ToString();
+
             }
 
 
@@ -204,60 +177,31 @@ namespace BankMS.tellerChildForm
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
         {
-            if (newAccNameTB.Text == "" || newAccGenderCB.SelectedIndex == -1 || newAccPhoneTB.Text == "" || newAccAddressTB.Text == "" || newAccTellerIdTB.Text == "" || customerPasswordTB.Text == "" || newAccCurrencyCB.SelectedIndex == -1 || newAccDatePicker.Text == ""||newAccCustomerIdTB.Text == ""||newAccAccountNoTB.Text =="" || newAccBalanceTB.Text == "" || newAccLoanTB.Text == "")
+            
+            if (FirstNameTB.Text == "" || LastNameTB.Text == "" || EmailTB.Text == "" || GenderCB.SelectedIndex == -1 || PhoneTB.Text == "" || AddressTB.Text == "" ||  PasswordTB.Text == "" || CustomerIdTB.Text == "" )
             {
                     MessageBox.Show(" Select the Account to be Updated and \n Fill all the Cells before Submitting");
             }
             else
             {
                 try
-                {
-                    openConnection();                                     
-                    SqlCommand cmd1 = new SqlCommand(@"UPDATE customerProfileTbl SET cId = @CI,cName = @CN,cGender = @CG,cPhone = @CP,
-                                                      cAddress = @CA,cPassword = @CPW,cDateCreated = @CDC WHERE cId = @AccKey", Con);
-                    cmd1.Parameters.AddWithValue("@CI", newAccCustomerIdTB.Text);
-                    cmd1.Parameters.AddWithValue("@CN", newAccNameTB.Text);
-                    cmd1.Parameters.AddWithValue("@CG", newAccGenderCB.SelectedItem.ToString());
-                    cmd1.Parameters.AddWithValue("@CP", newAccPhoneTB.Text);
-                    cmd1.Parameters.AddWithValue("@CA", newAccAddressTB.Text);
-                    cmd1.Parameters.AddWithValue("@CPW", customerPasswordTB.Text);
-                    cmd1.Parameters.AddWithValue("@CDC", newAccDatePicker.Value.ToShortDateString());
-                    cmd1.Parameters.AddWithValue("@AccKey", Key);
-                    cmd1.ExecuteNonQuery();
-                    Con.Close();
-                    
-                    openConnection();
-                    SqlCommand cmd2 = new SqlCommand(@"UPDATE accountInfoTbl SET accCurrencyName = @AC,
-                                                       accBalance = @AB,accLoan = @AL WHERE accNo = @AccKey2", Con);
+                {                                                                          
 
-                    //cmd2.Parameters.AddWithValue("@AN", newAccAccountNoTB.Text);//can only be updated in parent table (i.e, customerAccountTbl) (since it is a foreign key)
-                    cmd2.Parameters.AddWithValue("@AC", newAccCurrencyCB.SelectedItem.ToString());
-                    cmd2.Parameters.AddWithValue("@AB", newAccBalanceTB.Text);
-                    cmd2.Parameters.AddWithValue("@AL", newAccLoanTB.Text);
-                    cmd2.Parameters.AddWithValue("@AccKey2", key2);
-                    cmd2.ExecuteNonQuery();
-                    Con.Close();
-                                       
-                    openConnection();
-                    SqlCommand cmd3 = new SqlCommand(@"UPDATE customerAccountTbl SET cAccountNo = @CA
-                                                       WHERE cId = @AccKey", Con);
-                    //cmd3.Parameters.AddWithValue("@CI", newAccCustomerIdTB.Text);//can only be updated in parent table(i.e, customerProfileTbl)(since it is a foreign key)
-                    cmd3.Parameters.AddWithValue("@CA", newAccAccountNoTB.Text); 
-                    cmd3.Parameters.AddWithValue("@AccKey", Key);
-                    cmd3.ExecuteNonQuery();
-                    Con.Close();
-                    
-                    openConnection();
-                    SqlCommand cmd4 = new SqlCommand(@"UPDATE customerTellerTbl SET tellerId = @TI
-                                                       WHERE cId = @AccKey", Con);
-                    //cmd4.Parameters.AddWithValue("@CI", newAccCustomerIdTB.Text);//can only be updated in parent table(i.e, customerProfileTbl)(since it is a foreign key)
-                    cmd4.Parameters.AddWithValue("@TI", newAccTellerIdTB.Text);
-                    cmd4.Parameters.AddWithValue("@AccKey", Key);
-                    cmd4.ExecuteNonQuery();
-                 
-                    MessageBox.Show("Account Updated!");
+                    message = db.performCRUD(@"update Customer set TCKN = '" + CustomerIdTB.Text + "',FirstName = '" + FirstNameTB.Text + "'," +
+                                    "LastName = '" + LastNameTB.Text + "',Telephone = '" + PhoneTB.Text + "',Address = '" + AddressTB.Text + "'," +
+                                    "Gender = '" + GenderCB.SelectedItem.ToString() + "'," +
+                                    "Email = '" + EmailTB.Text + "',DateUpdated = getdate() " +
+                                    "where TCKN = '" + tc + "'") + "\n";
+                    //teller cannot change currency!thats why the next line is commented out.
+                    //message += db.performCRUD(@"update Account set CurrencyName = '" + CurrencyCB.SelectedItem.ToString() + "' " +
+                                                    //"where AccountNo = '" + acc + "'") + "\n";
+                    message += db.performCRUD(@"update CustomerLogin set Password = '" + PasswordTB.Text + "'" +
+                                                "where TCKN = '" + CustomerIdTB.Text + "'") + "\n";
+                   
 
-                    Con.Close();
+
+                    MessageBox.Show(message);
+                   
                     reset();
                     displayCustomerInfo();
 
@@ -269,5 +213,10 @@ namespace BankMS.tellerChildForm
 
             }
         }
+
+
+
+
+
     }
 }

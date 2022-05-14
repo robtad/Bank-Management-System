@@ -7,18 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SLRDbConnector;
 
 namespace BankMS.customerChildForm
 {
-    public partial class paraYatirCekForm : Form
+    public partial class hesapSilmeForm : Form
     {
-        DbConnector db = new DbConnector();
-        public paraYatirCekForm()
+        public hesapSilmeForm()
         {
             InitializeComponent();
         }
-
-       
     }
 }
