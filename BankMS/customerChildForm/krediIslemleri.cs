@@ -77,8 +77,9 @@ namespace BankMS.customerChildForm
                 try
                 {
 
-                    msg = db.performCRUD(@"insert into RequestLoan(CustomerTCKN,Amount,Expiration) 
-                                    values('" + loginForm.userId + "','" + creditAmountTB.Text + "','" + ExpirationCB.SelectedItem.ToString() + "')") + "\n";
+                    msg = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
+                                        insert into RequestLoan(CustomerTCKN,Amount,Expiration,RequestDate) 
+                                    values('" + loginForm.userId + "','" + creditAmountTB.Text + "','" + ExpirationCB.SelectedItem.ToString() + "',@date)") + "\n";
 
                     MessageBox.Show(msg);
                     MessageBox.Show("Credit Request Has Been Sent To Your Teller Successfully!");

@@ -42,7 +42,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "AYLIK OZET GORUNTULE";
             // 
-            // aylikOzet
+            // aylikOzetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -50,7 +50,7 @@
             this.ClientSize = new System.Drawing.Size(751, 439);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "aylikOzet";
+            this.Name = "aylikOzetForm";
             this.Text = "aylikOzet";
             this.ResumeLayout(false);
             this.PerformLayout();

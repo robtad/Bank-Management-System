@@ -97,7 +97,8 @@ namespace BankMS.customerChildForm
                     MessageBox.Show("Amount Deposited Successfully");
                     //write info to transaction table,payment table and deposit table
 
-                    msg += db.performCRUD(@"insert into TransactionTbl (AccountNo,Balance) values ('" + depositAccountTB.Text + "','" + availableBalance + "')") + "\n";
+                    msg += db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
+                                            insert into TransactionTbl (AccountNo,Balance,Date) values ('" + depositAccountTB.Text + "','" + availableBalance + "',@date)") + "\n";
 
                     db.getSingleValue("SELECT IDENT_CURRENT('TransactionTbl')", out TransactionID, 0);
 
@@ -157,7 +158,8 @@ namespace BankMS.customerChildForm
 
                     //write info to transaction table,payment table and withdraw table
 
-                    msg += db.performCRUD(@"insert into TransactionTbl (AccountNo,Balance) values ('" + withdrawAccountTB.Text + "','" + availableBalance + "')") + "\n";
+                    msg += db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
+                                        insert into TransactionTbl (AccountNo,Balance,Date) values ('" + withdrawAccountTB.Text + "','" + availableBalance + "',@date)") + "\n";
 
                     db.getSingleValue("SELECT IDENT_CURRENT('TransactionTbl')", out TransactionID, 0);
 
