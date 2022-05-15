@@ -60,15 +60,15 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "1",
             "5",
+            "10",
             "25",
-            "100",
             "Hepsi"});
             this.comboBox1.Location = new System.Drawing.Point(96, 76);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(45, 21);
             this.comboBox1.TabIndex = 23;
+            this.comboBox1.Text = "5";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
@@ -80,10 +80,10 @@
             this.label2.Size = new System.Drawing.Size(129, 18);
             this.label2.TabIndex = 22;
             this.label2.Text = "Adet İşlemi Listele.";
-            
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 116);
             this.dataGridView1.Name = "dataGridView1";
@@ -104,6 +104,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "islemKaydiForm";
             this.Text = "islemKaydiForm";
+            this.Load += new System.EventHandler(this.islemKaydiForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
