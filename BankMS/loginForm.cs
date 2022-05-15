@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 namespace BankMS
-{
+{//
     public partial class loginForm : Form
     {
         public loginForm()

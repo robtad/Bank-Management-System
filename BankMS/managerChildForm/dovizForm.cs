@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BankMS.managerChildForm
-{
+{//
     public partial class dovizForm : Form
     {
         public dovizForm()

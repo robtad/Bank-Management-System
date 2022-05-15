@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using SLRDbConnector;
 
 namespace BankMS.tellerChildForm
-{
+{//
     public partial class hesaplarForm : Form
     {
         public hesaplarForm()

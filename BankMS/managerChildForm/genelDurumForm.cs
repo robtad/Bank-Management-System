@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BankMS.managerChildForm
-{
+{//
     public partial class genelDurumForm : Form
     {
         DbConnector db = new DbConnector();
         string totalSalary, totalKredi, totalGelir, totalBakiye;
-        int totalSalaryNum, totalKrediNum, totalGelirNum, totalBakiyeNum;
+        decimal totalSalaryNum, totalKrediNum, totalGelirNum, totalBakiyeNum;
 
         public genelDurumForm()
         {
@@ -70,7 +70,7 @@ namespace BankMS.managerChildForm
             db.getSingleValue("SELECT SUM(TotalAmount) FROM PayrollLog", out totalSalary, 0);
             if (totalSalary != "")
             {
-                totalSalaryNum = Convert.ToInt32(totalSalary); //ToString("#,##0") for adding comma to number
+                totalSalaryNum = Convert.ToDecimal(totalSalary); //ToString("#,##0") for adding comma to number
             }
             labelTotalSalary.Text = totalSalaryNum.ToString("N0") + " (Maaş)";
         }
@@ -80,7 +80,7 @@ namespace BankMS.managerChildForm
             db.getSingleValue("SELECT SUM(TotalAmount) FROM Loan", out totalKredi, 0);
             if (totalKredi != "")
             {
-                totalKrediNum = Convert.ToInt32(totalKredi);
+                totalKrediNum = Convert.ToDecimal(totalKredi);
             }
             labelTotalKredi.Text = totalKrediNum.ToString("N0") + " (Kredi)";
         }
@@ -96,7 +96,8 @@ namespace BankMS.managerChildForm
             db.getSingleValue("SELECT SUM(Amount) FROM Payment p, LoanRepayment l WHERE p.id = l.PaymentID;", out totalGelir, 0);
             if (totalGelir != "")
             {
-                totalGelirNum = Convert.ToInt32(totalGelir);
+                decimal v = Convert.ToDecimal(totalGelir);
+                totalGelirNum = v;
             }
             labelGelir.Text = "TLY " + totalGelirNum.ToString("N0") + " \n(Kredi Ödeme)";
         }
@@ -106,7 +107,7 @@ namespace BankMS.managerChildForm
             db.getSingleValue("SELECT Balance FROM Bank", out totalBakiye, 0);
             if (totalBakiye != "")
             {
-                totalBakiyeNum = Convert.ToInt32(totalBakiye);
+                totalBakiyeNum = Convert.ToDecimal(totalBakiye);
             }
         }
 
@@ -114,17 +115,17 @@ namespace BankMS.managerChildForm
         {
             totalSalaryCount();
             totalCreditCount();
-            int totalGiderTemp = totalKrediNum + totalSalaryNum;
+            decimal totalGiderTemp = totalKrediNum + totalSalaryNum;
             totalGider.Text = "TLY " + totalGiderTemp.ToString("N0");
 
             totalGelirCount();
 
-            int totalKar = totalGelirNum - totalGiderTemp;
+            decimal totalKar = totalGelirNum - totalGiderTemp;
             labelKar.Text = totalKar.ToString("N0");
 
             totalBakiyeCount();
 
-            int bankBalance = totalBakiyeNum + totalKar;
+            decimal bankBalance = totalBakiyeNum + totalKar;
             labelBakiye.Text = "TLY " + bankBalance.ToString("N0");
         }
 

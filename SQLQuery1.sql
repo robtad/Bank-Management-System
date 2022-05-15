@@ -3,7 +3,7 @@ SELECT T.id, TCKN, Name, Surname, Gender, Telephone, Address, Email, Password
 FROM Teller T, TellerProfile P 
 WHERE T.id = P.TellerID
 */
-
+/**/
 /*
 SELECT T.id, TCKN, Name, Surname, Gender, Telephone, Address, Email, Password 
 FROM Teller T, TellerProfile P 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using SLRDbConnector;
 
 namespace BankMS.customerChildForm
-{
+{//
     public partial class hesapTalepleriForm : Form
     {
         public hesapTalepleriForm()

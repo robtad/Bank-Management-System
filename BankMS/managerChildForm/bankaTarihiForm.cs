@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using SLRDbConnector;
 
 namespace BankMS.managerChildForm
-{
+{//
     public partial class bankaTarihiForm : Form
     {
         DbConnector db = new DbConnector();

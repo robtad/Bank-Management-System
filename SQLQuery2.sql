@@ -3,7 +3,7 @@ SELECT DISTINCT PaymentDate, TotalAmount
 FROM PayrollLog PL, Payroll P
 WHERE PL.id = P.PayrollLogID
 ORDER BY PaymentDate DESC
-
+//
 
 SELECT SUM(TotalAmount)
 FROM PayrollLog

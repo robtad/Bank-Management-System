@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BankMS
-{
+{//
     internal static class Program
     {
         /// <summary>

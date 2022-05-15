@@ -9,4 +9,4 @@ WHERE t.id = p.TransactionID AND l.PaymentID = p.id
 SELECT t.id, t.AccountNo, p.Amount, t.Balance, Date
 FROM TransactionTbl t, Payment p, Deposit d
 WHERE t.id = p.TransactionID AND d.PaymentID = p.id
-
+/**/

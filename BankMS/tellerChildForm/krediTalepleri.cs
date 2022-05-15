@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using SLRDbConnector;
 
 namespace BankMS.tellerChildForm
-{
+{//
     public partial class krediTalepleri : Form
     {
         DbConnector db = new DbConnector();

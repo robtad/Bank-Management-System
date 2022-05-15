@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BankMS.managerChildForm
-{
+{//
     public partial class musteriForm : Form
     {
         public musteriForm()

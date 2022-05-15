@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using SLRDbConnector;
 
 namespace BankMS.customerChildForm
-{
+{//
     public partial class bilgiGuncelleForm : Form
     {
         public bilgiGuncelleForm()
