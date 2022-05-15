@@ -14,7 +14,7 @@ namespace BankMS.customerChildForm
     public partial class paraGonderForm : Form
     {
         DbConnector db = new DbConnector();
-
+  
         public paraGonderForm()
         {
             InitializeComponent();

@@ -114,6 +114,7 @@
             this.btnPayLoan.TabIndex = 10;
             this.btnPayLoan.Text = "ÖDE";
             this.btnPayLoan.UseVisualStyleBackColor = false;
+            this.btnPayLoan.Click += new System.EventHandler(this.btnPayLoan_Click);
             // 
             // loanAmountTB
             // 

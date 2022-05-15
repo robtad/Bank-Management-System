@@ -86,7 +86,7 @@ namespace BankMS.tellerChildForm
                     float mortgage;
                     float totalAmount = float.Parse(creditAmountTB.Text);
                     int expiration = Int32.Parse(expirationTB.Text);
-
+                    LoanInterest /= 100;
                     mortgage = (totalAmount * LoanInterest) / (1 - (float)Math.Pow((1 + LoanInterest), -expiration));
 
                     message = db.performCRUD(@"insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,Expiration) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + expirationTB.Text + "')") + "\n";

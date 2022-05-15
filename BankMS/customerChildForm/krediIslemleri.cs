@@ -93,6 +93,11 @@ namespace BankMS.customerChildForm
             }
         }
 
+        private void btnPayLoan_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         //
     }
