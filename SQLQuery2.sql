@@ -38,7 +38,7 @@ FROM TransactionTbl t, Payment p, Withdrawal w
 WHERE t.id = p.TransactionID AND w.PaymentID = p.id;
 
 
-SELECT TOP 5 * FROM 
+SELECT  * FROM 
 (
 	(
 	SELECT  t.id AS IşlemNo, CONVERT(varchar(10), t.AccountNo) AS Kaynak, CONVERT(varchar(10), tr.TargetAccountNO) AS Hedef, 'Para Gönderme' AS İşlem, p.Amount AS Tutar, t.Balance AS 'Kaynak Bakiye', (SELECT Balance FROM Account WHERE AccountNo = tr.TargetAccountNo) AS 'Hedef Bakiye', Date
@@ -64,3 +64,11 @@ SELECT TOP 5 * FROM
 	WHERE t.id = p.TransactionID AND w.PaymentID = p.id
 	)
 )t ORDER BY t.IşlemNo;
+
+SELECT BankDate FROM Date
+SELECT CONVERT(date, BankDate, 104) FROM Date
+
+DECLARE @date DATE = (SELECT BankDate FROM Date)
+
+INSERT INTO TransactionTbl (AccountNo, Balance, Date)
+VALUES(1000, 1, @date);

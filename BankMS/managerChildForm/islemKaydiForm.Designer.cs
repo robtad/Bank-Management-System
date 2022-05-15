@@ -33,6 +33,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelDeadLock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,12 +91,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(661, 285);
             this.dataGridView1.TabIndex = 24;
             // 
+            // labelDeadLock
+            // 
+            this.labelDeadLock.AutoSize = true;
+            this.labelDeadLock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeadLock.Location = new System.Drawing.Point(92, 471);
+            this.labelDeadLock.Name = "labelDeadLock";
+            this.labelDeadLock.Size = new System.Drawing.Size(51, 20);
+            this.labelDeadLock.TabIndex = 25;
+            this.labelDeadLock.Text = "label3";
+            // 
             // islemKaydiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(900, 600);
+            this.Controls.Add(this.labelDeadLock);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -118,5 +130,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelDeadLock;
     }
 }
