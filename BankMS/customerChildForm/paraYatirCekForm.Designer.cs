@@ -30,40 +30,35 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCheckBalance = new System.Windows.Forms.Button();
             this.accountTB = new System.Windows.Forms.TextBox();
-            this.lblBalance = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pnlDeposit = new System.Windows.Forms.Panel();
-            this.depositDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.depositCurrencyCB = new System.Windows.Forms.ComboBox();
-            this.depositAmountTB = new System.Windows.Forms.TextBox();
-            this.depositNoteTB = new System.Windows.Forms.TextBox();
-            this.depositAccountTB = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pnlWithdraw = new System.Windows.Forms.Panel();
-            this.withdrawDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.withdrawCurrencyCB = new System.Windows.Forms.ComboBox();
+            this.btnDeposit = new System.Windows.Forms.Button();
+            this.depositAmountTB = new System.Windows.Forms.TextBox();
+            this.depositAccountTB = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnWithdraw = new System.Windows.Forms.Button();
             this.withdrawAmountTB = new System.Windows.Forms.TextBox();
-            this.withdrawNoteTB = new System.Windows.Forms.TextBox();
             this.withdrawAccountTB = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnCheckBalance = new System.Windows.Forms.Button();
-            this.btnCancelDeposit = new System.Windows.Forms.Button();
-            this.btnConfirmDeposit = new System.Windows.Forms.Button();
-            this.btnConfirmWithdrawal = new System.Windows.Forms.Button();
-            this.btnCancelWithdrawal = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customerDataGrid = new System.Windows.Forms.DataGridView();
+            this.lblCurrency = new System.Windows.Forms.Label();
+            this.balanceTB = new System.Windows.Forms.TextBox();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.lblCurrencyA = new System.Windows.Forms.Label();
+            this.lblCurrencyB = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlDeposit.SuspendLayout();
             this.pnlWithdraw.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,9 +75,11 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.lblCurrency);
+            this.panel1.Controls.Add(this.balanceTB);
+            this.panel1.Controls.Add(this.lblBalance);
             this.panel1.Controls.Add(this.btnCheckBalance);
             this.panel1.Controls.Add(this.accountTB);
-            this.panel1.Controls.Add(this.lblBalance);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Location = new System.Drawing.Point(88, 48);
@@ -90,24 +87,31 @@
             this.panel1.Size = new System.Drawing.Size(753, 112);
             this.panel1.TabIndex = 2;
             // 
+            // btnCheckBalance
+            // 
+            this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCheckBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckBalance.ForeColor = System.Drawing.Color.Black;
+            this.btnCheckBalance.Location = new System.Drawing.Point(317, 55);
+            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheckBalance.Name = "btnCheckBalance";
+            this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
+            this.btnCheckBalance.TabIndex = 4;
+            this.btnCheckBalance.Text = "Göster";
+            this.btnCheckBalance.UseVisualStyleBackColor = false;
+            this.btnCheckBalance.Click += new System.EventHandler(this.btnCheckBalance_Click);
+            // 
             // accountTB
             // 
             this.accountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountTB.Location = new System.Drawing.Point(82, 61);
             this.accountTB.Name = "accountTB";
+            this.accountTB.ReadOnly = true;
             this.accountTB.Size = new System.Drawing.Size(223, 29);
             this.accountTB.TabIndex = 0;
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(601, 67);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(133, 20);
-            this.lblBalance.TabIndex = 1;
-            this.lblBalance.Text = "Hesap Bakiyem";
             // 
             // label2
             // 
@@ -134,117 +138,16 @@
             // pnlDeposit
             // 
             this.pnlDeposit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlDeposit.Controls.Add(this.btnConfirmDeposit);
-            this.pnlDeposit.Controls.Add(this.btnCancelDeposit);
-            this.pnlDeposit.Controls.Add(this.depositDatePicker);
-            this.pnlDeposit.Controls.Add(this.depositCurrencyCB);
+            this.pnlDeposit.Controls.Add(this.lblCurrencyA);
+            this.pnlDeposit.Controls.Add(this.btnDeposit);
             this.pnlDeposit.Controls.Add(this.depositAmountTB);
-            this.pnlDeposit.Controls.Add(this.depositNoteTB);
             this.pnlDeposit.Controls.Add(this.depositAccountTB);
-            this.pnlDeposit.Controls.Add(this.label10);
-            this.pnlDeposit.Controls.Add(this.label6);
             this.pnlDeposit.Controls.Add(this.label9);
             this.pnlDeposit.Controls.Add(this.label7);
             this.pnlDeposit.Location = new System.Drawing.Point(27, 219);
             this.pnlDeposit.Name = "pnlDeposit";
-            this.pnlDeposit.Size = new System.Drawing.Size(402, 311);
+            this.pnlDeposit.Size = new System.Drawing.Size(402, 125);
             this.pnlDeposit.TabIndex = 6;
-            // 
-            // depositDatePicker
-            // 
-            this.depositDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.depositDatePicker.Location = new System.Drawing.Point(143, 95);
-            this.depositDatePicker.Name = "depositDatePicker";
-            this.depositDatePicker.Size = new System.Drawing.Size(223, 22);
-            this.depositDatePicker.TabIndex = 6;
-            // 
-            // depositCurrencyCB
-            // 
-            this.depositCurrencyCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.depositCurrencyCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.depositCurrencyCB.ForeColor = System.Drawing.Color.Black;
-            this.depositCurrencyCB.FormattingEnabled = true;
-            this.depositCurrencyCB.Items.AddRange(new object[] {
-            "Lira",
-            "Dollar",
-            "Euro"});
-            this.depositCurrencyCB.Location = new System.Drawing.Point(268, 51);
-            this.depositCurrencyCB.Name = "depositCurrencyCB";
-            this.depositCurrencyCB.Size = new System.Drawing.Size(98, 25);
-            this.depositCurrencyCB.TabIndex = 5;
-            this.depositCurrencyCB.Text = "Para Birimi";
-            // 
-            // depositAmountTB
-            // 
-            this.depositAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.depositAmountTB.Location = new System.Drawing.Point(143, 50);
-            this.depositAmountTB.Name = "depositAmountTB";
-            this.depositAmountTB.Size = new System.Drawing.Size(102, 26);
-            this.depositAmountTB.TabIndex = 0;
-            // 
-            // depositNoteTB
-            // 
-            this.depositNoteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.depositNoteTB.Location = new System.Drawing.Point(143, 133);
-            this.depositNoteTB.Multiline = true;
-            this.depositNoteTB.Name = "depositNoteTB";
-            this.depositNoteTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.depositNoteTB.Size = new System.Drawing.Size(223, 97);
-            this.depositNoteTB.TabIndex = 0;
-            // 
-            // depositAccountTB
-            // 
-            this.depositAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.depositAccountTB.Location = new System.Drawing.Point(143, 7);
-            this.depositAccountTB.Name = "depositAccountTB";
-            this.depositAccountTB.Size = new System.Drawing.Size(223, 26);
-            this.depositAccountTB.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 141);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Açıklama:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 101);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Tarih:";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 58);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 20);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Mevduat Tutarı:";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Hesap Numarısı:";
             // 
             // label5
             // 
@@ -271,105 +174,116 @@
             // pnlWithdraw
             // 
             this.pnlWithdraw.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlWithdraw.Controls.Add(this.btnCancelWithdrawal);
-            this.pnlWithdraw.Controls.Add(this.btnConfirmWithdrawal);
-            this.pnlWithdraw.Controls.Add(this.withdrawDatePicker);
-            this.pnlWithdraw.Controls.Add(this.withdrawCurrencyCB);
+            this.pnlWithdraw.Controls.Add(this.lblCurrencyB);
+            this.pnlWithdraw.Controls.Add(this.btnWithdraw);
             this.pnlWithdraw.Controls.Add(this.withdrawAmountTB);
-            this.pnlWithdraw.Controls.Add(this.withdrawNoteTB);
             this.pnlWithdraw.Controls.Add(this.withdrawAccountTB);
-            this.pnlWithdraw.Controls.Add(this.label3);
-            this.pnlWithdraw.Controls.Add(this.label4);
             this.pnlWithdraw.Controls.Add(this.label11);
             this.pnlWithdraw.Controls.Add(this.label12);
             this.pnlWithdraw.Location = new System.Drawing.Point(456, 219);
             this.pnlWithdraw.Name = "pnlWithdraw";
-            this.pnlWithdraw.Size = new System.Drawing.Size(402, 311);
+            this.pnlWithdraw.Size = new System.Drawing.Size(402, 125);
             this.pnlWithdraw.TabIndex = 7;
             // 
-            // withdrawDatePicker
+            // btnDeposit
             // 
-            this.withdrawDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.withdrawDatePicker.Location = new System.Drawing.Point(143, 95);
-            this.withdrawDatePicker.Name = "withdrawDatePicker";
-            this.withdrawDatePicker.Size = new System.Drawing.Size(223, 22);
-            this.withdrawDatePicker.TabIndex = 6;
+            this.btnDeposit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeposit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.ForeColor = System.Drawing.Color.Black;
+            this.btnDeposit.Location = new System.Drawing.Point(303, 86);
+            this.btnDeposit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeposit.Name = "btnDeposit";
+            this.btnDeposit.Size = new System.Drawing.Size(75, 35);
+            this.btnDeposit.TabIndex = 10;
+            this.btnDeposit.Text = "Yatır";
+            this.btnDeposit.UseVisualStyleBackColor = false;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
-            // withdrawCurrencyCB
+            // depositAmountTB
             // 
-            this.withdrawCurrencyCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.withdrawCurrencyCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.withdrawCurrencyCB.ForeColor = System.Drawing.Color.Black;
-            this.withdrawCurrencyCB.FormattingEnabled = true;
-            this.withdrawCurrencyCB.Items.AddRange(new object[] {
-            "Lira",
-            "Dollar",
-            "Euro"});
-            this.withdrawCurrencyCB.Location = new System.Drawing.Point(268, 51);
-            this.withdrawCurrencyCB.Name = "withdrawCurrencyCB";
-            this.withdrawCurrencyCB.Size = new System.Drawing.Size(98, 25);
-            this.withdrawCurrencyCB.TabIndex = 5;
-            this.withdrawCurrencyCB.Text = "Para Birimi";
+            this.depositAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.depositAmountTB.Location = new System.Drawing.Point(155, 46);
+            this.depositAmountTB.Name = "depositAmountTB";
+            this.depositAmountTB.Size = new System.Drawing.Size(102, 26);
+            this.depositAmountTB.TabIndex = 6;
+            // 
+            // depositAccountTB
+            // 
+            this.depositAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.depositAccountTB.Location = new System.Drawing.Point(155, 7);
+            this.depositAccountTB.Name = "depositAccountTB";
+            this.depositAccountTB.ReadOnly = true;
+            this.depositAccountTB.Size = new System.Drawing.Size(223, 26);
+            this.depositAccountTB.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 54);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Mevduat Tutarı:";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(125, 20);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Hesap Numarısı:";
+            // 
+            // btnWithdraw
+            // 
+            this.btnWithdraw.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.btnWithdraw.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWithdraw.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWithdraw.ForeColor = System.Drawing.Color.Black;
+            this.btnWithdraw.Location = new System.Drawing.Point(303, 86);
+            this.btnWithdraw.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWithdraw.Name = "btnWithdraw";
+            this.btnWithdraw.Size = new System.Drawing.Size(75, 35);
+            this.btnWithdraw.TabIndex = 11;
+            this.btnWithdraw.Text = "Çek";
+            this.btnWithdraw.UseVisualStyleBackColor = false;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // withdrawAmountTB
             // 
             this.withdrawAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.withdrawAmountTB.Location = new System.Drawing.Point(143, 50);
+            this.withdrawAmountTB.Location = new System.Drawing.Point(155, 46);
             this.withdrawAmountTB.Name = "withdrawAmountTB";
             this.withdrawAmountTB.Size = new System.Drawing.Size(102, 26);
-            this.withdrawAmountTB.TabIndex = 0;
-            // 
-            // withdrawNoteTB
-            // 
-            this.withdrawNoteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.withdrawNoteTB.Location = new System.Drawing.Point(143, 133);
-            this.withdrawNoteTB.Multiline = true;
-            this.withdrawNoteTB.Name = "withdrawNoteTB";
-            this.withdrawNoteTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.withdrawNoteTB.Size = new System.Drawing.Size(223, 97);
-            this.withdrawNoteTB.TabIndex = 0;
+            this.withdrawAmountTB.TabIndex = 6;
             // 
             // withdrawAccountTB
             // 
             this.withdrawAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.withdrawAccountTB.Location = new System.Drawing.Point(143, 7);
+            this.withdrawAccountTB.Location = new System.Drawing.Point(155, 3);
             this.withdrawAccountTB.Name = "withdrawAccountTB";
+            this.withdrawAccountTB.ReadOnly = true;
             this.withdrawAccountTB.Size = new System.Drawing.Size(223, 26);
-            this.withdrawAccountTB.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Açıklama:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Tarih:";
+            this.withdrawAccountTB.TabIndex = 7;
             // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 58);
+            this.label11.Location = new System.Drawing.Point(24, 54);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 20);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 8;
             this.label11.Text = "Tutar:";
             // 
             // label12
@@ -377,91 +291,87 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 15);
+            this.label12.Location = new System.Drawing.Point(24, 11);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 20);
-            this.label12.TabIndex = 1;
+            this.label12.TabIndex = 9;
             this.label12.Text = "Hesap Numarısı:";
             // 
-            // btnCheckBalance
+            // label3
             // 
-            this.btnCheckBalance.ForeColor = System.Drawing.Color.Black;
-            this.btnCheckBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCheckBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckBalance.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCheckBalance.Text = "Göster";
-            this.btnCheckBalance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckBalance.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckBalance.Location = new System.Drawing.Point(317, 55);
-            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCheckBalance.Name = "btnCheckBalance";
-            this.btnCheckBalance.Size = new System.Drawing.Size(116, 35);
-            this.btnCheckBalance.TabIndex = 4;
-            this.btnCheckBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(71, 426);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 20);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Hesaplarim:";
             // 
-            // btnCancelDeposit
+            // customerDataGrid
             // 
-            this.btnCancelDeposit.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelDeposit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelDeposit.Text = "İptal et";
-            this.btnCancelDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelDeposit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelDeposit.Location = new System.Drawing.Point(290, 259);
-            this.btnCancelDeposit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelDeposit.Name = "btnCancelDeposit";
-            this.btnCancelDeposit.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelDeposit.TabIndex = 4;
-            this.btnCancelDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.customerDataGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.customerDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.customerDataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.customerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerDataGrid.Location = new System.Drawing.Point(170, 364);
+            this.customerDataGrid.Name = "customerDataGrid";
+            this.customerDataGrid.Size = new System.Drawing.Size(501, 166);
+            this.customerDataGrid.TabIndex = 49;
+            this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
             // 
-            // btnConfirmDeposit
+            // lblCurrency
             // 
-            this.btnConfirmDeposit.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmDeposit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmDeposit.Text = "Onayla";
-            this.btnConfirmDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmDeposit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmDeposit.Location = new System.Drawing.Point(207, 259);
-            this.btnConfirmDeposit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmDeposit.Name = "btnConfirmDeposit";
-            this.btnConfirmDeposit.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmDeposit.TabIndex = 4;
-            this.btnConfirmDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCurrency.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCurrency.AutoSize = true;
+            this.lblCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrency.Location = new System.Drawing.Point(610, 70);
+            this.lblCurrency.Name = "lblCurrency";
+            this.lblCurrency.Size = new System.Drawing.Size(53, 15);
+            this.lblCurrency.TabIndex = 20;
+            this.lblCurrency.Text = "currency";
             // 
-            // btnConfirmWithdrawal
+            // balanceTB
             // 
-            this.btnConfirmWithdrawal.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmWithdrawal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnConfirmWithdrawal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmWithdrawal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfirmWithdrawal.Text = "Onayla";
-            this.btnConfirmWithdrawal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmWithdrawal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmWithdrawal.Location = new System.Drawing.Point(207, 259);
-            this.btnConfirmWithdrawal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConfirmWithdrawal.Name = "btnConfirmWithdrawal";
-            this.btnConfirmWithdrawal.Size = new System.Drawing.Size(75, 35);
-            this.btnConfirmWithdrawal.TabIndex = 4;
-            this.btnConfirmWithdrawal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.balanceTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceTB.Location = new System.Drawing.Point(511, 64);
+            this.balanceTB.Name = "balanceTB";
+            this.balanceTB.ReadOnly = true;
+            this.balanceTB.Size = new System.Drawing.Size(93, 26);
+            this.balanceTB.TabIndex = 19;
             // 
-            // btnCancelWithdrawal
+            // lblBalance
             // 
-            this.btnCancelWithdrawal.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelWithdrawal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
-            this.btnCancelWithdrawal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelWithdrawal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelWithdrawal.Text = "İptal et";
-            this.btnCancelWithdrawal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelWithdrawal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelWithdrawal.Location = new System.Drawing.Point(290, 259);
-            this.btnCancelWithdrawal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelWithdrawal.Name = "btnCancelWithdrawal";
-            this.btnCancelWithdrawal.Size = new System.Drawing.Size(76, 35);
-            this.btnCancelWithdrawal.TabIndex = 4;
-            this.btnCancelWithdrawal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.Location = new System.Drawing.Point(507, 38);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(62, 20);
+            this.lblBalance.TabIndex = 18;
+            this.lblBalance.Text = "Bakiye";
+            // 
+            // lblCurrencyA
+            // 
+            this.lblCurrencyA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCurrencyA.AutoSize = true;
+            this.lblCurrencyA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrencyA.Location = new System.Drawing.Point(263, 54);
+            this.lblCurrencyA.Name = "lblCurrencyA";
+            this.lblCurrencyA.Size = new System.Drawing.Size(53, 15);
+            this.lblCurrencyA.TabIndex = 21;
+            this.lblCurrencyA.Text = "currency";
+            // 
+            // lblCurrencyB
+            // 
+            this.lblCurrencyB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCurrencyB.AutoSize = true;
+            this.lblCurrencyB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrencyB.Location = new System.Drawing.Point(263, 52);
+            this.lblCurrencyB.Name = "lblCurrencyB";
+            this.lblCurrencyB.Size = new System.Drawing.Size(53, 15);
+            this.lblCurrencyB.TabIndex = 21;
+            this.lblCurrencyB.Text = "currency";
             // 
             // paraYatirCekForm
             // 
@@ -469,6 +379,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(890, 542);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.customerDataGrid);
             this.Controls.Add(this.pnlWithdraw);
             this.Controls.Add(this.pnlDeposit);
             this.Controls.Add(this.panel1);
@@ -484,6 +396,7 @@
             this.pnlDeposit.PerformLayout();
             this.pnlWithdraw.ResumeLayout(false);
             this.pnlWithdraw.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,39 +408,28 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox accountTB;
         private System.Windows.Forms.Label label2;
-        //private Bunifu.Framework.UI.BunifuThinButton2 btnCheckBalance;
-        private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Panel pnlDeposit;
-        //private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmDeposit;
-        private System.Windows.Forms.TextBox depositAccountTB;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox depositAmountTB;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox depositCurrencyCB;
-        private System.Windows.Forms.DateTimePicker depositDatePicker;
-        //private Bunifu.Framework.UI.BunifuThinButton2 btnCancelDeposit;
-        private System.Windows.Forms.TextBox depositNoteTB;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel pnlWithdraw;
-        private System.Windows.Forms.DateTimePicker withdrawDatePicker;
-        private System.Windows.Forms.ComboBox withdrawCurrencyCB;
-       // private Bunifu.Framework.UI.BunifuThinButton2 btnCancelWithdrawal;
-        //private Bunifu.Framework.UI.BunifuThinButton2 btnConfirmWithdrawal;
-        private System.Windows.Forms.TextBox withdrawAmountTB;
-        private System.Windows.Forms.TextBox withdrawNoteTB;
-        private System.Windows.Forms.TextBox withdrawAccountTB;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnCheckBalance;
-        private System.Windows.Forms.Button btnConfirmDeposit;
-        private System.Windows.Forms.Button btnCancelDeposit;
-        private System.Windows.Forms.Button btnCancelWithdrawal;
-        private System.Windows.Forms.Button btnConfirmWithdrawal;
+        private System.Windows.Forms.Button btnDeposit;
+        private System.Windows.Forms.TextBox depositAmountTB;
+        private System.Windows.Forms.TextBox depositAccountTB;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnWithdraw;
+        private System.Windows.Forms.TextBox withdrawAmountTB;
+        private System.Windows.Forms.TextBox withdrawAccountTB;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView customerDataGrid;
+        private System.Windows.Forms.Label lblCurrency;
+        private System.Windows.Forms.TextBox balanceTB;
+        private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.Label lblCurrencyA;
+        private System.Windows.Forms.Label lblCurrencyB;
     }
 }

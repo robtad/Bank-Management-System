@@ -107,6 +107,12 @@
     <Compile Include="tellerChildForm\hesaplarForm.Designer.cs">
       <DependentUpon>hesaplarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="tellerChildForm\krediTalepleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tellerChildForm\krediTalepleri.Designer.cs">
+      <DependentUpon>krediTalepleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="tellerChildForm\musteriIslemlerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </Compile>
     <EmbeddedResource Include="tellerChildForm\hesaplarForm.resx">
       <DependentUpon>hesaplarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tellerChildForm\krediTalepleri.resx">
+      <DependentUpon>krediTalepleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tellerChildForm\musteriIslemlerForm.resx">
       <DependentUpon>musteriIslemlerForm.cs</DependentUpon>

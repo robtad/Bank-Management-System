@@ -117,18 +117,15 @@ namespace BankMS.customerChildForm
 
              
         int index;
-        private void customerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void customerDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-                index = e.RowIndex;
-                DataGridViewRow row = customerDataGrid.Rows[index];
-                AccNumberTB.Text = row.Cells[1].Value.ToString();
-                accountTB.Text = row.Cells[1].Value.ToString();
-               
-
-            
+            index = e.RowIndex;
+            DataGridViewRow row = customerDataGrid.Rows[index];
+            AccNumberTB.Text = row.Cells[1].Value.ToString();
+            accountTB.Text = row.Cells[1].Value.ToString();
         }
 
-        
+        //
     }
 }

@@ -61,18 +61,18 @@
             this.customerDataGrid2.Name = "customerDataGrid2";
             this.customerDataGrid2.Size = new System.Drawing.Size(361, 159);
             this.customerDataGrid2.TabIndex = 20;
-            this.customerDataGrid2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid2_CellContentClick);
+            this.customerDataGrid2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid2_CellClick);
             // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(479, 36);
+            this.label8.Location = new System.Drawing.Point(446, 36);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(350, 25);
+            this.label8.Size = new System.Drawing.Size(400, 25);
             this.label8.TabIndex = 18;
-            this.label8.Text = "MEVCÜT HESAP SİLME TALEBİ";
+            this.label8.Text = "MEVCÜT HESAP SİLME TALEBİLERİ";
             // 
             // customerDataGrid
             // 
@@ -84,7 +84,7 @@
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.Size = new System.Drawing.Size(361, 159);
             this.customerDataGrid.TabIndex = 23;
-            this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
+            this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
             // 
             // label5
             // 
@@ -93,9 +93,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(50, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(305, 25);
+            this.label5.Size = new System.Drawing.Size(355, 25);
             this.label5.TabIndex = 24;
-            this.label5.Text = "YENİ HESAP AÇMA TALEBİ";
+            this.label5.Text = "YENİ HESAP AÇMA TALEBİLERİ";
             // 
             // panel2
             // 
@@ -150,6 +150,7 @@
             this.CurrencyTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrencyTB.Location = new System.Drawing.Point(132, 56);
             this.CurrencyTB.Name = "CurrencyTB";
+            this.CurrencyTB.ReadOnly = true;
             this.CurrencyTB.Size = new System.Drawing.Size(158, 26);
             this.CurrencyTB.TabIndex = 71;
             // 
@@ -180,6 +181,7 @@
             this.CustomerIdNewTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerIdNewTB.Location = new System.Drawing.Point(132, 15);
             this.CustomerIdNewTB.Name = "CustomerIdNewTB";
+            this.CustomerIdNewTB.ReadOnly = true;
             this.CustomerIdNewTB.Size = new System.Drawing.Size(158, 26);
             this.CustomerIdNewTB.TabIndex = 67;
             // 
@@ -218,6 +220,7 @@
             this.AccountNoTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountNoTB.Location = new System.Drawing.Point(132, 56);
             this.AccountNoTB.Name = "AccountNoTB";
+            this.AccountNoTB.ReadOnly = true;
             this.AccountNoTB.Size = new System.Drawing.Size(158, 26);
             this.AccountNoTB.TabIndex = 71;
             // 
@@ -248,6 +251,7 @@
             this.CustomerIdDeleteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerIdDeleteTB.Location = new System.Drawing.Point(132, 15);
             this.CustomerIdDeleteTB.Name = "CustomerIdDeleteTB";
+            this.CustomerIdDeleteTB.ReadOnly = true;
             this.CustomerIdDeleteTB.Size = new System.Drawing.Size(158, 26);
             this.CustomerIdDeleteTB.TabIndex = 67;
             // 

@@ -346,7 +346,7 @@
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.Size = new System.Drawing.Size(1023, 232);
             this.customerDataGrid.TabIndex = 14;
-            this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
+            this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
             // 
             // TellerId
             // 

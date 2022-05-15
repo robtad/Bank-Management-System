@@ -49,5 +49,10 @@ namespace BankMS
             obj.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadForm(new tellerChildForm.krediTalepleri());
+        }
     }
 }

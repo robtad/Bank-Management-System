@@ -58,7 +58,8 @@ namespace BankMS.customerChildForm
         int Key = 0;
         string tc;
         int index;
-        private void customerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void customerDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
             DataGridViewRow row = customerDataGrid.Rows[index];
@@ -70,7 +71,7 @@ namespace BankMS.customerChildForm
             GenderCB.SelectedItem = row.Cells[5].Value.ToString();
             EmailTB.Text = row.Cells[6].Value.ToString();
             PasswordTB.Text = row.Cells[14].Value.ToString();
-            
+
 
             if (FirstNameTB.Text == "")
             {
@@ -81,9 +82,8 @@ namespace BankMS.customerChildForm
                 Key = Convert.ToInt32(row.Cells[0].Value.ToString());
                 tc = row.Cells[0].Value.ToString();
 
-                
-            }
 
+            }
         }
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
@@ -125,5 +125,7 @@ namespace BankMS.customerChildForm
 
 
         }
+
+       //
     }
 }
