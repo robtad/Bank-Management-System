@@ -150,6 +150,7 @@
             this.CurrencyTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrencyTB.Location = new System.Drawing.Point(132, 56);
             this.CurrencyTB.Name = "CurrencyTB";
+            this.CurrencyTB.ReadOnly = true;
             this.CurrencyTB.Size = new System.Drawing.Size(158, 26);
             this.CurrencyTB.TabIndex = 71;
             // 
@@ -180,6 +181,7 @@
             this.CustomerIdNewTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerIdNewTB.Location = new System.Drawing.Point(132, 15);
             this.CustomerIdNewTB.Name = "CustomerIdNewTB";
+            this.CustomerIdNewTB.ReadOnly = true;
             this.CustomerIdNewTB.Size = new System.Drawing.Size(158, 26);
             this.CustomerIdNewTB.TabIndex = 67;
             // 
@@ -218,6 +220,7 @@
             this.AccountNoTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountNoTB.Location = new System.Drawing.Point(132, 56);
             this.AccountNoTB.Name = "AccountNoTB";
+            this.AccountNoTB.ReadOnly = true;
             this.AccountNoTB.Size = new System.Drawing.Size(158, 26);
             this.AccountNoTB.TabIndex = 71;
             // 
@@ -248,6 +251,7 @@
             this.CustomerIdDeleteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerIdDeleteTB.Location = new System.Drawing.Point(132, 15);
             this.CustomerIdDeleteTB.Name = "CustomerIdDeleteTB";
+            this.CustomerIdDeleteTB.ReadOnly = true;
             this.CustomerIdDeleteTB.Size = new System.Drawing.Size(158, 26);
             this.CustomerIdDeleteTB.TabIndex = 67;
             // 
