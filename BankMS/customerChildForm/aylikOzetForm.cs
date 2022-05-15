@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,14 +11,54 @@ using SLRDbConnector;
 
 namespace BankMS.customerChildForm
 {
-    public partial class aylikOzetForm : Form
-    {
-        DbConnector db = new DbConnector();
-       
+	public partial class aylikOzetForm : Form
+	{
+		public aylikOzetForm()
+		{
+			InitializeComponent();
+		}
 
-        public aylikOzetForm()
+		DbConnector db = new DbConnector();
+
+		private void aylikOzetForm_Load(object sender, EventArgs e)
+		{
+			showTransactions();
+		}
+
+		private void showTransactions()
+		{
+			paraGonder();
+			borcOdeme();
+			paraYatir();
+			paraCek();
+		}
+
+		private void paraGonder()
         {
-            InitializeComponent();
-        }
-    }
+			db.fillDataGridView(@"SELECT t.id, t.AccountNo AS Kaynak, tr.TargetAccountNo AS Hedef, t.Balance AS Bakiye, p.Amount AS Tutar, Currency, t.Date
+								FROM TransactionTbl t, Payment p, TransferTbl tr
+								WHERE t.id = p.TransactionID AND tr.PaymentID = p.id", dataGridViewParaGonder);
+		}
+
+		private void borcOdeme()
+        {
+			db.fillDataGridView(@"SELECT t.id, t.AccountNo, p.Amount, t.Balance, Date
+								FROM TransactionTbl t, Payment p, LoanRepayment l
+								WHERE t.id = p.TransactionID AND l.PaymentID = p.id", dataGridViewBorc);
+		}
+
+		private void paraYatir()
+        {
+			db.fillDataGridView(@"SELECT t.id, t.AccountNo, p.Amount, t.Balance, Date
+								FROM TransactionTbl t, Payment p, Deposit d
+								WHERE t.id = p.TransactionID AND d.PaymentID = p.id", dataGridViewYatir);
+		}
+
+		private void paraCek()
+		{
+			db.fillDataGridView(@"SELECT t.id, t.AccountNo, p.Amount, t.Balance, Date
+								FROM TransactionTbl t, Payment p, Withdrawal w
+								WHERE t.id = p.TransactionID AND w.PaymentID = p.id", dataGridViewCek);
+		}
+	}
 }
