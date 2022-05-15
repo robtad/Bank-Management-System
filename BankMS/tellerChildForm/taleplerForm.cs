@@ -214,13 +214,13 @@ namespace BankMS.tellerChildForm
             }
         }
 
-        private int checkBalance()
+        private float checkBalance()
         {
             string balance;
             db.getSingleValue("select Balance from Account where AccountNo = '" + AccountNoTB.Text + "'", out balance, 0);
             //MessageBox.Show(balance);
-            int balanceInt;
-            balanceInt = Convert.ToInt32(balance);
+            float balanceInt;
+            balanceInt = float.Parse(balance);
            
             return balanceInt;
         }
