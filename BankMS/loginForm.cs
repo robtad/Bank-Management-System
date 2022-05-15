@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Configuration;
 
 namespace BankMS
 {
@@ -20,8 +20,8 @@ namespace BankMS
         }
         public static string userId = "";
         public static string userPassword = "";
-        
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30");
+        private static string ConnectionString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        SqlConnection Con = new SqlConnection(ConnectionString);
         private void resetLabel_Click(object sender, EventArgs e)
         {
             userNameTB.Text = "";
@@ -86,14 +86,14 @@ namespace BankMS
             }
             else if (roleCB.SelectedIndex == 0)//for manager
             {
-                string query = "SELECT COUNT(*) FROM ManagerTbl WHERE mName = @username AND mPassword = @password ";
+                string query = "SELECT COUNT(*) FROM ManagerLogin WHERE TCKN = @username AND Password = @password ";
                 managerForm obj = new managerForm();
                 login_check(query, obj);
 
             }
             else if (roleCB.SelectedIndex == 1)//for teller (bank clerk)
             {
-                string query = "SELECT COUNT(*) FROM ClerkTbl WHERE tId = @username AND tPassword = @password ";
+                string query = "SELECT COUNT(*) FROM TellerLogin WHERE TCKN = @username AND Password = @password ";
                 tellerForm obj = new tellerForm();
                 login_check(query, obj);
             }
