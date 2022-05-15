@@ -1,3 +1,4 @@
+<!-- Change this file name to App.config then change the connectionString to your own DB -->
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
 	<configSections>
@@ -5,10 +6,6 @@
  <connectionStrings>
   <add name="ConnString" connectionString="Data Source=DESKTOP-LP6V62U;Initial Catalog=BankDB;Integrated Security=True;"
    providerName="System.Data.SqlClient" />
-	 
-	 <add name="ConnStringRob" connectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RobTad\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30"    
-		  providerName="System.Data.SqlClient" />
-	 
  </connectionStrings>
     <startup> 
         <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />

@@ -32,11 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelMusteriSayisi = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelHesapSayisi = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -87,22 +87,26 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LimeGreen;
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.labelMusteriSayisi);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 200);
             this.panel3.TabIndex = 1;
             // 
-            // label3
+            // labelMusteriSayisi
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 25);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "musteriSayisi";
+            this.labelMusteriSayisi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelMusteriSayisi.AutoSize = true;
+            this.labelMusteriSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMusteriSayisi.Location = new System.Drawing.Point(74, 113);
+            this.labelMusteriSayisi.Name = "labelMusteriSayisi";
+            this.labelMusteriSayisi.Size = new System.Drawing.Size(140, 25);
+            this.labelMusteriSayisi.TabIndex = 13;
+            this.labelMusteriSayisi.Text = "musteriSayisi";
+            this.labelMusteriSayisi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -128,22 +132,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.labelHesapSayisi);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Location = new System.Drawing.Point(209, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 200);
             this.panel2.TabIndex = 0;
             // 
-            // label7
+            // labelHesapSayisi
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 113);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 25);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "hesapSayisi";
+            this.labelHesapSayisi.AutoSize = true;
+            this.labelHesapSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHesapSayisi.Location = new System.Drawing.Point(85, 113);
+            this.labelHesapSayisi.Name = "labelHesapSayisi";
+            this.labelHesapSayisi.Size = new System.Drawing.Size(129, 25);
+            this.labelHesapSayisi.TabIndex = 13;
+            this.labelHesapSayisi.Text = "hesapSayisi";
+            this.labelHesapSayisi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -189,11 +194,10 @@
             // 
             // labelTemsilciSayisi
             // 
-            this.labelTemsilciSayisi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTemsilciSayisi.AutoSize = true;
             this.labelTemsilciSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTemsilciSayisi.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.labelTemsilciSayisi.Location = new System.Drawing.Point(24, 113);
+            this.labelTemsilciSayisi.Location = new System.Drawing.Point(76, 113);
             this.labelTemsilciSayisi.Name = "labelTemsilciSayisi";
             this.labelTemsilciSayisi.Size = new System.Drawing.Size(142, 25);
             this.labelTemsilciSayisi.TabIndex = 13;
@@ -265,8 +269,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelMusteriSayisi;
+        private System.Windows.Forms.Label labelHesapSayisi;
         private System.Windows.Forms.Label labelTemsilciSayisi;
     }
 }

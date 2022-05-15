@@ -20,6 +20,12 @@ namespace BankMS.managerChildForm
 
         DbConnector db = new DbConnector();
 
+        private void dovizForm_Load(object sender, EventArgs e)
+        {
+            getValue();
+            clearTextBoxes();
+        }
+
         private void getValue()
         {
             db.fillDataGridView("select * from Currency", dataGridView1);
@@ -33,25 +39,15 @@ namespace BankMS.managerChildForm
             {
                 db.performCRUD("insert into Currency(Name, ExchangeRate) values('" + textBoxPara.Text + "','" + textBoxDeger.Text + "')");
                 getValue();
+                clearTextBoxes();
             }
-        }
-
-        private void dovizForm_Load(object sender, EventArgs e)
-        {
-            getValue();
-            db.FillCombobox("select name from Currency", comboBox1);
-        }
-
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            textBoxPara.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            textBoxDeger.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             db.performCRUD("delete from Currency where name = '" + textBoxPara.Text + "'");
             getValue();
+            clearTextBoxes();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -62,7 +58,20 @@ namespace BankMS.managerChildForm
             {
                 db.performCRUD("update Currency set ExchangeRate = '" + textBoxDeger.Text + "' where name = '" + textBoxPara.Text + "'");
                 getValue();
+                clearTextBoxes();
             }
+        }
+
+        private void clearTextBoxes()
+        {
+            textBoxPara.Text = string.Empty;
+            textBoxDeger.Text = string.Empty;
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxPara.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            textBoxDeger.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }

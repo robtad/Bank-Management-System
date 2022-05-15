@@ -40,7 +40,6 @@
             this.btnEkle = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,7 +57,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -79,9 +77,9 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(351, 186);
+            this.dataGridView1.Size = new System.Drawing.Size(288, 186);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // panel2
             // 
@@ -150,7 +148,7 @@
             this.btnEkle.FlatAppearance.BorderSize = 0;
             this.btnEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEkle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEkle.Location = new System.Drawing.Point(384, 21);
+            this.btnEkle.Location = new System.Drawing.Point(384, 6);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(94, 29);
             this.btnEkle.TabIndex = 20;
@@ -164,7 +162,7 @@
             this.btnGuncelle.FlatAppearance.BorderSize = 0;
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuncelle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuncelle.Location = new System.Drawing.Point(384, 63);
+            this.btnGuncelle.Location = new System.Drawing.Point(384, 79);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(94, 29);
             this.btnGuncelle.TabIndex = 18;
@@ -178,21 +176,13 @@
             this.btnSil.FlatAppearance.BorderSize = 0;
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSil.Location = new System.Drawing.Point(492, 21);
+            this.btnSil.Location = new System.Drawing.Point(384, 42);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(94, 29);
             this.btnSil.TabIndex = 19;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(430, 282);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
             // 
             // dovizForm
             // 
@@ -228,6 +218,5 @@
         private System.Windows.Forms.TextBox textBoxDeger;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

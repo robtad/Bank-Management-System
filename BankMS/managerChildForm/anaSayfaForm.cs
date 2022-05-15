@@ -23,10 +23,17 @@ namespace BankMS.managerChildForm
 
         private void anaSayfaForm_Load(object sender, EventArgs e)
         {
-            string temp;
-            db.getSingleValue("SELECT COUNT(id) FROM Teller", out temp, 0);
-            labelTemsilciSayisi.Text = temp;
-            //Normal connection to DB
+            string musteri, temsilci, hesap;
+
+            db.getSingleValue("SELECT COUNT(TCKN) FROM Teller", out temsilci, 0);
+            db.getSingleValue("SELECT COUNT(TCKN) FROM Customer", out musteri, 0);
+            db.getSingleValue("SELECT COUNT(AccountNo) FROM Account", out hesap, 0);
+
+            labelTemsilciSayisi.Text = temsilci;
+            labelMusteriSayisi.Text = musteri;
+            labelHesapSayisi.Text = hesap;
+
+            // The old connection to DB
             /*
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-LP6V62U;Initial Catalog=BankDB;Integrated Security=True");
             con.Open();
