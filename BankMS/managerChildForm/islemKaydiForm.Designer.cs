@@ -34,6 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelDeadLock = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.deadlocksayisi = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +98,41 @@
             // 
             this.labelDeadLock.AutoSize = true;
             this.labelDeadLock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDeadLock.Location = new System.Drawing.Point(92, 471);
+            this.labelDeadLock.Location = new System.Drawing.Point(226, 471);
             this.labelDeadLock.Name = "labelDeadLock";
-            this.labelDeadLock.Size = new System.Drawing.Size(51, 20);
+            this.labelDeadLock.Size = new System.Drawing.Size(129, 20);
             this.labelDeadLock.TabIndex = 25;
-            this.labelDeadLock.Text = "label3";
+            this.labelDeadLock.Text = "deadlockislemleri";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(90, 438);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 20);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Deadlock sayısı : ";
+            // 
+            // deadlocksayisi
+            // 
+            this.deadlocksayisi.AutoSize = true;
+            this.deadlocksayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deadlocksayisi.Location = new System.Drawing.Point(226, 438);
+            this.deadlocksayisi.Name = "deadlocksayisi";
+            this.deadlocksayisi.Size = new System.Drawing.Size(36, 20);
+            this.deadlocksayisi.TabIndex = 27;
+            this.deadlocksayisi.Text = "sayi";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(142, 471);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 20);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "İşlemler : ";
             // 
             // islemKaydiForm
             // 
@@ -107,6 +140,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(900, 600);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.deadlocksayisi);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.labelDeadLock);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
@@ -131,5 +167,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelDeadLock;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label deadlocksayisi;
+        private System.Windows.Forms.Label label5;
     }
 }

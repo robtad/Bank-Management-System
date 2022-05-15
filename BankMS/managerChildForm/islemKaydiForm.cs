@@ -31,6 +31,12 @@ namespace BankMS.managerChildForm
 			showTransactions();
 			deadlock += ")";
 			labelDeadLock.Text = deadlock;
+			int count = 0;
+			foreach (char c in deadlock)
+				if (c == '(') 
+					count++;
+			deadlocksayisi.Text = count.ToString();
+
 			//Console.WriteLine(deadlock);
 		}
 
@@ -71,8 +77,6 @@ namespace BankMS.managerChildForm
 			
 			db.fillDataGridView(query, dataGridView1);
 			sameValue(dataGridView1);
-			//FindSameValueInCellsOfDataGridView(dataGridView1);
-			//detectDeadlock();
 
 		}
 
