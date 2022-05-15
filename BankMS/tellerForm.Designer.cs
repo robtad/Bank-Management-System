@@ -38,6 +38,7 @@
             this.btnTransactions = new System.Windows.Forms.Button();
             this.btnAccounts = new System.Windows.Forms.Button();
             this.bankLogo = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bankLogo)).BeginInit();
@@ -46,9 +47,9 @@
             // centerPanel
             // 
             this.centerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.centerPanel.Location = new System.Drawing.Point(215, 0);
+            this.centerPanel.Location = new System.Drawing.Point(213, 0);
             this.centerPanel.Name = "centerPanel";
-            this.centerPanel.Size = new System.Drawing.Size(616, 483);
+            this.centerPanel.Size = new System.Drawing.Size(618, 483);
             this.centerPanel.TabIndex = 3;
             // 
             // sidePanel
@@ -61,7 +62,7 @@
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(215, 483);
+            this.sidePanel.Size = new System.Drawing.Size(213, 483);
             this.sidePanel.TabIndex = 2;
             // 
             // btnLogout
@@ -96,13 +97,14 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.button1);
             this.menuPanel.Controls.Add(this.btnRequests);
             this.menuPanel.Controls.Add(this.btnTransactions);
             this.menuPanel.Controls.Add(this.btnAccounts);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(215, 171);
+            this.menuPanel.Size = new System.Drawing.Size(213, 171);
             this.menuPanel.TabIndex = 9;
             // 
             // btnRequests
@@ -174,6 +176,25 @@
             this.bankLogo.TabIndex = 2;
             this.bankLogo.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(190)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::BankMS.Properties.Resources.request2Icon;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 35);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "KREDİ TALEPLERİ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tellerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,5 +223,6 @@
         private System.Windows.Forms.Button btnTransactions;
         private System.Windows.Forms.Button btnAccounts;
         private System.Windows.Forms.PictureBox bankLogo;
+        private System.Windows.Forms.Button button1;
     }
 }
