@@ -27,8 +27,7 @@ namespace BankMS.managerChildForm
 
             db.getSingleValue("SELECT COUNT(TCKN) FROM Teller", out temsilci, 0);
             db.getSingleValue("SELECT COUNT(TCKN) FROM Customer", out musteri, 0);
-            //db.getSingleValue("SELECT COUNT(AccountN0) FROM Account", out hesap, 0);
-            hesap = "Hesap Bulunamadi";
+            db.getSingleValue("SELECT COUNT(AccountNo) FROM Account", out hesap, 0);
 
             labelTemsilciSayisi.Text = temsilci;
             labelMusteriSayisi.Text = musteri;
