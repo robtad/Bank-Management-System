@@ -84,7 +84,7 @@
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.Size = new System.Drawing.Size(1023, 131);
             this.customerDataGrid.TabIndex = 57;
-            this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
+            this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
             // 
             // pnlCheckBalance
             // 

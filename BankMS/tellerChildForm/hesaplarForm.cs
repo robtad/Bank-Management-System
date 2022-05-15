@@ -72,8 +72,9 @@ namespace BankMS.tellerChildForm
 
                     }
 
-                    
-                    db.getSingleValue("select AccountNo from Account; select scope_identity();", out AccNum, 0);
+                    db.getSingleValue("SELECT IDENT_CURRENT('Account')", out AccNum, 0);
+
+                    //db.getSingleValue("select AccountNo from Account; select scope_identity();", out AccNum, 0);
 
 
                     message += db.performCRUD(@"insert into CustomerAccounts(CustomerTCKN,AccountNo) values ('" + CustomerIdTB.Text + "','" + AccNum + "')") + "\n";
@@ -141,7 +142,8 @@ namespace BankMS.tellerChildForm
         int acc;
         string tc;
         int index;
-        private void customerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void customerDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
             DataGridViewRow row = customerDataGrid.Rows[index];
@@ -152,7 +154,7 @@ namespace BankMS.tellerChildForm
             AddressTB.Text = row.Cells[4].Value.ToString();
             GenderCB.SelectedItem = row.Cells[5].Value.ToString();
             EmailTB.Text = row.Cells[6].Value.ToString();
-            PasswordTB.Text = row.Cells[14].Value.ToString();           
+            PasswordTB.Text = row.Cells[14].Value.ToString();
             CurrencyCB.SelectedItem = row.Cells[11].Value.ToString();
 
 
@@ -161,17 +163,15 @@ namespace BankMS.tellerChildForm
             if (FirstNameTB.Text == "")
             {
                 Key = 0;
-                
+
             }
             else
             {
-                Key =  Convert.ToInt32(row.Cells[0].Value.ToString());
+                Key = Convert.ToInt32(row.Cells[0].Value.ToString());
                 acc = Convert.ToInt32(row.Cells[10].Value.ToString());
                 tc = row.Cells[0].Value.ToString();
 
             }
-
-
 
         }
 
@@ -214,9 +214,6 @@ namespace BankMS.tellerChildForm
             }
         }
 
-
-
-
-
+       //
     }
 }

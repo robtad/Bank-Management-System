@@ -33,6 +33,7 @@
             this.AccNumberTB = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.pnlCheckBalance = new System.Windows.Forms.Panel();
+            this.lblCurrency = new System.Windows.Forms.Label();
             this.balanceTB = new System.Windows.Forms.TextBox();
             this.btnCheckBalance = new System.Windows.Forms.Button();
             this.accountTB = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.customerDataGrid = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblCurrency = new System.Windows.Forms.Label();
             this.pnlDeleteAcc.SuspendLayout();
             this.pnlCheckBalance.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -117,6 +117,17 @@
             this.pnlCheckBalance.Name = "pnlCheckBalance";
             this.pnlCheckBalance.Size = new System.Drawing.Size(753, 112);
             this.pnlCheckBalance.TabIndex = 11;
+            // 
+            // lblCurrency
+            // 
+            this.lblCurrency.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCurrency.AutoSize = true;
+            this.lblCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrency.Location = new System.Drawing.Point(637, 70);
+            this.lblCurrency.Name = "lblCurrency";
+            this.lblCurrency.Size = new System.Drawing.Size(53, 15);
+            this.lblCurrency.TabIndex = 17;
+            this.lblCurrency.Text = "currency";
             // 
             // balanceTB
             // 
@@ -291,7 +302,7 @@
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.Size = new System.Drawing.Size(361, 166);
             this.customerDataGrid.TabIndex = 15;
-            this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
+            this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
             // 
             // label3
             // 
@@ -303,17 +314,6 @@
             this.label3.Size = new System.Drawing.Size(93, 20);
             this.label3.TabIndex = 48;
             this.label3.Text = "Hesaplarim:";
-            // 
-            // lblCurrency
-            // 
-            this.lblCurrency.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCurrency.AutoSize = true;
-            this.lblCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrency.Location = new System.Drawing.Point(637, 70);
-            this.lblCurrency.Name = "lblCurrency";
-            this.lblCurrency.Size = new System.Drawing.Size(53, 15);
-            this.lblCurrency.TabIndex = 17;
-            this.lblCurrency.Text = "currency";
             // 
             // hesapTalepleriForm
             // 

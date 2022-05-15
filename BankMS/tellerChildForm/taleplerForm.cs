@@ -54,7 +54,8 @@ namespace BankMS.tellerChildForm
         int index;
         int key1;
         int key2;
-        private void customerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       
+        private void customerDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
             DataGridViewRow row = customerDataGrid.Rows[index];
@@ -72,11 +73,10 @@ namespace BankMS.tellerChildForm
                 key1 = Convert.ToInt32(row.Cells[0].Value.ToString());
 
             }
-
         }
 
-
-        private void customerDataGrid2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void customerDataGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
             DataGridViewRow row = customerDataGrid2.Rows[index];
@@ -94,7 +94,6 @@ namespace BankMS.tellerChildForm
 
             }
         }
-
         private void deleteFromAccRequestTable()
         {
             if (key1 == 0)
@@ -191,7 +190,9 @@ namespace BankMS.tellerChildForm
                 {
                     message = db.performCRUD(@"insert into Account(CurrencyName) values ('" + CurrencyTB.Text + "')") + "\n";
 
-                    db.getSingleValue("select AccountNo from Account; select scope_identity();", out AccNum, 0);
+                    //db.getSingleValue("select AccountNo from Account; select scope_identity();", out AccNum, 0);
+                    db.getSingleValue("SELECT IDENT_CURRENT('Account')", out AccNum, 0);
+
 
                     message += db.performCRUD(@"insert into CustomerAccounts(CustomerTCKN,AccountNo) values ('" + CustomerIdNewTB.Text + "','" + AccNum + "')") + "\n";
 
@@ -265,9 +266,9 @@ namespace BankMS.tellerChildForm
 
 
         }
-   
-    
-    
-    
+
+        
+
+        //
     }
 }

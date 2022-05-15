@@ -61,7 +61,7 @@
             this.customerDataGrid2.Name = "customerDataGrid2";
             this.customerDataGrid2.Size = new System.Drawing.Size(361, 159);
             this.customerDataGrid2.TabIndex = 20;
-            this.customerDataGrid2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid2_CellContentClick);
+            this.customerDataGrid2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid2_CellClick);
             // 
             // label8
             // 
@@ -84,7 +84,7 @@
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.Size = new System.Drawing.Size(361, 159);
             this.customerDataGrid.TabIndex = 23;
-            this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
+            this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
             // 
             // label5
             // 

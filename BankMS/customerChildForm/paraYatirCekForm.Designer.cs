@@ -109,6 +109,7 @@
             this.accountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountTB.Location = new System.Drawing.Point(82, 61);
             this.accountTB.Name = "accountTB";
+            this.accountTB.ReadOnly = true;
             this.accountTB.Size = new System.Drawing.Size(223, 29);
             this.accountTB.TabIndex = 0;
             // 
@@ -214,6 +215,7 @@
             this.depositAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.depositAccountTB.Location = new System.Drawing.Point(155, 7);
             this.depositAccountTB.Name = "depositAccountTB";
+            this.depositAccountTB.ReadOnly = true;
             this.depositAccountTB.Size = new System.Drawing.Size(223, 26);
             this.depositAccountTB.TabIndex = 7;
             // 
@@ -269,6 +271,7 @@
             this.withdrawAccountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.withdrawAccountTB.Location = new System.Drawing.Point(155, 3);
             this.withdrawAccountTB.Name = "withdrawAccountTB";
+            this.withdrawAccountTB.ReadOnly = true;
             this.withdrawAccountTB.Size = new System.Drawing.Size(223, 26);
             this.withdrawAccountTB.TabIndex = 7;
             // 
@@ -299,7 +302,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 422);
+            this.label3.Location = new System.Drawing.Point(71, 426);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 20);
             this.label3.TabIndex = 50;
@@ -311,11 +314,11 @@
             this.customerDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customerDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.customerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerDataGrid.Location = new System.Drawing.Point(122, 364);
+            this.customerDataGrid.Location = new System.Drawing.Point(170, 364);
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.Size = new System.Drawing.Size(501, 166);
             this.customerDataGrid.TabIndex = 49;
-            this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
+            this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
             // 
             // lblCurrency
             // 
@@ -333,6 +336,7 @@
             this.balanceTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.balanceTB.Location = new System.Drawing.Point(511, 64);
             this.balanceTB.Name = "balanceTB";
+            this.balanceTB.ReadOnly = true;
             this.balanceTB.Size = new System.Drawing.Size(93, 26);
             this.balanceTB.TabIndex = 19;
             // 
