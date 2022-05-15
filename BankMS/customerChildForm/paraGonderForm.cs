@@ -122,7 +122,8 @@ namespace BankMS.customerChildForm
 
                     //write info to transaction table,payment table and withdraw table
 
-                    msg += db.performCRUD(@"insert into TransactionTbl (AccountNo,Balance) values ('" + senderAccountTB.Text + "','" + availableBalance + "')") + "\n";
+                    msg += db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
+                                            insert into TransactionTbl (AccountNo,Balance,Date) values ('" + senderAccountTB.Text + "','" + availableBalance + "',@date)") + "\n";
 
                     db.getSingleValue("SELECT IDENT_CURRENT('TransactionTbl')", out TransactionID, 0);
 

@@ -62,10 +62,10 @@ namespace BankMS.tellerChildForm
                     try
                     {
                     
-                    message = db.performCRUD(@"insert into Customer(TCKN,FirstName,LastName,Telephone,Address,Gender,Email) 
+                    message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date) insert into Customer(TCKN,FirstName,LastName,Telephone,Address,Gender,Email,DateCreated) 
                                     values('" + CustomerIdTB.Text + "','" + FirstNameTB.Text + "','" + LastNameTB.Text + "', " +
                                     "'" + PhoneTB.Text + "','" + AddressTB.Text + "','" + GenderCB.SelectedItem.ToString() + "'," +
-                                    "'" + EmailTB.Text + "')") + "\n";
+                                    "'" + EmailTB.Text + "',@date)") + "\n";
                     if (message.Contains("success"))
                     {
                         message += db.performCRUD(@"insert into Account(CurrencyName) values ('" + CurrencyCB.SelectedItem.ToString() + "')") + "\n";

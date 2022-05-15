@@ -41,8 +41,9 @@ namespace BankMS.customerChildForm
                 try
                 {
 
-                    message = db.performCRUD(@"insert into CustomerRequestAccount(CustomerTCKN,Currency) 
-                                    values('" + loginForm.userId + "','" + CurrencyCB.SelectedItem.ToString() + "')") + "\n";
+                    message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
+                                            insert into CustomerRequestAccount(CustomerTCKN,Currency, RequestDate) 
+                                            values('" + loginForm.userId + "','" + CurrencyCB.SelectedItem.ToString() + "', @date)") + "\n";
 
                     //MessageBox.Show(message);
                     MessageBox.Show("Request Has Been Sent To Your Teller Successfully!");
@@ -69,8 +70,9 @@ namespace BankMS.customerChildForm
                 try
                 {
 
-                    message = db.performCRUD(@"insert into CustomerDeleteAccount(CustomerTCKN,AccountNo) 
-                                    values('" + loginForm.userId + "','" + AccNumberTB.Text + "')") + "\n";
+                    message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
+                                            insert into CustomerDeleteAccount(CustomerTCKN,AccountNo,RequestDate) 
+                                            values('" + loginForm.userId + "','" + AccNumberTB.Text + "',@date)") + "\n";
 
                     if (message.Contains("duplicate"))
                     {

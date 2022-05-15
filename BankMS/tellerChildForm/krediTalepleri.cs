@@ -89,7 +89,7 @@ namespace BankMS.tellerChildForm
                     LoanInterest /= 100;
                     mortgage = (totalAmount * LoanInterest) / (1 - (float)Math.Pow((1 + LoanInterest), -expiration));
 
-                    message = db.performCRUD(@"insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,Expiration) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + expirationTB.Text + "')") + "\n";
+                    message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + expirationTB.Text + "',@date)") + "\n";
 
                     //MessageBox.Show(message);
 

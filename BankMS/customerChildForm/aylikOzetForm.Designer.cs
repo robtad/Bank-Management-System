@@ -162,6 +162,7 @@
             this.dataGridViewCek.Size = new System.Drawing.Size(744, 301);
             this.dataGridViewCek.TabIndex = 8;
             // 
+
             // aylikOzetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
