@@ -139,32 +139,44 @@ namespace BankMS.customerChildForm
 
                     decimal paidAmount, monthlyRemainingAmount, principal, interest;
                     paidAmount = decimal.Parse(loanAmountTB.Text);
+                    if (paidAmount < 0)
+                    {
+                        MessageBox.Show("Can't Pay Negative Amount or Zero");
+                    }
+                    else
+                    {
+
+                        monthlyRemainingAmount = monthlyPayment - paidAmount;//check this for early payment also
+                        interest = remainingPrincipal * LoanInterest;
+                        principal = monthlyPayment - interest;
+                        remainingPrincipal = remainingPrincipal - principal;
 
 
-                    monthlyRemainingAmount = monthlyPayment - paidAmount;//check this for early payment also
+                        //round off every float to 2dp
+                        monthlyPayment = Math.Round(monthlyPayment, 2);
+                        monthlyRemainingAmount = Math.Round(monthlyRemainingAmount, 2);
+                        interest = Math.Round(interest, 2);
+                        remainingPrincipal = Math.Round(remainingPrincipal, 2);
 
-                    interest = remainingPrincipal * LoanInterest;
-                    principal = monthlyPayment - interest;
-                    remainingPrincipal = remainingPrincipal - principal;
-                    //round off every float to 2dp
-                    monthlyPayment= Math.Round(monthlyPayment, 2);
-                    monthlyRemainingAmount = Math.Round(monthlyRemainingAmount, 2);
-                    interest = Math.Round(interest, 2);
-                    remainingPrincipal = Math.Round(remainingPrincipal, 2);
-                 
+                        /*
 
-                    //
+                        double denominator = 1 - Math.Pow(decimal.ToDouble(LoanInterest), -expiration);
 
-                    // message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into LoanRepaymentLog(PaidAmount,MonthlyRemainingAmount,Principal,Interest,Date) values ('" +paidAmount + "','" + monthlyRemainingAmount + "','" + principal + "','" + interest + "',@date)") + "\n";
-                    message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into LoanRepaymentLog(PaidAmount,MonthlyRemainingAmount,Principal,Interest,Date) values ('" + paidAmount + "','" + monthlyRemainingAmount + "','" + principal + "','" + interest + "',@date)") + "\n";
+                        mortgage = (totalAmount * LoanInterest) / (decimal)(denominator);
+                         */
+                        //
 
-                    message += db.performCRUD(@"update Loan set MonthlyPayment = '" + monthlyPayment + "',RemainingPrincipal = '" + remainingPrincipal + "' where CustomerTCKN = '" + loginForm.userId + "' and  id = '" + loanID + "'") + "\n";
+                        // message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into LoanRepaymentLog(PaidAmount,MonthlyRemainingAmount,Principal,Interest,Date) values ('" +paidAmount + "','" + monthlyRemainingAmount + "','" + principal + "','" + interest + "',@date)") + "\n";
+                        message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into LoanRepaymentLog(PaidAmount,MonthlyRemainingAmount,Principal,Interest,Date) values ('" + paidAmount + "','" + monthlyRemainingAmount + "','" + principal + "','" + interest + "',@date)") + "\n";
 
-                    displayCustomerInfo();
+                        message += db.performCRUD(@"update Loan set MonthlyPayment = '" + monthlyPayment + "',RemainingPrincipal = '" + remainingPrincipal + "' where CustomerTCKN = '" + loginForm.userId + "' and  id = '" + loanID + "'") + "\n";
 
-                    //message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + expirationTB.Text + "',@date)") + "\n";
+                        displayCustomerInfo();
 
-                    MessageBox.Show(message);
+                        //message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + expirationTB.Text + "',@date)") + "\n";
+
+                        MessageBox.Show(message);
+                    }
                 }
             }catch (Exception ex)
             {

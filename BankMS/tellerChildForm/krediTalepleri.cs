@@ -78,18 +78,21 @@ namespace BankMS.tellerChildForm
                 {
 
                     int id = 1;
-                    float LoanInterest, OverdueInterest;
+                    decimal LoanInterest, OverdueInterest;
                     string[] interestInfo = db.getArray("select LoanInterest, OverdueInterest from Interest where id = '" +id+ "'", 2);
-                    LoanInterest = float.Parse(interestInfo[0]);
-                    OverdueInterest = float.Parse(interestInfo[1]);
+                    LoanInterest = decimal.Parse(interestInfo[0]);
+                    OverdueInterest = decimal.Parse(interestInfo[1]);
                     
-                    float mortgage;
-                    float totalAmount = float.Parse(creditAmountTB.Text);
+                    decimal mortgage;
+                    decimal totalAmount = decimal.Parse(creditAmountTB.Text);
                     int expiration = Int32.Parse(expirationTB.Text);
                     LoanInterest /= 100;
-                    mortgage = (totalAmount * LoanInterest) / (1 - (float)Math.Pow((1 + LoanInterest), -expiration));
+                    double denominator = 1 - Math.Pow(decimal.ToDouble(LoanInterest), -expiration);
 
-                    message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,RemainingPrincipal,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + creditAmountTB.Text + "','" + expirationTB.Text + "',@date)") + "\n";
+                    mortgage = (totalAmount * LoanInterest) / (decimal)(denominator);
+
+
+                    message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,RemainingPrincipal,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + Math.Round(mortgage,2) + "','" + creditAmountTB.Text + "','" + expirationTB.Text + "',@date)") + "\n";
 
                     //MessageBox.Show(message);
 
