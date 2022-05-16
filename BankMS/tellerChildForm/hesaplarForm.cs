@@ -28,7 +28,7 @@ namespace BankMS.tellerChildForm
         private void displayCustomerInfo()
         {
 
-            db.fillDataGridView(@"SELECT c.*, tc.TellerTCKN, ca.AccountNo, a.CurrencyName,a.Balance,a.Loan,cl.Password 
+            db.fillDataGridView(@"SELECT c.*, tc.TellerTCKN, ca.AccountNo, a.CurrencyName,a.Balance,cl.Password 
                             FROM customer c
                             INNER JOIN TellerCustomer tc ON c.TCKN=tc.CustomerTCKN 
                             INNER JOIN CustomerAccounts ca ON tc.CustomerTCKN=ca.CustomerTCKN 

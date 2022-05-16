@@ -82,10 +82,12 @@ namespace BankMS.managerChildForm
 
 		string deadlock = "(";
 		DataGridViewRow lastRow = null;
-		private Random rnd = new Random();
+		//private Random rnd = new Random();
 
 		private void detectDeadlock(DataGridViewRow row1, DataGridViewRow row2)
         {
+			Random rnd = new Random();
+			Random rnd2 = new Random();
 			string targetAcc1 = row1.Cells[2].Value.ToString();
 			string sourceAcc1 = row2.Cells[1].Value.ToString();
 			string targetAcc2 = row1.Cells[1].Value.ToString();
@@ -113,9 +115,9 @@ namespace BankMS.managerChildForm
 						if (lastRow.Cells[7].Value.ToString() != row1.Cells[7].Value.ToString())
 						{
 							deadlock += ") + (";
-							Color color = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-							row1.Cells[7].Style.BackColor = color;
-							row2.Cells[7].Style.BackColor = color;
+							Color color2 = Color.FromArgb(rnd2.Next(256), rnd2.Next(256), rnd2.Next(256));
+							row1.Cells[7].Style.BackColor = color2;
+							row2.Cells[7].Style.BackColor = color2;
 						}
 					}
 				}
@@ -135,11 +137,10 @@ namespace BankMS.managerChildForm
 					
 					lastRow = row2;
 				}
-				//Console.WriteLine(deadlock);
-				
-			}
-			
 
+				//Console.WriteLine(deadlock);
+
+			}
 
 			// make datagrid to array
 			/*
@@ -174,6 +175,8 @@ namespace BankMS.managerChildForm
 
 		}
 
+		DataGridViewRow lastRow2 = null;
+
 		private void sameValue(DataGridView dgv)
 		{
 			deadlock = "(";
@@ -189,7 +192,10 @@ namespace BankMS.managerChildForm
 						{
 							if (dgv.Rows[i].Cells[7].Value.ToString() == dgv.Rows[j].Cells[7].Value.ToString())
 							{
-
+                                //if (lastRow2.Cells[7].Value != null && dgv.Cells[7].Value != null)
+                                
+								//dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+								//dgv.Rows[j].DefaultCellStyle.BackColor = Color.Red;
 								dgv.Rows[i].Cells[7].Style.BackColor = Color.Red;
 								dgv.Rows[j].Cells[7].Style.BackColor = Color.Red;
 								//Console.WriteLine(dgv.Rows[i].Cells[0].Value.ToString());
@@ -203,7 +209,12 @@ namespace BankMS.managerChildForm
 			
 		}
 
-		/*
+        private void dataGridView1_Sorted(object sender, EventArgs e)
+        {
+			sameValue(dataGridView1);
+		}
+
+        /*
 		private void FindSameValueInCellsOfDataGridView(DataGridView dgv)
 		{
 			int rowCount = dgv.Rows.Count;
@@ -233,5 +244,5 @@ namespace BankMS.managerChildForm
 			}
 		}
 		*/
-	}
+    }
 }
