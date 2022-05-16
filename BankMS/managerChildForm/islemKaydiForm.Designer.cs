@@ -93,6 +93,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(661, 285);
             this.dataGridView1.TabIndex = 24;
+            this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
             // labelDeadLock
             // 
