@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelBankaaTarihi = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -39,30 +40,32 @@
             this.dataGridPayroll = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.labelTotalKredi = new System.Windows.Forms.Label();
             this.labelTotalSalary = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.totalGider = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelBakiye = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelGelir = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelKar = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelBankaaTarihi = new System.Windows.Forms.Label();
+            this.dataGridViewKredi = new System.Windows.Forms.DataGridView();
+            this.dataGridRepayment = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayroll)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -71,6 +74,8 @@
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKredi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRepayment)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,6 +103,17 @@
             this.panel1.Size = new System.Drawing.Size(803, 788);
             this.panel1.TabIndex = 15;
             // 
+            // labelBankaaTarihi
+            // 
+            this.labelBankaaTarihi.AutoSize = true;
+            this.labelBankaaTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBankaaTarihi.Location = new System.Drawing.Point(444, 27);
+            this.labelBankaaTarihi.Name = "labelBankaaTarihi";
+            this.labelBankaaTarihi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelBankaaTarihi.Size = new System.Drawing.Size(93, 20);
+            this.labelBankaaTarihi.TabIndex = 2;
+            this.labelBankaaTarihi.Text = "BankaTarihi";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -107,6 +123,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(555, 388);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -179,58 +196,62 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.dataGridRepayment);
+            this.tabPage2.Controls.Add(this.dataGridViewKredi);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(547, 362);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Kredi";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Red;
-            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.labelTotalKredi);
             this.panel4.Controls.Add(this.labelTotalSalary);
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.totalGider);
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Location = new System.Drawing.Point(209, 68);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(170, 150);
             this.panel4.TabIndex = 0;
             // 
-            // label13
+            // labelTotalKredi
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(17, 78);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 25);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "totalCredit";
+            this.labelTotalKredi.AutoSize = true;
+            this.labelTotalKredi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalKredi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelTotalKredi.Location = new System.Drawing.Point(10, 81);
+            this.labelTotalKredi.Name = "labelTotalKredi";
+            this.labelTotalKredi.Size = new System.Drawing.Size(82, 20);
+            this.labelTotalKredi.TabIndex = 16;
+            this.labelTotalKredi.Text = "totalCredit";
             // 
             // labelTotalSalary
             // 
             this.labelTotalSalary.AutoSize = true;
-            this.labelTotalSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotalSalary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelTotalSalary.Location = new System.Drawing.Point(17, 53);
+            this.labelTotalSalary.Location = new System.Drawing.Point(10, 56);
             this.labelTotalSalary.Name = "labelTotalSalary";
-            this.labelTotalSalary.Size = new System.Drawing.Size(114, 25);
+            this.labelTotalSalary.Size = new System.Drawing.Size(84, 20);
             this.labelTotalSalary.TabIndex = 15;
             this.labelTotalSalary.Text = "totalSalary";
             // 
-            // label7
+            // totalGider
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(17, 117);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 25);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "giderAmount";
+            this.totalGider.AutoSize = true;
+            this.totalGider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalGider.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.totalGider.Location = new System.Drawing.Point(11, 117);
+            this.totalGider.Name = "totalGider";
+            this.totalGider.Size = new System.Drawing.Size(100, 20);
+            this.totalGider.TabIndex = 14;
+            this.totalGider.Text = "giderAmount";
             // 
             // panel8
             // 
@@ -256,23 +277,23 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Goldenrod;
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.labelBakiye);
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Location = new System.Drawing.Point(17, 242);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(555, 90);
             this.panel5.TabIndex = 0;
             // 
-            // label9
+            // labelBakiye
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(221, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(214, 25);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "toplamBakiyeAmount";
+            this.labelBakiye.AutoSize = true;
+            this.labelBakiye.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBakiye.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelBakiye.Location = new System.Drawing.Point(221, 32);
+            this.labelBakiye.Name = "labelBakiye";
+            this.labelBakiye.Size = new System.Drawing.Size(214, 25);
+            this.labelBakiye.TabIndex = 14;
+            this.labelBakiye.Text = "toplamBakiyeAmount";
             // 
             // panel9
             // 
@@ -298,47 +319,23 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.labelGelir);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Location = new System.Drawing.Point(17, 68);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(170, 150);
             this.panel3.TabIndex = 0;
             // 
-            // label15
+            // labelGelir
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label15.Location = new System.Drawing.Point(18, 78);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(162, 25);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "totalRepayment";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(18, 53);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(124, 25);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "totalInterest";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(18, 117);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 25);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "gelirAmount";
+            this.labelGelir.AutoSize = true;
+            this.labelGelir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGelir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelGelir.Location = new System.Drawing.Point(8, 76);
+            this.labelGelir.Name = "labelGelir";
+            this.labelGelir.Size = new System.Drawing.Size(94, 20);
+            this.labelGelir.TabIndex = 14;
+            this.labelGelir.Text = "gelirAmount";
             // 
             // panel7
             // 
@@ -364,23 +361,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LimeGreen;
-            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.labelKar);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Location = new System.Drawing.Point(402, 68);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(170, 150);
             this.panel2.TabIndex = 0;
             // 
-            // label8
+            // labelKar
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(16, 85);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 25);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "karAmount";
+            this.labelKar.AutoSize = true;
+            this.labelKar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelKar.Location = new System.Drawing.Point(16, 85);
+            this.labelKar.Name = "labelKar";
+            this.labelKar.Size = new System.Drawing.Size(87, 20);
+            this.labelKar.TabIndex = 14;
+            this.labelKar.Text = "karAmount";
             // 
             // panel6
             // 
@@ -403,16 +400,43 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Kâr";
             // 
-            // labelBankaaTarihi
+            // dataGridViewKredi
             // 
-            this.labelBankaaTarihi.AutoSize = true;
-            this.labelBankaaTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBankaaTarihi.Location = new System.Drawing.Point(444, 27);
-            this.labelBankaaTarihi.Name = "labelBankaaTarihi";
-            this.labelBankaaTarihi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.labelBankaaTarihi.Size = new System.Drawing.Size(93, 20);
-            this.labelBankaaTarihi.TabIndex = 2;
-            this.labelBankaaTarihi.Text = "BankaTarihi";
+            this.dataGridViewKredi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewKredi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKredi.Location = new System.Drawing.Point(6, 32);
+            this.dataGridViewKredi.Name = "dataGridViewKredi";
+            this.dataGridViewKredi.Size = new System.Drawing.Size(535, 144);
+            this.dataGridViewKredi.TabIndex = 3;
+            // 
+            // dataGridRepayment
+            // 
+            this.dataGridRepayment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridRepayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRepayment.Location = new System.Drawing.Point(6, 208);
+            this.dataGridRepayment.Name = "dataGridRepayment";
+            this.dataGridRepayment.Size = new System.Drawing.Size(535, 148);
+            this.dataGridRepayment.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(148, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Kredi Alan Listesi";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 182);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(169, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Kredi Ödeme Listesi";
             // 
             // genelDurumForm
             // 
@@ -432,6 +456,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayroll)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -448,6 +474,8 @@
             this.panel2.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKredi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRepayment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,10 +497,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label totalGider;
+        private System.Windows.Forms.Label labelBakiye;
+        private System.Windows.Forms.Label labelGelir;
+        private System.Windows.Forms.Label labelKar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label11;
@@ -482,9 +510,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelTotalSalary;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label labelTotalKredi;
         private System.Windows.Forms.Label labelBankaaTarihi;
+        private System.Windows.Forms.DataGridView dataGridViewKredi;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridRepayment;
     }
 }
