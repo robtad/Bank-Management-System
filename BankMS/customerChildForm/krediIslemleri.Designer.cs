@@ -30,6 +30,8 @@
         {
             this.label8 = new System.Windows.Forms.Label();
             this.pnlLoanPayment = new System.Windows.Forms.Panel();
+            this.loanIdTB = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblCurrencyB = new System.Windows.Forms.Label();
             this.btnPayLoan = new System.Windows.Forms.Button();
             this.loanAmountTB = new System.Windows.Forms.TextBox();
@@ -56,17 +58,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.customerDataGrid = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.customerDataGrid2 = new System.Windows.Forms.DataGridView();
-            this.loanIdTB = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlLoanPayment.SuspendLayout();
             this.pnlCreditRequest.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +96,25 @@
             this.pnlLoanPayment.Name = "pnlLoanPayment";
             this.pnlLoanPayment.Size = new System.Drawing.Size(402, 146);
             this.pnlLoanPayment.TabIndex = 13;
+            // 
+            // loanIdTB
+            // 
+            this.loanIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanIdTB.Location = new System.Drawing.Point(155, 51);
+            this.loanIdTB.Name = "loanIdTB";
+            this.loanIdTB.Size = new System.Drawing.Size(102, 26);
+            this.loanIdTB.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 20);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Borç ID:";
             // 
             // lblCurrencyB
             // 
@@ -219,9 +238,9 @@
             this.lblCurrencyA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrencyA.Location = new System.Drawing.Point(263, 67);
             this.lblCurrencyA.Name = "lblCurrencyA";
-            this.lblCurrencyA.Size = new System.Drawing.Size(53, 15);
+            this.lblCurrencyA.Size = new System.Drawing.Size(24, 15);
             this.lblCurrencyA.TabIndex = 21;
-            this.lblCurrencyA.Text = "currency";
+            this.lblCurrencyA.Text = "lira";
             // 
             // btnCreditRequest
             // 
@@ -406,17 +425,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hesaplarım";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.customerDataGrid2);
-            this.groupBox2.Location = new System.Drawing.Point(304, 393);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(565, 162);
-            this.groupBox2.TabIndex = 54;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kredi Borçlarım";
-            // 
             // customerDataGrid
             // 
             this.customerDataGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -429,6 +437,17 @@
             this.customerDataGrid.TabIndex = 53;
             this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.customerDataGrid2);
+            this.groupBox2.Location = new System.Drawing.Point(304, 393);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(565, 162);
+            this.groupBox2.TabIndex = 54;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Kredi Borçlarım";
+            // 
             // customerDataGrid2
             // 
             this.customerDataGrid2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -440,25 +459,6 @@
             this.customerDataGrid2.Size = new System.Drawing.Size(551, 130);
             this.customerDataGrid2.TabIndex = 53;
             this.customerDataGrid2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid2_CellClick);
-            // 
-            // loanIdTB
-            // 
-            this.loanIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loanIdTB.Location = new System.Drawing.Point(155, 51);
-            this.loanIdTB.Name = "loanIdTB";
-            this.loanIdTB.Size = new System.Drawing.Size(102, 26);
-            this.loanIdTB.TabIndex = 24;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 20);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Borç ID:";
             // 
             // krediIslemleri
             // 
@@ -484,8 +484,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

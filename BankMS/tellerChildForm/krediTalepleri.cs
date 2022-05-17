@@ -24,7 +24,7 @@ namespace BankMS.tellerChildForm
         private void displayNewAccInfo()
         {
 
-            db.fillDataGridView(@"SELECT rl.id, rl.CustomerTCKN, rl.Amount,rl.Expiration, rl.RequestDate 
+            db.fillDataGridView(@"SELECT rl.* 
                             FROM RequestLoan rl
                             INNER JOIN TellerCustomer tc ON rl.CustomerTCKN = tc.CustomerTCKN 
                             WHERE tc.TellerTCKN = '" + loginForm.userId + "'", customerDataGrid);
@@ -35,6 +35,7 @@ namespace BankMS.tellerChildForm
             CustomerIdTB.Text = "";
             creditAmountTB.Text = "";
             expirationTB.Text = "";
+            creditAccountTB.Text = "";
         }
         private void deleteFromAccRequestTable()
         {
@@ -97,6 +98,52 @@ namespace BankMS.tellerChildForm
 
                     //MessageBox.Show(message);
 
+                    //Deposit The Credit To The Customer's Account
+                    string receiverCurrency;
+                    string receiverRate;
+                    float receiverExchangeRate,conversionRate;
+                    db.getSingleValue("select CurrencyName from Account where AccountNo = '" + creditAccountTB.Text + "'", out receiverCurrency, 0);
+                    
+                    db.getSingleValue("select ExchangeRate from Currency where Name = '" + receiverCurrency + "'", out receiverRate, 0);
+                    receiverExchangeRate = float.Parse(receiverRate);
+                    conversionRate = 1/ receiverExchangeRate; //Banks currency is always lira
+
+                    string balance, msg;
+                    string TransactionID, PaymentID;
+                    db.getSingleValue("select Balance from Account where AccountNo = '" + creditAccountTB.Text + "'", out balance, 0);
+
+                    float availableBalance, creditAmount, total;
+                    creditAmount = float.Parse(creditAmountTB.Text);
+                    creditAmount *= conversionRate; //converting lira to target currency.
+
+                    availableBalance = float.Parse(balance);
+                    total = availableBalance + creditAmount;
+
+
+                    msg = db.performCRUD(@"update Account set Balance = '" + total + "'" +
+                                                        "where AccountNo = '" + creditAccountTB.Text + "'") + "\n";
+                    //MessageBox.Show(msg);
+                    MessageBox.Show(" Credit Amount Deposited Successfully");
+                    //write info to transaction table,payment table and deposit table
+
+                    msg += db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
+                                        insert into TransactionTbl (AccountNo,Balance,Date) values ('" + creditAccountTB.Text + "','" + availableBalance + "',@date)") + "\n";
+
+                    db.getSingleValue("SELECT IDENT_CURRENT('TransactionTbl')", out TransactionID, 0);
+
+
+                    msg += db.performCRUD(@"insert into Payment (TransactionID,Amount,Currency) values ('" + TransactionID + "','" + creditAmount + "','" + "lira" + "')") + "\n";
+
+                    db.getSingleValue("SELECT IDENT_CURRENT('Payment')", out PaymentID, 0);
+
+
+                    msg += db.performCRUD(@"insert into Deposit (PaymentID) values ('" + PaymentID + "')") + "\n";
+
+                    //MessageBox.Show(msg);
+                    //MessageBox.Show("Transaction, Payment and Deposit Tables Updated Successfully!");
+
+
+
                     if (message.Contains("success"))
                     {
                         deleteFromAccRequestTable();
@@ -109,6 +156,7 @@ namespace BankMS.tellerChildForm
                     MessageBox.Show(ex.Message);
 
                 }
+
 
 
             }
@@ -133,11 +181,11 @@ namespace BankMS.tellerChildForm
             index = e.RowIndex;
             DataGridViewRow row = customerDataGrid.Rows[index];
             CustomerIdTB.Text = row.Cells[1].Value.ToString();
-            creditAmountTB.Text = row.Cells[2].Value.ToString();
-            expirationTB.Text = row.Cells[3].Value.ToString();
+            creditAccountTB.Text = row.Cells[2].Value.ToString();
+            creditAmountTB.Text = row.Cells[3].Value.ToString();
+            expirationTB.Text = row.Cells[4].Value.ToString();
 
-
-            if (CustomerIdTB.Text == "" || creditAmountTB.Text == "" || expirationTB.Text == "")
+            if (CustomerIdTB.Text == "" || creditAmountTB.Text == "" || expirationTB.Text == ""||creditAccountTB.Text=="")
             {
                 key1 = 0;
 
@@ -151,6 +199,12 @@ namespace BankMS.tellerChildForm
 
             
         }
+
+       
+
+       
+
+
 
         //
     }

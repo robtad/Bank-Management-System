@@ -72,7 +72,6 @@ namespace BankMS.customerChildForm
                     string[] accountDetails = db.getArray("select Balance, CurrencyName from Account where AccountNo = '" + accountTB.Text + "'", 2);
                     balanceTB.Text = accountDetails[0];
                     lblCurrency.Text = accountDetails[1];
-                    lblCurrencyA.Text = accountDetails[1];
                     lblCurrencyB.Text = accountDetails[1];
 
 
@@ -92,16 +91,20 @@ namespace BankMS.customerChildForm
             {
                 MessageBox.Show("Select Credit Amount and Currency before submitting");
             }
+            else if (creditAmountTB.Text.Contains("-"))
+            {
+                MessageBox.Show("You Cannot Request Negative Amount or Zero!"+"\n"+"Please Enter Valid Numerical Values!");
+            }
             else
             {
                 try
                 {
 
                     msg = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
-                                        insert into RequestLoan(CustomerTCKN,Amount,Expiration,RequestDate) 
-                                    values('" + loginForm.userId + "','" + creditAmountTB.Text + "','" + ExpirationCB.SelectedItem.ToString() + "',@date)") + "\n";
+                                        insert into RequestLoan(CustomerTCKN,Amount,Expiration,AccountNo,RequestDate) 
+                                    values('" + loginForm.userId + "','" + creditAmountTB.Text + "','" + ExpirationCB.SelectedItem.ToString() + "','" + creditAccountTB.Text + "',@date)") + "\n";
 
-                    MessageBox.Show(msg);
+                    //MessageBox.Show(msg);
                     MessageBox.Show("Credit Request Has Been Sent To Your Teller Successfully!");
 
 
@@ -133,10 +136,22 @@ namespace BankMS.customerChildForm
                     LoanInterest /= 100;
                     OverdueInterest /= 100;
 
+                    //
+                    string senderCurrency1;
+                    string senderRate1;
+                    decimal senderExchangeRate1, conversionRate1;
+                    db.getSingleValue("select CurrencyName from Account where AccountNo = '" + loanAccountTB.Text + "'", out senderCurrency1, 0);
 
+                    db.getSingleValue("select ExchangeRate from Currency where Name = '" + senderCurrency1 + "'", out senderRate1, 0);
+                    senderExchangeRate1 = decimal.Parse(senderRate1);
+                    conversionRate1 = senderExchangeRate1 / 1;
 
                     decimal paidAmount, principal, interest;
+
                     paidAmount = decimal.Parse(loanAmountTB.Text);
+                    paidAmount *= conversionRate1;
+
+
                     if (paidAmount < 0)
                     {
                         MessageBox.Show("Can't Pay Negative Amount or Zero");
@@ -183,7 +198,7 @@ namespace BankMS.customerChildForm
                             message += db.performCRUD(@"update Loan set RemainingPrincipal = '" + remainingPrincipal + "' where CustomerTCKN = '" + loginForm.userId + "' and  id = '" + loanID + "'") + "\n";
 
                             displayCustomerInfo();
-                            MessageBox.Show(message);
+                            //MessageBox.Show(message);
 
                             //message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + expirationTB.Text + "',@date)") + "\n";
 
@@ -233,7 +248,7 @@ namespace BankMS.customerChildForm
                                 msg = db.performCRUD(@"update Account set Balance = '" + totalSender + "'" +
                                                                     "where AccountNo = '" + loanAccountTB.Text + "'") + "\n";
 
-                                MessageBox.Show(msg);
+                                //MessageBox.Show(msg);
                                 MessageBox.Show(@"Amount Transfered Successfully" + "\n" + "Amount Before Exchange: " + amountBeforeExchange + senderCurrency + "\n" + "" +
                                                  "Target Account Currency: lira " + "\n" + "Amount After Exchange: " + amountAfterExchange + "lira");
 
@@ -255,9 +270,9 @@ namespace BankMS.customerChildForm
 
                                 msg += db.performCRUD(@"insert into LoanRepayment (LoanID, PaymentID,LoanRepaymentLogID) values ('" + LoanID + "','" + PaymentID + "','" + LoanRepaymentLogID + "')") + "\n";
 
-                                MessageBox.Show(msg);
-                                MessageBox.Show("Transaction, Payment and Transfer Tables Updated Successfully!");
-
+                                //MessageBox.Show(msg);
+                                //MessageBox.Show("Transaction, Payment and Transfer Tables Updated Successfully!");
+                                MessageBox.Show("Mortgage Paid Successfully!");
                                 loanAmountTB.Text = "";
 
                             }
