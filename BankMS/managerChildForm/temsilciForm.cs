@@ -105,14 +105,14 @@ namespace BankMS.managerChildForm
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             string message;
-            message = db.performCRUD(@"UPDATE Teller SET Email = '"+textBoxEmail.Text+", 'TCKN = '" + textBoxTCKN.Text + "', FirstName = '" + textBoxAd.Text + 
+            message = db.performCRUD(@"UPDATE Teller SET Email = '"+textBoxEmail.Text+"', TCKN = '" + textBoxTCKN.Text + "', FirstName = '" + textBoxAd.Text + 
                                     "', LastName = '" + textBoxSoyad.Text + "', Gender = '" + comboBoxCinsiyet.SelectedItem.ToString() + 
                                     "', Telephone = '" + textBoxTel.Text + "', Address = '" + richTextBoxAdres.Text + "', DateUpdated = GETDATE() " +
                                     "WHERE TCKN = '" + textBoxTCKN.Text + "'");
 
             message += db.performCRUD("UPDATE TellerLogin SET Password = '" + textBoxPass.Text + "' WHERE TCKN = '" + textBoxTCKN.Text + "'");
 
-            //MessageBox.Show(message);
+            MessageBox.Show(message);
             MessageBox.Show("Updated Successfully!");
             tableShow();
             clearForm();

@@ -34,7 +34,7 @@ namespace BankMS.tellerChildForm
                             INNER JOIN CustomerAccounts ca ON tc.CustomerTCKN=ca.CustomerTCKN 
                             INNER JOIN Account a ON ca.AccountNo=a.AccountNo
                             INNER JOIN CustomerLogin cl ON c.TCKN = cl.TCKN
-                            ", customerDataGrid);
+                            WHERE tc.TellerTCKN = '"+ loginForm.userId +"'", customerDataGrid);
         }
         private void reset()
         {
