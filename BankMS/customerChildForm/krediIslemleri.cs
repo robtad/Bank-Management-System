@@ -127,58 +127,154 @@ namespace BankMS.customerChildForm
                     string message;
                     int id = 1;
                     decimal LoanInterest, OverdueInterest;
-                    //float creditAmount, monthlyPayment, expiration,remainingPrincipal;
                     string[] interestInfo = db.getArray("select LoanInterest, OverdueInterest from Interest where id = '" + id + "'", 2);
                     LoanInterest = decimal.Parse(interestInfo[0]);
                     OverdueInterest = decimal.Parse(interestInfo[1]);
                     LoanInterest /= 100;
                     OverdueInterest /= 100;
 
-                    //string[] loanInfo = db.getArray("select TotalAmount, MonthlyPayment,Expiration,RemainingPrincipal from Loan where CustomerTCKN = '" + loginForm.userId + "'", 4);
 
 
-                    decimal paidAmount, monthlyRemainingAmount, principal, interest;
+                    decimal paidAmount, principal, interest;
                     paidAmount = decimal.Parse(loanAmountTB.Text);
                     if (paidAmount < 0)
                     {
                         MessageBox.Show("Can't Pay Negative Amount or Zero");
                     }
-                    else
+                    else if(paidAmount > 0)
                     {
+                        if (remainingPrincipal > 0)
+                        {
 
-                        monthlyRemainingAmount = monthlyPayment - paidAmount;//check this for early payment also
-                        interest = remainingPrincipal * LoanInterest;
-                        principal = monthlyPayment - interest;
-                        remainingPrincipal = remainingPrincipal - principal;
+                            if (paidAmount >= monthlyPayment)
+                            {
+                                decimal extraPayment = paidAmount - monthlyPayment;
+                                remainingPrincipal -= extraPayment;
 
 
-                        //round off every float to 2dp
-                        monthlyPayment = Math.Round(monthlyPayment, 2);
-                        monthlyRemainingAmount = Math.Round(monthlyRemainingAmount, 2);
-                        interest = Math.Round(interest, 2);
-                        remainingPrincipal = Math.Round(remainingPrincipal, 2);
+                                interest = remainingPrincipal * LoanInterest;
+                                //principal = paidAmount - interest;
+                                principal = monthlyPayment - interest;
+                                remainingPrincipal = remainingPrincipal - principal;
+                            }
+                            else
+                            {
+                                decimal remainedPayment = monthlyPayment - paidAmount;
+                                remainedPayment += remainedPayment * OverdueInterest;
+                                remainingPrincipal += remainedPayment;
 
-                        /*
 
-                        double denominator = 1 - Math.Pow(decimal.ToDouble(LoanInterest), -expiration);
+                                interest = remainingPrincipal * LoanInterest;
+                                //principal = paidAmount - interest;
+                                principal = monthlyPayment - interest;
+                                remainingPrincipal = remainingPrincipal - principal;
 
-                        mortgage = (totalAmount * LoanInterest) / (decimal)(denominator);
-                         */
-                        //
+                            }
 
-                        // message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into LoanRepaymentLog(PaidAmount,MonthlyRemainingAmount,Principal,Interest,Date) values ('" +paidAmount + "','" + monthlyRemainingAmount + "','" + principal + "','" + interest + "',@date)") + "\n";
-                        message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into LoanRepaymentLog(PaidAmount,MonthlyRemainingAmount,Principal,Interest,Date) values ('" + paidAmount + "','" + monthlyRemainingAmount + "','" + principal + "','" + interest + "',@date)") + "\n";
+                            //round off every float to 2dp
+                            interest = Math.Round(interest, 2);
+                            remainingPrincipal = Math.Round(remainingPrincipal, 2);
 
-                        message += db.performCRUD(@"update Loan set MonthlyPayment = '" + monthlyPayment + "',RemainingPrincipal = '" + remainingPrincipal + "' where CustomerTCKN = '" + loginForm.userId + "' and  id = '" + loanID + "'") + "\n";
+                            //
 
-                        displayCustomerInfo();
+                            // message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into LoanRepaymentLog(PaidAmount,MonthlyRemainingAmount,Principal,Interest,Date) values ('" +paidAmount + "','" + monthlyRemainingAmount + "','" + principal + "','" + interest + "',@date)") + "\n";
+                            message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into LoanRepaymentLog(PaidAmount,Principal,Interest,Date) values ('" + paidAmount + "','" + principal + "','" + interest + "',@date)") + "\n";
 
-                        //message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + expirationTB.Text + "',@date)") + "\n";
+                            message += db.performCRUD(@"update Loan set RemainingPrincipal = '" + remainingPrincipal + "' where CustomerTCKN = '" + loginForm.userId + "' and  id = '" + loanID + "'") + "\n";
 
-                        MessageBox.Show(message);
-                    }
+                            displayCustomerInfo();
+                            MessageBox.Show(message);
+
+                            //message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + mortgage + "','" + expirationTB.Text + "',@date)") + "\n";
+
+
+                            //transfer the money from selected account
+
+
+
+
+                            string senderBalance, TransactionID, senderCurrency, senderRate, msg;
+                            string PaymentID, LoanID, LoanRepaymentLogID;
+                            float senderExchangeRate;
+                            senderCurrency = lblCurrencyA.Text;
+
+                            db.getSingleValue("select ExchangeRate from Currency where Name = '" + lblCurrencyA.Text + "'", out senderRate, 0);
+                            senderExchangeRate = float.Parse(senderRate);
+
+                            float conversionRate;
+                            conversionRate = senderExchangeRate / 1;//coz bank's currency is only lira
+
+
+                            db.getSingleValue("select Balance from Account where AccountNo = '" + loanAccountTB.Text + "'", out senderBalance, 0);
+
+                            float availableBalance, transferAmount, totalSender;
+                            transferAmount = float.Parse(loanAmountTB.Text);
+                            availableBalance = float.Parse(senderBalance);
+
+
+                            if (transferAmount <= 0)
+                            {
+                                MessageBox.Show("Hey Come on Now >:( You Cannot Transfer Negative Amount or Zero!");
+                            }
+                            else if (transferAmount > availableBalance)
+                            {
+                                MessageBox.Show("Insufficient Balance" + "\n" + "Account Balance: " + availableBalance + "\n" + "Can't Transfer:" + transferAmount);
+                            }
+                            else
+                            {
+                                totalSender = availableBalance - transferAmount;
+                                float amountBeforeExchange = transferAmount;
+
+                                transferAmount = transferAmount * conversionRate;//convert from sender currency to receiver currency
+                                float amountAfterExchange = transferAmount;
+
+
+
+                                msg = db.performCRUD(@"update Account set Balance = '" + totalSender + "'" +
+                                                                    "where AccountNo = '" + loanAccountTB.Text + "'") + "\n";
+
+                                MessageBox.Show(msg);
+                                MessageBox.Show(@"Amount Transfered Successfully" + "\n" + "Amount Before Exchange: " + amountBeforeExchange + senderCurrency + "\n" + "" +
+                                                 "Target Account Currency: lira " + "\n" + "Amount After Exchange: " + amountAfterExchange + "lira");
+
+                                //write info to transaction table,payment table and withdraw table
+
+                                msg += db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)
+                                            insert into TransactionTbl (AccountNo,Balance,Date) values ('" + loanAccountTB.Text + "','" + availableBalance + "',@date)") + "\n";
+
+                                db.getSingleValue("SELECT IDENT_CURRENT('TransactionTbl')", out TransactionID, 0);
+
+
+                                msg += db.performCRUD(@"insert into Payment (TransactionID,Amount,Currency) values ('" + TransactionID + "','" + transferAmount + "','" + lblCurrencyA.Text + "')") + "\n";
+
+                                db.getSingleValue("SELECT IDENT_CURRENT('Payment')", out PaymentID, 0);
+                                db.getSingleValue("SELECT IDENT_CURRENT('Loan')", out LoanID, 0);
+                                db.getSingleValue("SELECT IDENT_CURRENT('LoanRepaymentLog')", out LoanRepaymentLogID, 0);
+
+
+
+                                msg += db.performCRUD(@"insert into LoanRepayment (LoanID, PaymentID,LoanRepaymentLogID) values ('" + LoanID + "','" + PaymentID + "','" + LoanRepaymentLogID + "')") + "\n";
+
+                                MessageBox.Show(msg);
+                                MessageBox.Show("Transaction, Payment and Transfer Tables Updated Successfully!");
+
+                                loanAmountTB.Text = "";
+
+                            }
+                        }                    
+                        else
+                        {
+                            MessageBox.Show("You Have Completed Your Credit Payment");
+                        }
+
+
+
+
+                        }
                 }
-            }catch (Exception ex)
+            }
+
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

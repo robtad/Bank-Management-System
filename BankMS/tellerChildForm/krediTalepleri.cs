@@ -87,11 +87,12 @@ namespace BankMS.tellerChildForm
                     decimal totalAmount = decimal.Parse(creditAmountTB.Text);
                     int expiration = Int32.Parse(expirationTB.Text);
                     LoanInterest /= 100;
-                    double denominator = 1 - Math.Pow(decimal.ToDouble(LoanInterest), -expiration);
+                    double denominator = 1 - Math.Pow(1+ decimal.ToDouble(LoanInterest), -expiration);
 
                     mortgage = (totalAmount * LoanInterest) / (decimal)(denominator);
 
 
+                    //MessageBox.Show();
                     message = db.performCRUD(@"DECLARE @date DATE = (SELECT BankDate FROM Date)insert into Loan(CustomerTCKN,TotalAmount,MonthlyPayment,RemainingPrincipal,Expiration,DateStarted) values ('" + CustomerIdTB.Text + "','" + creditAmountTB.Text + "','" + Math.Round(mortgage,2) + "','" + creditAmountTB.Text + "','" + expirationTB.Text + "',@date)") + "\n";
 
                     //MessageBox.Show(message);
