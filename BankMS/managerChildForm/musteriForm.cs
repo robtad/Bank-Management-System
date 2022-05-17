@@ -137,6 +137,7 @@ namespace BankMS.managerChildForm
                 string enAzMusteri = assginTeller();
 
                 message2 = db.performCRUD("INSERT INTO TellerCustomer(CustomerTCKN, TellerTCKN) VALUES('" + textBoxTCKN.Text + "', '" + enAzMusteri + "')");
+                addCustomerAccount();
                 if (!message.Contains("failed"))
                 {
                     MessageBox.Show("MÜŞTERİ EKLENMİŞTİR","",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -197,7 +198,14 @@ namespace BankMS.managerChildForm
             //MessageBox.Show(message);
         }
 
+        private void addCustomerAccount()
+        {
+            string AccNum;
+            db.performCRUD(@"insert into Account(CurrencyName) values ('Lira')");
+            db.getSingleValue("SELECT IDENT_CURRENT('Account')", out AccNum, 0);
+            db.performCRUD(@"insert into CustomerAccounts(CustomerTCKN,AccountNo) values ('" + textBoxTCKN.Text + "','" + AccNum + "')");
+        }
         #endregion
-    
+
     }
 }

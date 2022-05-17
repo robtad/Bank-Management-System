@@ -15,6 +15,7 @@ namespace BankMS.managerChildForm
     {
         DbConnector db = new DbConnector();
         string totalSalary, totalKredi, totalGelir, totalBakiye;
+        int totalSalaryNum, totalKrediNum, totalGelirNum, totalBakiyeNum;
 
         public genelDurumForm()
         {
@@ -67,13 +68,21 @@ namespace BankMS.managerChildForm
         private void totalSalaryCount()
         {
             db.getSingleValue("SELECT SUM(TotalAmount) FROM PayrollLog", out totalSalary, 0);
-            labelTotalSalary.Text = Convert.ToInt32(totalSalary).ToString("N0") + " (Maaş)"; //ToString("#,##0") for adding comma to number
+            if (totalSalary != "")
+            {
+                totalSalaryNum = Convert.ToInt32(totalSalary); //ToString("#,##0") for adding comma to number
+            }
+            labelTotalSalary.Text = totalSalaryNum.ToString("N0") + " (Maaş)";
         }
 
         private void totalCreditCount()
         {
             db.getSingleValue("SELECT SUM(TotalAmount) FROM Loan", out totalKredi, 0);
-            labelTotalKredi.Text = Convert.ToInt32(totalKredi).ToString("N0") + " (Kredi)";
+            if (totalKredi != "")
+            {
+                totalKrediNum = Convert.ToInt32(totalKredi);
+            }
+            labelTotalKredi.Text = totalKrediNum.ToString("N0") + " (Kredi)";
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,29 +94,37 @@ namespace BankMS.managerChildForm
         private void totalGelirCount()
         {
             db.getSingleValue("SELECT SUM(Amount) FROM Payment p, LoanRepayment l WHERE p.id = l.PaymentID;", out totalGelir, 0);
-            labelGelir.Text = "TLY " + Convert.ToInt32(totalGelir).ToString("N0") + " \n(Kredi Ödeme)";
+            if (totalGelir != "")
+            {
+                totalGelirNum = Convert.ToInt32(totalGelir);
+            }
+            labelGelir.Text = "TLY " + totalGelirNum.ToString("N0") + " \n(Kredi Ödeme)";
         }
 
         private void totalBakiyeCount()
         {
             db.getSingleValue("SELECT Balance FROM Bank", out totalBakiye, 0);
+            if (totalBakiye != "")
+            {
+                totalBakiyeNum = Convert.ToInt32(totalBakiye);
+            }
         }
 
         private void tumIslemler()
         {
             totalSalaryCount();
             totalCreditCount();
-            int totalGiderTemp = ((Convert.ToInt32(totalKredi)) + Convert.ToInt32(totalSalary));
+            int totalGiderTemp = totalKrediNum + totalSalaryNum;
             totalGider.Text = "TLY " + totalGiderTemp.ToString("N0");
 
             totalGelirCount();
 
-            int totalKar = (Convert.ToInt32(totalGelir)) - totalGiderTemp;
+            int totalKar = totalGelirNum - totalGiderTemp;
             labelKar.Text = totalKar.ToString("N0");
 
             totalBakiyeCount();
 
-            int bankBalance = (Convert.ToInt32(totalBakiye)) + totalKar;
+            int bankBalance = totalBakiyeNum + totalKar;
             labelBakiye.Text = "TLY " + bankBalance.ToString("N0");
         }
 
