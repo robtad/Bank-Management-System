@@ -33,8 +33,9 @@ namespace BankMS.tellerChildForm
                             INNER JOIN TellerCustomer tc ON c.TCKN=tc.CustomerTCKN 
                             INNER JOIN CustomerAccounts ca ON tc.CustomerTCKN=ca.CustomerTCKN 
                             INNER JOIN Account a ON ca.AccountNo=a.AccountNo
-                            INNER JOIN CustomerLogin cl ON c.TCKN = cl.TCKN
-                            WHERE tc.TellerTCKN = '"+ loginForm.userId +"'", customerDataGrid);
+                            INNER JOIN CustomerLogin cl ON c.TCKN = cl.TCKN 
+                            Where tc.TellerTCKN = '"+loginForm.userId+"'", customerDataGrid);
+           
         }
         private void reset()
         {
@@ -89,7 +90,8 @@ namespace BankMS.tellerChildForm
                                     "'" +PasswordTB.Text+ "')") + "\n";
 
                     
-                    MessageBox.Show(message);
+                    //MessageBox.Show(message);
+                    MessageBox.Show("Customer Added Successfully!");
                     
                      reset();
                      displayCustomerInfo();
@@ -154,7 +156,7 @@ namespace BankMS.tellerChildForm
             AddressTB.Text = row.Cells[4].Value.ToString();
             GenderCB.SelectedItem = row.Cells[5].Value.ToString();
             EmailTB.Text = row.Cells[6].Value.ToString();
-            PasswordTB.Text = row.Cells[14].Value.ToString();
+            PasswordTB.Text = row.Cells[13].Value.ToString();
             CurrencyCB.SelectedItem = row.Cells[11].Value.ToString();
 
 

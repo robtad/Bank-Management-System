@@ -31,7 +31,7 @@ namespace BankMS.customerChildForm
         private void displayCustomerInfo(string userTC)
         {
 
-            db.fillDataGridView(@"SELECT c.*, tc.TellerTCKN, ca.AccountNo, a.CurrencyName,a.Balance,a.Loan,cl.Password 
+            db.fillDataGridView(@"SELECT c.*, tc.TellerTCKN, ca.AccountNo, a.CurrencyName,a.Balance,cl.Password 
                             FROM customer c
                             INNER JOIN TellerCustomer tc ON c.TCKN=tc.CustomerTCKN 
                             INNER JOIN CustomerAccounts ca ON tc.CustomerTCKN=ca.CustomerTCKN 
@@ -70,7 +70,7 @@ namespace BankMS.customerChildForm
             AddressTB.Text = row.Cells[4].Value.ToString();
             GenderCB.SelectedItem = row.Cells[5].Value.ToString();
             EmailTB.Text = row.Cells[6].Value.ToString();
-            PasswordTB.Text = row.Cells[14].Value.ToString();
+            PasswordTB.Text = row.Cells[13].Value.ToString();
 
 
             if (FirstNameTB.Text == "")
