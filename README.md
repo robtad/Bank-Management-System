@@ -25,9 +25,9 @@ Bank Manager can:
     5. view teller's and customer's info and edit it
     6. view the bank's income,expenditures and profits
     7. add and edit bank date
-    8. advance the bank's date-time by one month at once.(Our system uses it's own imaginary time(calender)) to check the functionality of app such as salary payment and loan paymets etc.
-    9. view the banks transaction history.
-Teller can:
+    8. advance the bank's date-time by one month at once.(Our system uses it's own imaginary time(calender)) to check the functionality of the app such as salary payment and loan paymets etc.
+    9. view the bank's transaction history.
+2. Teller can:
     1. add,remove, and edit customers
     2. view their own customers' info and edit it.(every customer has his/her own teller(representative)
     3. approve or decline new account opening requests from his customers
@@ -36,7 +36,7 @@ Teller can:
     6. view their customers' transaction history
     7. view their customers' account balance and loans
     
- Cutomer can:
+3. Cutomer can:
     1. deposit and withdraw money to and from their account
     2. request for the opening of new account and deletions of their existing account(s)
     2. open more than one account: (eg dollar account, euro account etc)(there is no limit in the number of accounts customer can have)
