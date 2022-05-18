@@ -19,6 +19,7 @@ namespace BankMS.customerChildForm
         {
             InitializeComponent();
             displayCustomerInfo();
+            //faizAnapara();
         }
 
         private void displayCustomerInfo()
@@ -57,6 +58,54 @@ namespace BankMS.customerChildForm
             expiration = decimal.Parse(row.Cells[6].Value.ToString());
             loanIdTB.Text = loanID.ToString();
         }
+
+        
+
+        private void krediIslemleri_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlCreditRequest_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlLoanPayment_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void customerDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnCheckBalance_Click(object sender, EventArgs e)
         {
 

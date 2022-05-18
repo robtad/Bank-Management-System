@@ -75,11 +75,12 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(605, 192);
+            this.label8.Location = new System.Drawing.Point(603, 175);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(256, 25);
             this.label8.TabIndex = 8;
             this.label8.Text = "KREDİ BORCU ÖDEME";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pnlLoanPayment
             // 
@@ -92,10 +93,11 @@
             this.pnlLoanPayment.Controls.Add(this.loanAccountTB);
             this.pnlLoanPayment.Controls.Add(this.label11);
             this.pnlLoanPayment.Controls.Add(this.label12);
-            this.pnlLoanPayment.Location = new System.Drawing.Point(467, 233);
+            this.pnlLoanPayment.Location = new System.Drawing.Point(465, 216);
             this.pnlLoanPayment.Name = "pnlLoanPayment";
             this.pnlLoanPayment.Size = new System.Drawing.Size(402, 146);
             this.pnlLoanPayment.TabIndex = 13;
+            this.pnlLoanPayment.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLoanPayment_Paint);
             // 
             // loanIdTB
             // 
@@ -194,10 +196,11 @@
             this.pnlCreditRequest.Controls.Add(this.creditAccountTB);
             this.pnlCreditRequest.Controls.Add(this.label9);
             this.pnlCreditRequest.Controls.Add(this.label7);
-            this.pnlCreditRequest.Location = new System.Drawing.Point(38, 233);
+            this.pnlCreditRequest.Location = new System.Drawing.Point(36, 216);
             this.pnlCreditRequest.Name = "pnlCreditRequest";
             this.pnlCreditRequest.Size = new System.Drawing.Size(402, 146);
             this.pnlCreditRequest.TabIndex = 12;
+            this.pnlCreditRequest.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCreditRequest_Paint);
             // 
             // ExpirationCB
             // 
@@ -303,22 +306,24 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(176, 192);
+            this.label5.Location = new System.Drawing.Point(174, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "KREDİ TALEBİ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(240, 23);
+            this.label1.Location = new System.Drawing.Point(238, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(453, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "KREDİ TALEBİ VE KREDİ BORCU ÖDEME";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -330,10 +335,11 @@
             this.panel1.Controls.Add(this.accountTB);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Location = new System.Drawing.Point(129, 61);
+            this.panel1.Location = new System.Drawing.Point(127, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 112);
             this.panel1.TabIndex = 14;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblCurrency
             // 
@@ -418,7 +424,7 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.customerDataGrid);
-            this.groupBox1.Location = new System.Drawing.Point(38, 393);
+            this.groupBox1.Location = new System.Drawing.Point(36, 376);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(253, 162);
             this.groupBox1.TabIndex = 53;
@@ -436,17 +442,19 @@
             this.customerDataGrid.Size = new System.Drawing.Size(219, 130);
             this.customerDataGrid.TabIndex = 53;
             this.customerDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellClick);
+            this.customerDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGrid_CellContentClick);
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.customerDataGrid2);
-            this.groupBox2.Location = new System.Drawing.Point(304, 393);
+            this.groupBox2.Location = new System.Drawing.Point(302, 376);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(565, 162);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kredi Borçlarım";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // customerDataGrid2
             // 
@@ -465,7 +473,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(906, 567);
+            this.ClientSize = new System.Drawing.Size(906, 663);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -477,6 +485,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "krediIslemleri";
             this.Text = "krediTalebi";
+            this.Load += new System.EventHandler(this.krediIslemleri_Load);
             this.pnlLoanPayment.ResumeLayout(false);
             this.pnlLoanPayment.PerformLayout();
             this.pnlCreditRequest.ResumeLayout(false);

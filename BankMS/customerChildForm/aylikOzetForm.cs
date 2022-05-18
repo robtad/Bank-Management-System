@@ -33,6 +33,15 @@ namespace BankMS.customerChildForm
 			borcOdeme();
 			paraYatir();
 			paraCek();
+			faizAnapara();
+			
+		}
+
+		private void faizAnapara()
+		{
+			db.fillDataGridView(@"SELECT ll.*
+								FROM TransactionTbl t, Payment p, LoanRepayment l, LoanRepaymentLog ll
+								WHERE t.id = p.TransactionID AND l.PaymentID = p.id AND ll.id = l.LoanRepaymentLogID AND t.AccountNo = '" + accNo + "'", dataGridView1);
 		}
 
 		private void paraGonder()
@@ -70,7 +79,7 @@ namespace BankMS.customerChildForm
 								WHERE t.id = p.TransactionID AND w.PaymentID = p.id
 								AND AccountNo = '" + accNo + "'", dataGridViewCek);
 		}
-
+		 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 			accNo = comboBox1.SelectedItem.ToString();

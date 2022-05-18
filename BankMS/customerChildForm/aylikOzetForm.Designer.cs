@@ -37,11 +37,13 @@
             this.dataGridViewYatir = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridViewBorc = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridViewGelenPara = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridViewGelenPara = new System.Windows.Forms.DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParaGonder)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -53,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBorc)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGelenPara)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewParaGonder
@@ -71,6 +75,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(35, 134);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -146,6 +151,25 @@
             this.dataGridViewBorc.Size = new System.Drawing.Size(600, 262);
             this.dataGridViewBorc.TabIndex = 6;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.dataGridViewGelenPara);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(606, 268);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Gelen Para";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewGelenPara
+            // 
+            this.dataGridViewGelenPara.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewGelenPara.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGelenPara.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewGelenPara.Name = "dataGridViewGelenPara";
+            this.dataGridViewGelenPara.Size = new System.Drawing.Size(600, 262);
+            this.dataGridViewGelenPara.TabIndex = 1;
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -175,24 +199,26 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Hesap No : ";
             // 
-            // tabPage5
+            // tabPage6
             // 
-            this.tabPage5.Controls.Add(this.dataGridViewGelenPara);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(606, 268);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Gelen Para";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage6.Controls.Add(this.dataGridView1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(606, 268);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Faiz ve Anapara";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewGelenPara
+            // dataGridView1
             // 
-            this.dataGridViewGelenPara.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewGelenPara.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGelenPara.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewGelenPara.Name = "dataGridViewGelenPara";
-            this.dataGridViewGelenPara.Size = new System.Drawing.Size(600, 262);
-            this.dataGridViewGelenPara.TabIndex = 1;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(600, 262);
+            this.dataGridView1.TabIndex = 56;
             // 
             // aylikOzetForm
             // 
@@ -200,7 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(951, 520);
+            this.ClientSize = new System.Drawing.Size(951, 727);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -220,6 +246,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBorc)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGelenPara)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +268,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataGridView dataGridViewGelenPara;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
