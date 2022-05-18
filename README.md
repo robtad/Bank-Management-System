@@ -1,8 +1,8 @@
 # BankMS
 BankManagementSystemProject
-This is a Bank Management System Project.
-Buit by Robera Tadesse Gobosho(me)(robtad318@gmail.com) and Muhammad Abdan Syakura(prof.syakur@gmail.com).
-We are a second year Computer Engineerig Students(2022)
+This is a Bank Management System Project(App).
+Built by Robera Tadesse Gobosho(me)(robtad318@gmail.com) and Muhammad Abdan Syakura(prof.syakur@gmail.com).
+We are a second year Computer Engineerig Students(2022) at KOCAELI UNIVERSITY, TURKEY.
 
 -The project is a WinForms App:
 - framework: dotnet(.NET) framework.
@@ -14,7 +14,8 @@ The system has three roles:
 2. Teller (Customer Representative)
 3. Bank Customers.
 
-How does the app work:
+How does the app work ?:
+
 1. manager,teller and customer can log in through a login form using their respective login username(ID) and password.
 Bank Manager can:
     1. add,remove, and edit tellers and customers
@@ -56,6 +57,6 @@ Database:
      - There are total of 26-tables
      - Query language: T-SQL.
      
-The up to date source codes and file are in this repo.  
+The up to date source codes and files are in this repo.  
 
              
